@@ -7,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: rokka-
+  m_Name: dustbox
   m_Shader: {fileID: 4800000, guid: 5ca92f1e9fc35504aba297fd1acd62df, type: 3}
   m_ValidKeywords:
-  - MOCHIE_PBR
   - POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE
   - POI_LIGHT_DATA_ADDITIVE_ENABLE
+  - POI_MATCAP0
   - POI_VERTEXLIGHT_ON
   - VIGNETTE_MASKED
   - _LIGHTINGMODE_FLAT
@@ -66,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 6dffbf4305b62ac4982b392cb7cd8531, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ClearCoatFallback:
@@ -306,11 +306,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6cf0da9ef76bea843b5d8426e08b8b88, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 46ec5de8b6955e74b85a8173d64fd30f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap0NormalMap:
@@ -796,7 +796,7 @@ Material:
     - _ClearCoatSpecularStrengthGlobalMask: 0
     - _ClearCoatSpecularStrengthGlobalMaskBlendType: 2
     - _ClearCoatSpecularTintThemeIndex: 0
-    - _ClearCoatStrength: 0
+    - _ClearCoatStrength: 1
     - _ClearCoatTPSDepthMaskEnabled: 0
     - _ClearCoatTPSMaskStrength: 1
     - _ClearcoatFresnel: 1
@@ -1771,14 +1771,14 @@ Material:
     - _Matcap4TPSDepthEnabled: 0
     - _Matcap4TPSMaskStrength: 1
     - _Matcap4UVMode: 1
-    - _MatcapAdd: 0
+    - _MatcapAdd: 1
     - _MatcapAddToLight: 0
     - _MatcapAlphaOverride: 0
-    - _MatcapBaseColorMix: 0
+    - _MatcapBaseColorMix: 1
     - _MatcapBorder: 0.43
     - _MatcapColorThemeIndex: 0
     - _MatcapEmissionStrength: 0
-    - _MatcapEnable: 0
+    - _MatcapEnable: 1
     - _MatcapHueShift: 0
     - _MatcapHueShiftEnabled: 0
     - _MatcapHueShiftSpeed: 0
@@ -1794,7 +1794,7 @@ Material:
     - _MatcapMixed: 0
     - _MatcapMultiply: 0
     - _MatcapNormal: 1
-    - _MatcapReplace: 1
+    - _MatcapReplace: 0.35
     - _MatcapRotation: 0
     - _MatcapScreen: 0
     - _MatcapSmoothness: 1
@@ -1807,7 +1807,7 @@ Material:
     - _MirrorColorThemeIndex: 0
     - _MirrorTextureBlendType: 0
     - _MirrorTextureUV: 0
-    - _MochieBRDF: 1
+    - _MochieBRDF: 0
     - _MochieForceFallback: 0
     - _MochieGSAAEnabled: 1
     - _MochieLitFallback: 0
@@ -1819,14 +1819,14 @@ Material:
     - _MochieMetallicMapsStochastic: 0
     - _MochieMetallicMapsUV: 0
     - _MochieMetallicMasksUV: 0
-    - _MochieMetallicMultiplier: 1
+    - _MochieMetallicMultiplier: 0
     - _MochieReflectionMaskInvert: 0
     - _MochieReflectionStrength: 1
     - _MochieReflectionStrengthGlobalMask: 0
     - _MochieReflectionStrengthGlobalMaskBlendType: 2
     - _MochieReflectionTintThemeIndex: 0
     - _MochieRoughnessMapInvert: 0
-    - _MochieRoughnessMultiplier: 0.5
+    - _MochieRoughnessMultiplier: 1
     - _MochieRoughnessMultiplier2: 1
     - _MochieSpecularMaskInvert: 0
     - _MochieSpecularStrength: 1
@@ -2561,7 +2561,7 @@ Material:
     - m_start_backFace: 0
     - m_start_backlight: 0
     - m_start_blending: 0
-    - m_start_brdf: 1
+    - m_start_brdf: 0
     - m_start_brdfadvanced: 0
     - m_start_brdfglobalmask: 0
     - m_start_clearCoat: 0
@@ -2578,7 +2578,7 @@ Material:
     - m_start_flipBook: 0
     - m_start_glitter: 0
     - m_start_internalparallax: 0
-    - m_start_matcap: 0
+    - m_start_matcap: 1
     - m_start_mirrorOptions: 0
     - m_start_normalCorrect: 0
     - m_start_parallax: 0
@@ -2701,7 +2701,7 @@ Material:
     - _ClearCoatSpecularTint: {r: 1, g: 1, b: 1, a: 1}
     - _ClippingMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClothMetallicSmoothnessMapPan: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
     - _CubeMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _CubeMapMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _CubeMapRotation: {r: 0, g: 0, b: 0, a: 0}
