@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //[SerializeField] TitleDetection titleDetection;
+    [SerializeField] TimeManager timeManager;
+    [SerializeField] MainDetection mainDetection;
+    //[SerializeField] ResultManager resultManager;
+
+
+    //管理する状態
     public enum STATE
     {
         TITLE, //タイトル
@@ -14,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetStase(STATE.TITLE);
     }
 
     // Update is called once per frame
@@ -23,6 +30,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+
+    //状態遷移を管理
     public void SetStase(STATE state)
     {
         switch (state)
@@ -32,7 +41,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case STATE.GAMESCENE:
-                //時間の計測開始、パンチでカウントできるようにする
+                //時間の計測開始、パンチでカウントできるようにする＝maindetectionの有効化
                 break;
 
             case STATE.RESULT:
