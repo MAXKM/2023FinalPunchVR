@@ -8,7 +8,7 @@ public class titleDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.SetStase(GameManager.STATE.GAMESCENE);
+        gameManager.SetState(GameManager.STATE.GAMESCENE);
     }
 
     // Start is called before the first frame update
