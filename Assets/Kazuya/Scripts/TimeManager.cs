@@ -7,6 +7,9 @@ public class TimeManager : MonoBehaviour
 {
     private Text timerText; // §ŒÀŠÔ‚ğŠi”[‚·‚é•Ï”
     private float limit;
+    public enum STATE { RESULT };
+    [SerializeField] GameManager;
+    private bool count;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +22,21 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        limit -= Time.deltaTime;
-        timerText.text = limit.ToString("0.00");
+        if (count == true) 
+        {
+            limit -= Time.deltaTime;
+            timerText.text = limit.ToString("0.00");
+        }
+    }
+    public void CountTime()
+    {
+        count = true;
 
         if (limit < 0)
         {
-            timerText.text = "ƒV[ƒ“‘JˆÚ";
-            
+            gameManager.SetState(GameManager.STATE.RESULT);
+            count = false;
         }
+
     }
 }
