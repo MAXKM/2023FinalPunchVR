@@ -5,9 +5,9 @@ using UnityEngine;
 public class titleDetection : MonoBehaviour
 {
     public GameManager gameManager;
-    void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("“–‚½‚Á‚½");
         gameManager.SetStase(GameManager.STATE.GAMESCENE);
     }
 
@@ -22,6 +22,4 @@ public class titleDetection : MonoBehaviour
     {
         
     }
-
-    
 }
