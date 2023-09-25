@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class titleDetection : MonoBehaviour
 {
-    public GameManager gamemanager;
+    public GameManager gameManager;
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ìñÇΩÇ¡ÇΩ");
-        //gamemanager.SetStase; ä÷êîñºÇÕÇ±ÇÍÇ≈OKÅH
+        //Debug.Log("ìñÇΩÇ¡ÇΩ");
+        gameManager.SetStase(GameManager.STATE.GAMESCENE);
     }
 
     // Start is called before the first frame update
