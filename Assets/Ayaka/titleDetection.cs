@@ -5,10 +5,11 @@ using UnityEngine;
 public class titleDetection : MonoBehaviour
 {
     public GameManager gameManager;
-    void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("“–‚½‚Á‚½");
-        gameManager.SetStase(GameManager.STATE.GAMESCENE);
+        //ŠÖ”ŒÄ‚Ño‚µ
+        gameManager.SetState(GameManager.STATE.GAMESCENE);
     }
 
     // Start is called before the first frame update
@@ -22,6 +23,4 @@ public class titleDetection : MonoBehaviour
     {
         
     }
-
-    
 }

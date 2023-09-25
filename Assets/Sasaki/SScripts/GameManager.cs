@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
 
     //ó‘Ô‘JˆÚ‚ğŠÇ—
-    public void SetStase(STATE state)
+    public void SetState(STATE state)
     {
         switch (state)
         {
