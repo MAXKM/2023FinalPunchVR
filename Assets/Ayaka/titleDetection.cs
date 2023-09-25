@@ -8,7 +8,6 @@ public class titleDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //ŠÖ”ŒÄ‚Ño‚µ
         gameManager.SetState(GameManager.STATE.GAMESCENE);
     }
 

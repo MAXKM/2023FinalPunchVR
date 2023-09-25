@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetStase(STATE.TITLE);
+        //SetState(STATE.TITLE);
+        SetState(STATE.GAMESCENE);
     }
 
     // Update is called once per frame
@@ -37,14 +38,17 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case STATE.TITLE:
-               //UIの表示
+               //UIの表示＝ titlsceneに通知
                 break;
 
             case STATE.GAMESCENE:
                 //時間の計測開始、パンチでカウントできるようにする＝maindetectionの有効化
+                Debug.Log("Game");
+                timeManager.CountTime();
                 break;
 
             case STATE.RESULT:
+                Debug.Log("re");
                 //resultmanagerに通知
                 break;
         }
