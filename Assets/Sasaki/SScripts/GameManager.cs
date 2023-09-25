@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SetState(STATE.TITLE);
-        SetState(STATE.GAMESCENE);
+        SetState(STATE.TITLE);
+        //SetState(STATE.GAMESCENE);
     }
 
     // Update is called once per frame
