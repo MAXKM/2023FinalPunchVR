@@ -1,7 +1,7 @@
-# Blender MTL File: 'hand2.blend'
+# Blender MTL File: 'None'
 # Material Count: 2
 
-newmtl マテリアル
+newmtl マテリアル.005
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.571708 0.295157 0.094335
@@ -11,7 +11,7 @@ Ni 1.450000
 d 1.000000
 illum 2
 
-newmtl マテリアル.002
+newmtl マテリアル.006
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
