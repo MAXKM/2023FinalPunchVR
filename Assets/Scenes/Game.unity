@@ -1644,6 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeManager: {fileID: 721857275}
   mainDetection: {fileID: 0}
+  resultManager: {fileID: 1033210379}
 --- !u!4 &1572190798
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,6 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1985340d304124fb689e204313f89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  afterimageManager: {fileID: 1033210381}
   appearAfterimage: {fileID: 43295075}
 --- !u!136 &1578301774
 CapsuleCollider:
@@ -2007,6 +2009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1985340d304124fb689e204313f89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  afterimageManager: {fileID: 0}
   appearAfterimage: {fileID: 43295075}
 --- !u!65 &1972148966
 BoxCollider:
