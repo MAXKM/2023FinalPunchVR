@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class AppearAfterimage : MonoBehaviour
 {
-    private List<GameObject> pool = new List<GameObject>();
+    public List<GameObject> pool = new List<GameObject>();
     [SerializeField] private GameObject afterimagePrefab;
-    public void Appear(Vector3 _origin,Quaternion _rot)
+    public void Appear(Vector3 _origin,Quaternion _rot,bool _isDisappear = true)
     {
         GameObject afterimage = GetFromPool();
         if(!afterimage.activeSelf) afterimage.SetActive(true);
         afterimage.transform.position = _origin;
         afterimage.transform.rotation = _rot * transform.rotation;
         afterimage.transform.parent = transform;
+        if (!_isDisappear) return;
         DOVirtual.DelayedCall(0.5f, () =>
         {
             afterimage.SetActive(false);
