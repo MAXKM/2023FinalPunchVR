@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] TitleDetection titleDetection;
     [SerializeField] TimeManager timeManager;
     [SerializeField] MainDetection mainDetection;
-    //[SerializeField] ResultManager resultManager;
+    [SerializeField] ResultManager resultManager;
 
 
     //ŠÇ—‚·‚éó‘Ô
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case STATE.TITLE:
+                Debug.Log("Title");
                //UI‚Ì•\¦ titlscene‚É’Ê’m
                 break;
 
@@ -48,7 +49,8 @@ public class GameManager : MonoBehaviour
                 break;
 
             case STATE.RESULT:
-                Debug.Log("re");
+                Debug.Log("Result");
+                resultManager.AfterImageCome();
                 //resultmanager‚É’Ê’m
                 break;
         }
