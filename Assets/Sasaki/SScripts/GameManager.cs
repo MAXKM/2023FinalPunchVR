@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         GAMESCENE, //ゲームシーン
         RESULT, //リザルト
     }
+    public STATE state;
 
     // Start is called before the first frame update
     void Start()
