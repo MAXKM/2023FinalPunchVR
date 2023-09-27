@@ -39,7 +39,7 @@ public class ResultManager : MonoBehaviour
     {
         posM = afterimageManager.pos;
         rotM = afterimageManager.rot;
-        listCountP = posM.Count;
+        listCountP = posM.Count-1;
         listCountR = rotM.Count;
         interval = count / listCountP;
         StartCoroutine(AA1(0));
@@ -71,42 +71,99 @@ public class ResultManager : MonoBehaviour
     IEnumerator AA1(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int i = 0; i < 2; i++)
+        if (listCountP >= 2)
         {
-            appearAfterimage.Appear(posM[i], rotM[i], false);
+            for (int i = 0; i <= 2; i++)
+            {
+                appearAfterimage.Appear(posM[i], rotM[i], false);
+            }
+        }else if (listCountP < 2)
+        {
+            for (int i = 0; i <= listCountP; i++)
+            {
+                appearAfterimage.Appear(posM[i], rotM[i], false);
+            }
         }
     }
     IEnumerator AA2(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int j = 2; j < 6; j++)
+        if (listCountP >= 6)
         {
-            appearAfterimage.Appear(posM[j], rotM[j], false);
+            for (int j = 3; j <= 6; j++)
+            {
+                appearAfterimage.Appear(posM[j], rotM[j], false);
+            }
+        }
+        else if(listCountP >= 3 && listCountP < 6)
+        {
+            for (int j = 3; j <= listCountP; j++)
+            {
+                appearAfterimage.Appear(posM[j], rotM[j], false);
+            }
+        }
+        else
+        {
+
         }
     }
     IEnumerator AA3(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int k = 6; k < 14; k++)
+        if (listCountP >= 14)
         {
-            appearAfterimage.Appear(posM[k], rotM[k], false);
+            for (int k = 7; k <= 14; k++)
+            {
+                appearAfterimage.Appear(posM[k], rotM[k], false);
+            }
+        }else if(listCountP >= 7 && listCountP < 14)
+        {
+            for (int k = 7; k <= listCountP; k++)
+            {
+                appearAfterimage.Appear(posM[k], rotM[k], false);
+            }
+        }
+        else
+        {
+
         }
     }
     IEnumerator AA4(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int l = 14; l < 30; l++)
+        if (listCountP >= 30)
         {
-            appearAfterimage.Appear(posM[l], rotM[l], false);
+            for (int l = 15; l <= 30; l++)
+            {
+                appearAfterimage.Appear(posM[l], rotM[l], false);
+            }
+        }else if (listCountP >= 15 && listCountP < 30)
+        {
+            for (int l = 15; l <= listCountP; l++)
+            {
+                appearAfterimage.Appear(posM[l], rotM[l], false);
+            }
+        }
+        else
+        {
+
         }
     }
     IEnumerator AA5(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int m = 30; m <= listCountP; m++)
+        if (listCountP >= 31)
         {
-            appearAfterimage.Appear(posM[m], rotM[m], false);
+            for (int m = 31; m <= listCountP; m++)
+            {
+                appearAfterimage.Appear(posM[m], rotM[m], false);
+            }
         }
+        else
+        {
+
+        }
+
     }
 
     /*IEnumerator AAG1(float wait)
@@ -182,11 +239,14 @@ public class ResultManager : MonoBehaviour
 
     private void FAA()
     {
-        appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 2), 0.5f);
-        if (appearAfterimage.pool[caa].transform.position == new Vector3(0, 0, 2))
+        if (listCountP >= caa)
         {
-            appearAfterimage.pool[caa].SetActive(false);
+            appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 2), 0.5f);
+            if (appearAfterimage.pool[caa].transform.position == new Vector3(0, 0, 2))
+            {
+                appearAfterimage.pool[caa].SetActive(false);
+            }
+            caa++;
         }
-        caa++;
     }
 }
