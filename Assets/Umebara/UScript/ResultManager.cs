@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,11 +14,16 @@ public class ResultManager : MonoBehaviour
     [SerializeField] List<Quaternion> rotM = new List<Quaternion>() { };
     private int listCountP;
     private int listCountR;
-    [SerializeField] float speed = 4;
+    //[SerializeField] float speed = 4;
+    private float count;
+    private float interval;
+    private int caa;
     void Start()
     {
-        
+        count = 10.0f;
+        caa = 0;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -35,18 +41,20 @@ public class ResultManager : MonoBehaviour
         rotM = afterimageManager.rot;
         listCountP = posM.Count;
         listCountR = rotM.Count;
+        interval = count / listCountP;
         StartCoroutine(AA1(0));
         StartCoroutine(AA2(1));
         StartCoroutine(AA3(2));
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
-        StartCoroutine(AAG1(6));
+        /*StartCoroutine(AAG1(6));
         StartCoroutine(AAG2(7));
         StartCoroutine(AAG3(8));
         StartCoroutine(AAG3(9));
         StartCoroutine(AAG4(10));
-        StartCoroutine(AAG5(11));
-        StartCoroutine(SM(15));
+        StartCoroutine(AAG5(11));*/
+        InvokeRepeating("FAA", 6, interval);
+        StartCoroutine(SM(18));
     }
 
     /*public void AfterImageGo()
@@ -59,8 +67,7 @@ public class ResultManager : MonoBehaviour
         StartCoroutine(AAG5(11));
     }
     */
-
-
+    
     IEnumerator AA1(float wait)
     {
         yield return new WaitForSeconds(wait);
@@ -102,7 +109,7 @@ public class ResultManager : MonoBehaviour
         }
     }
 
-    IEnumerator AAG1(float wait)
+    /*IEnumerator AAG1(float wait)
     {
         yield return new WaitForSeconds(wait);
         for (int i = 0; i <= 2; i++)
@@ -165,11 +172,21 @@ public class ResultManager : MonoBehaviour
                 appearAfterimage.pool[m].SetActive(false);
             }
         }
-    }
+    }*/
 
     IEnumerator SM(float wait)
     {
         yield return new WaitForSeconds(wait);
         SceneManager.LoadScene("ResultScene");
+    }
+
+    private void FAA()
+    {
+        appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 2), 0.5f);
+        if (appearAfterimage.pool[caa].transform.position == new Vector3(0, 0, 2))
+        {
+            appearAfterimage.pool[caa].SetActive(false);
+        }
+        caa++;
     }
 }
