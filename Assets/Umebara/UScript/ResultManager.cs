@@ -71,7 +71,7 @@ public class ResultManager : MonoBehaviour
     IEnumerator AA1(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int i = 0; i <= 2; i++)
+        for (int i = 0; i < 2; i++)
         {
             appearAfterimage.Appear(posM[i], rotM[i], false);
         }
@@ -79,7 +79,7 @@ public class ResultManager : MonoBehaviour
     IEnumerator AA2(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int j = 2; j <= 6; j++)
+        for (int j = 2; j < 6; j++)
         {
             appearAfterimage.Appear(posM[j], rotM[j], false);
         }
@@ -87,7 +87,7 @@ public class ResultManager : MonoBehaviour
     IEnumerator AA3(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int k = 6; k <= 14; k++)
+        for (int k = 6; k < 14; k++)
         {
             appearAfterimage.Appear(posM[k], rotM[k], false);
         }
@@ -95,7 +95,7 @@ public class ResultManager : MonoBehaviour
     IEnumerator AA4(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for (int l = 14; l <= 30; l++)
+        for (int l = 14; l < 30; l++)
         {
             appearAfterimage.Appear(posM[l], rotM[l], false);
         }
