@@ -7,6 +7,7 @@ public class MainDetection : MonoBehaviour
     private Vector3 mainHitPos; // メインの接触座標
     private Vector3 inFrontHitPos; // 手前の接触座標
     private Vector3 direction; // 残像の方向ベクトル
+    private bool isPunchable; // 殴れるかどうか
     [SerializeField] private AfterimageManager afterimageManager;
     [SerializeField] private AppearAfterimage appearAfterimage;
     [SerializeField] private Collider[] handCollider; // 0=>左 1=>右
@@ -38,5 +39,12 @@ public class MainDetection : MonoBehaviour
     public void SetInFrontPosition(Vector3 _pos)
     {
         inFrontHitPos = _pos;
+    }
+
+    // ゲーム終了後強制的に殴れなくする
+    public void HandColliderOff()
+    {
+        foreach (Collider collider in handCollider) 
+            collider.enabled = false;
     }
 }
