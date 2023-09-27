@@ -7,6 +7,8 @@ TagManager:
   - PunchingMachine
   - LeftHand
   - RightHand
+  - Sound1
+  - Sound2
   layers:
   - Default
   - TransparentFX

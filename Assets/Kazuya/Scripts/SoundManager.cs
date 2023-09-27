@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip hitsound;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public void PlaySound()
+    public void PlaySound(AudioClip hitsound)
     {
         audioSource.PlayOneShot(hitsound);
     }
