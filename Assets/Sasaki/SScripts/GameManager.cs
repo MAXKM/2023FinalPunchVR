@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
             case STATE.RESULT:
                 Debug.Log("Result");
                 resultManager.AfterImageCome();
+                mainDetection.HandColliderOff();
                 //resultmanager�ɒʒm
                 break;
         }
