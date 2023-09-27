@@ -7,7 +7,7 @@ public class MainDetection : MonoBehaviour
     private Vector3 mainHitPos; // メインの接触座標
     private Vector3 inFrontHitPos; // 手前の接触座標
     private Vector3 direction; // 残像の方向ベクトル
-
+    [SerializeField] private AfterimageManager afterimageManager;
     [SerializeField] private AppearAfterimage appearAfterimage;
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +17,7 @@ public class MainDetection : MonoBehaviour
         direction = mainHitPos - inFrontHitPos;
         Quaternion targetRot = Quaternion.FromToRotation(transform.forward,direction);
         appearAfterimage.Appear(inFrontHitPos,targetRot);
+        afterimageManager.Store(inFrontHitPos,targetRot);
     }
 
     public void SetInFrontPosition(Vector3 _pos)
