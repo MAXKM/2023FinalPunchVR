@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 765257897}
   - component: {fileID: 765257899}
   - component: {fileID: 765257898}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SubDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 1033210380}
   - component: {fileID: 1033210381}
   - component: {fileID: 1033210379}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 1287903479}
   m_Layer: 8
   m_Name: HandDetectionRight
-  m_TagString: Untagged
+  m_TagString: RightHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1672,7 +1672,7 @@ GameObject:
   - component: {fileID: 1578301774}
   - component: {fileID: 1578301773}
   - component: {fileID: 1578301776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoxingBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,6 +1693,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   afterimageManager: {fileID: 1033210381}
   appearAfterimage: {fileID: 43295075}
+  handCollider:
+  - {fileID: 1997551284}
+  - {fileID: 1287903480}
+  isVRTest: 0
 --- !u!136 &1578301774
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2011,6 +2015,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   afterimageManager: {fileID: 0}
   appearAfterimage: {fileID: 43295075}
+  handCollider: []
+  isVRTest: 0
 --- !u!65 &1972148966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2050,7 +2056,7 @@ GameObject:
   - component: {fileID: 1997551283}
   m_Layer: 8
   m_Name: HandDetectionLeft
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
