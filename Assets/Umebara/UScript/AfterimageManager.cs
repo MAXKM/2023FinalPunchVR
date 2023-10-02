@@ -6,16 +6,6 @@ public class AfterimageManager : MonoBehaviour
 {
     public List<Vector3> pos = new List<Vector3>() { };
     public List<Quaternion> rot = new List<Quaternion>() { };
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Store(Vector3 _pos, Quaternion _rot)
     {
