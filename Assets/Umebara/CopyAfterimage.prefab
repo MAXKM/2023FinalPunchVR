@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7714804929246490886}
   - component: {fileID: -8119750125574707449}
+  - component: {fileID: 2946812687339872320}
   m_Layer: 0
   m_Name: CopyAfterimage
   m_TagString: Untagged
@@ -46,6 +47,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6a79138854214468ce8110c49dc31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &2946812687339872320
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712999446097874619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.75}
 --- !u!1 &6763404090546299449
 GameObject:
   m_ObjectHideFlags: 0

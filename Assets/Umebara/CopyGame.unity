@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 721857275}
-  mainDetection: {fileID: 0}
+  mainDetection: {fileID: 1578301773}
   resultManager: {fileID: 1033210379}
   state: 0
 --- !u!4 &1572190798
@@ -1673,6 +1673,7 @@ GameObject:
   - component: {fileID: 1578301774}
   - component: {fileID: 1578301773}
   - component: {fileID: 1578301776}
+  - component: {fileID: 1578301777}
   m_Layer: 6
   m_Name: BoxingBag
   m_TagString: PM
@@ -1742,6 +1743,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1572190797}
+  StartObject: {fileID: 0}
+--- !u!114 &1578301777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578301772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25983a1fd822fc441babc3e1e05d7b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1705867158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1572190797}
+  StartObject: {fileID: 0}
 --- !u!1 &1979992359
 GameObject:
   m_ObjectHideFlags: 0
