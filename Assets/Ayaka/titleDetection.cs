@@ -11,8 +11,16 @@ public class titleDetection : MonoBehaviour
         gameManager.SetState(GameManager.STATE.GAMESCENE);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    //スタートパンチされたらUI削除
+    /*
+    private void OnColliderEnter(Collider other)
+    {
+        gameObject.SetActive(false);
+    }
+    */
+
+        // Start is called before the first frame update
+        void Start()
     {
         
     }
