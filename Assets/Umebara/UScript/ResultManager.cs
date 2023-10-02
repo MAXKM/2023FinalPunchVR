@@ -237,11 +237,11 @@ public class ResultManager : MonoBehaviour
     {
         if (listCountP >= caa)
         {
-            appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 2), 0.5f);
-            if (appearAfterimage.pool[caa].transform.position == new Vector3(0, 0, 2))
+            appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 1), 0.5f);
+            /*if (appearAfterimage.pool[caa].transform.position == new Vector3(0, 0, 1))
             {
                 appearAfterimage.pool[caa].SetActive(false);
-            }
+            }*/
             caa++;
         }
     }

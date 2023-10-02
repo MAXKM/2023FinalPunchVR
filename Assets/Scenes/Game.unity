@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 721857275}
-  mainDetection: {fileID: 0}
+  mainDetection: {fileID: 1578301773}
   resultManager: {fileID: 1033210379}
   state: 0
 --- !u!4 &1572190798
@@ -2171,7 +2171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1979992360}
-  hitsound: {fileID: 8300000, guid: b23058efebf4bb1408237849917a710a, type: 3}
 --- !u!4 &1979992362
 Transform:
   m_ObjectHideFlags: 0
