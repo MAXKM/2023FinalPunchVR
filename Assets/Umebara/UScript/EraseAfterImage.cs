@@ -19,9 +19,10 @@ public class EraseAfterImage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PM"))
+        if (other.CompareTag("PM"))
         {
-            StartCoroutine(EAA(0.2f));
+            StartCoroutine(EAA(0.5f));
+            Debug.Log("a");
         }
     }
 
