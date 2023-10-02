@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Test : MonoBehaviour
 {
-    public Text StartObject;   
+    //public Text StartObject;      //Text用
+    public GameObject StartObject;　//TMPro用
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +23,11 @@ public class Test : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("衝突した");
-        Text StartText = StartObject.GetComponent<Text>();
+        //Text用
+        //Text StartText = StartObject.GetComponent<Text>();
+
+        //TMPro用
+        TextMeshProUGUI StartText = StartObject.GetComponent<TextMeshProUGUI>();
         StartText.gameObject.SetActive(false);
     }
 }
