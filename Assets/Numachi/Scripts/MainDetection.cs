@@ -22,6 +22,7 @@ public class MainDetection : MonoBehaviour
         direction = mainHitPos - inFrontHitPos;
         Quaternion targetRot = Quaternion.FromToRotation(transform.forward,direction);
         appearAfterimage.Appear(inFrontHitPos,targetRot);
+        inFrontHitPos.z -= 0.5f;
         afterimageManager.Store(inFrontHitPos,targetRot);
         if (!isVRTest) return; // テスト用、後で消す
         if (other.CompareTag("LeftHand"))
