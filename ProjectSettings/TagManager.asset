@@ -8,6 +8,7 @@ TagManager:
   - LeftHand
   - RightHand
   - Sound1
+  - PM
   - Sound2
   layers:
   - Default
