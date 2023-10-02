@@ -1,33 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class titleDetection : MonoBehaviour
 {
     public GameManager gameManager;
+    public Text StartObject;
 
     private void OnTriggerEnter(Collider other)
     {
         gameManager.SetState(GameManager.STATE.GAMESCENE);
-    }
 
-    //スタートパンチされたらUI削除
-    /*
-    private void OnColliderEnter(Collider other)
-    {
-        gameObject.SetActive(false);
-    }
-    */
-
-        // Start is called before the first frame update
-        void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //テキスト削除
+        Text StartText = StartObject.GetComponent<Text>();
+        StartText.gameObject.SetActive(false);
     }
 }

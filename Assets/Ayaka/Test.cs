@@ -5,25 +5,24 @@ using UnityEngine.UI;
 
 public class Test : MonoBehaviour
 {
-    public Text StartText;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //if(other.gameObject.tag == "StartText")
-        //{
-            StartText.gameObject.SetActive(false);
-        //}
-    }
+    public Text StartObject;   
 
     // Start is called before the first frame update
     void Start()
     {
-        StartText.gameObject.SetActive(true);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+   
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log("è’ìÀÇµÇΩ");
+        Text StartText = StartObject.GetComponent<Text>();
+        StartText.gameObject.SetActive(false);
     }
 }
