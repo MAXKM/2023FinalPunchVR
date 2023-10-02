@@ -24,7 +24,6 @@ public class TimeManager : MonoBehaviour
     {
         if (count == true) 
         {
-            Debug.Log(limit);
             limit -= Time.deltaTime;
             timerText.text = limit.ToString("0.00");
             if (limit < 0)
