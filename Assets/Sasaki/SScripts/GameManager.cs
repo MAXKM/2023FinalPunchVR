@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] MainDetection mainDetection;
     [SerializeField] ResultManager resultManager;
+    //[SerializeField] TextMeshProUGUI TitleText;   //テキスト
 
 
     //管理する状態
@@ -33,7 +35,9 @@ public class GameManager : MonoBehaviour
         {
             case STATE.TITLE:
                 Debug.Log("Title");
-               //UIの表示＝ titlsceneに通知
+                //UIの表示
+                //TitleText.gameObject.SetActive(true);
+                //TitleText.gameObject.SetActive(false);
                 break;
 
             case STATE.GAMESCENE:
