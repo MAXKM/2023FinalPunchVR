@@ -26,13 +26,6 @@ public class GameManager : MonoBehaviour
         //SetState(STATE.GAMESCENE);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     //ó‘Ô‘JˆÚ‚ğŠÇ—
     public void SetState(STATE state)
     {
