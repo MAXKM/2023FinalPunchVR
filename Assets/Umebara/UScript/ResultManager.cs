@@ -5,24 +5,32 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class ResultManager : MonoBehaviour
 {
-    [SerializeField] private AfterimageManager afterimageManager;
-    [SerializeField] private AppearAfterimage appearAfterimage;
+    [SerializeField] AfterimageManager afterimageManager;
+    [SerializeField] AppearAfterimage appearAfterimage;
+    [SerializeField] MoveingPunchingBag moveingPunching;
     [SerializeField] List<Vector3> posM = new List<Vector3>() { };
     [SerializeField] List<Quaternion> rotM = new List<Quaternion>() { };
-    public int listCountP;
-    public int listCountR;
-    //[SerializeField] float speed = 4;
+    [SerializeField] Text score_text;
+    [SerializeField] Text resultdotweenText;
+    [SerializeField] int score;
+    public GameObject pM;
+    private int listCountP;
+    private int listCountR;
     private float count;
     private float interval;
     private int caa;
-    //public MeshRenderer meshRenderer;
+    private bool isDefaultScale;
     void Start()
     {
-        count = 10.0f;
+        moveingPunching = pM.GetComponent<MoveingPunchingBag>();
         caa = 0;
+        score = 0;
+        isDefaultScale = true;
     }
 
     public void AfterImageCome()
@@ -31,32 +39,20 @@ public class ResultManager : MonoBehaviour
         rotM = afterimageManager.rot;
         listCountP = posM.Count-1;
         listCountR = rotM.Count;
-        interval = count / listCountP;
+        count = 0.25f * listCountR;
+        interval = count / listCountR;
+        moveingPunching.enabled = true;
         StartCoroutine(AA1(0));
         StartCoroutine(AA2(1));
         StartCoroutine(AA3(2));
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
-        /*StartCoroutine(AAG1(6));
-        StartCoroutine(AAG2(7));
-        StartCoroutine(AAG3(8));
-        StartCoroutine(AAG3(9));
-        StartCoroutine(AAG4(10));
-        StartCoroutine(AAG5(11));*/
         InvokeRepeating("FAA", 6, interval);
-        StartCoroutine(SM(18));
+        InvokeRepeating("PunchCount", 6.25f, interval);
+        StartCoroutine(ResultScore(6.5f + count));
+        StartCoroutine(ResultScore2(9.5f + count));
+        StartCoroutine(SM(15.0f + count));
     }
-
-    /*public void AfterImageGo()
-    {
-        StartCoroutine(AAG1(6));
-        StartCoroutine(AAG2(7));
-        StartCoroutine(AAG3(8));
-        StartCoroutine(AAG3(9));
-        StartCoroutine(AAG4(10));
-        StartCoroutine(AAG5(11));
-    }
-    */
     
     IEnumerator AA1(float wait)
     {
@@ -92,10 +88,6 @@ public class ResultManager : MonoBehaviour
                 appearAfterimage.Appear(posM[j], rotM[j], false);
             }
         }
-        else
-        {
-
-        }
     }
     IEnumerator AA3(float wait)
     {
@@ -112,10 +104,6 @@ public class ResultManager : MonoBehaviour
             {
                 appearAfterimage.Appear(posM[k], rotM[k], false);
             }
-        }
-        else
-        {
-
         }
     }
     IEnumerator AA4(float wait)
@@ -134,10 +122,6 @@ public class ResultManager : MonoBehaviour
                 appearAfterimage.Appear(posM[l], rotM[l], false);
             }
         }
-        else
-        {
-
-        }
     }
     IEnumerator AA5(float wait)
     {
@@ -149,86 +133,8 @@ public class ResultManager : MonoBehaviour
                 appearAfterimage.Appear(posM[m], rotM[m], false);
             }
         }
-        else
-        {
-
-        }
-
     }
 
-    /*IEnumerator GM(float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        for (int n = 0; n <= listCountP; n++)
-        {
-            meshRenderer = appearAfterimage.pool[n].GetComponent<MeshRenderer>();
-        }
-    }*/
-
-    /*IEnumerator AAG1(float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        for (int i = 0; i <= 2; i++)
-        {
-            //appearAfterimage.pool[i].transform.position = Vector3.MoveTowards(appearAfterimage.pool[i].transform.position, new Vector3(0, 0, 2), speed * Time.deltaTime);
-            appearAfterimage.pool[i].transform.DOMove(new Vector3(0, 0, 2), 1);
-            if (appearAfterimage.pool[i].transform.position == new Vector3(0, 0, 2)){
-                appearAfterimage.pool[i].SetActive(false);
-            }
-        }
-    }
-    IEnumerator AAG2(float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        for (int j = 2; j <= 6; j++)
-        {
-            //appearAfterimage.pool[j].transform.position = Vector3.MoveTowards(appearAfterimage.pool[j].transform.position, new Vector3(0, 0, 2), speed * Time.deltaTime);
-            appearAfterimage.pool[j].transform.DOMove(new Vector3(0, 0, 2), 1);
-            if (appearAfterimage.pool[j].transform.position == new Vector3(0, 0, 2))
-            {
-                appearAfterimage.pool[j].SetActive(false);
-            }
-        }
-    }
-    IEnumerator AAG3(float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        for (int k = 6; k <= 14; k++)
-        {
-            //appearAfterimage.pool[k].transform.position = Vector3.MoveTowards(appearAfterimage.pool[k].transform.position, new Vector3(0, 0, 2), speed * Time.deltaTime);
-            appearAfterimage.pool[k].transform.DOMove(new Vector3(0, 0, 2), 1);
-            if (appearAfterimage.pool[k].transform.position == new Vector3(0, 0, 2))
-            {
-                appearAfterimage.pool[k].SetActive(false);
-            }
-        }
-    }
-    IEnumerator AAG4(float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        for (int l = 14; l <= 30; l++)
-        {
-            //appearAfterimage.pool[l].transform.position = Vector3.MoveTowards(appearAfterimage.pool[l].transform.position, new Vector3(0, 0, 2), speed * Time.deltaTime);
-            appearAfterimage.pool[l].transform.DOMove(new Vector3(0, 0, 2), 1);
-            if (appearAfterimage.pool[l].transform.position == new Vector3(0, 0, 2))
-            {
-                appearAfterimage.pool[l].SetActive(false);
-            }
-        }
-    }
-    IEnumerator AAG5(float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        for (int m = 30; m <= listCountP; m++)
-        {
-            //appearAfterimage.pool[m].transform.position = Vector3.MoveTowards(appearAfterimage.pool[m].transform.position, new Vector3(0, 0, 2), speed * Time.deltaTime);
-            appearAfterimage.pool[m].transform.DOMove(new Vector3(0, 0, 2), 1);
-            if (appearAfterimage.pool[m].transform.position == new Vector3(0, 0, 2))
-            {
-                appearAfterimage.pool[m].SetActive(false);
-            }
-        }
-    }*/
 
     IEnumerator SM(float wait)
     {
@@ -240,22 +146,36 @@ public class ResultManager : MonoBehaviour
     {
         if (listCountP >= caa)
         {
-            appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 1), 0.5f);
-            /*if (appearAfterimage.pool[caa].transform.position.z >= 0.8f)
-            {
-                meshRenderer = appearAfterimage.pool[caa].GetComponent<MeshRenderer>();
-                meshRenderer.enabled = false;
-                //appearAfterimage.pool[caa].SetActive(false);
-            }*/
-            /*DOVirtual.DelayedCall(1.5f, () =>
-            {
-                //appearAfterimage.pool[caa].SetActive(false);
-                meshRenderer = appearAfterimage.pool[caa].GetComponentInChildren<MeshRenderer>();
-                meshRenderer.enabled = false;
-            });*/
+            appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 1), 0.25f);
             caa++;
         }
     }
 
+    private void PunchCount()
+    {
+        if (listCountP >= score)
+        {
+            score++;
+            score_text.text = score.ToString();
+            score_text.transform.DOScale(new Vector3(0.005f, 0.005f, 0.005f), 0.05f);
+            score_text.transform.DOScale(new Vector3(0.003f, 0.003f, 0.003f), 0.1f).SetDelay(0.05f);
+        }
+    }
+    IEnumerator ResultScore(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        //result_text.text = score.ToString();
+        resultdotweenText.DOCounter(0, score, 3.0f, true);
+    }
+    IEnumerator ResultScore2(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        if (isDefaultScale)
+        {
+            resultdotweenText.transform.DOScale(new Vector3(0.01f, 0.01f, 0.01f), 0.5f);
+            resultdotweenText.transform.DOScale(new Vector3(0.006f, 0.006f, 0.006f), 1.0f).SetDelay(0.5f);
 
+            isDefaultScale = false;
+        }
+    }
 }
