@@ -10,6 +10,12 @@ public class MainDetection : MonoBehaviour
     [SerializeField] private AfterimageManager afterimageManager;
     [SerializeField] private AppearAfterimage appearAfterimage;
     [SerializeField] private Collider[] handCollider; // 0=>左 1=>右
+    private titleDetection titleDetection;
+
+    private void Start()
+    {
+        titleDetection = GetComponent<titleDetection>();
+    }
 
     // テスト用
     [SerializeField] private bool isVRTest;
@@ -35,6 +41,7 @@ public class MainDetection : MonoBehaviour
             handCollider[0].enabled = true;
             handCollider[1].enabled = false;
         }
+        if (titleDetection.enabled) titleDetection.enabled = false;
     }
 
     public void SetInFrontPosition(Vector3 _pos)
