@@ -48,6 +48,7 @@ public class ResultManager : MonoBehaviour
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
         InvokeRepeating("FAA", 6, interval);
+        InvokeRepeating("CallPunch", 6.25f, interval);
         InvokeRepeating("PunchCount", 6.25f, interval);
         StartCoroutine(ResultScore(6.5f + count));
         StartCoroutine(ResultScore2(9.5f + count));
@@ -177,5 +178,9 @@ public class ResultManager : MonoBehaviour
 
             isDefaultScale = false;
         }
+    }
+    private void CallPunch()
+    {
+        moveingPunching.KnockBack();
     }
 }
