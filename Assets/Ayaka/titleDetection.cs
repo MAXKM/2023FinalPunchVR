@@ -19,7 +19,10 @@ public class titleDetection : MonoBehaviour
         //Text StartText = StartObject.GetComponent<Text>();
 
         //TMPro用
-        TextMeshProUGUI StartText = StartObject.GetComponent<TextMeshProUGUI>();
-        StartText.gameObject.SetActive(false);
+        //TextMeshProUGUI StartText = StartObject.GetComponent<TextMeshProUGUI>();
+        //StartText.gameObject.SetActive(false);
+
+        // 変更しました（ヌマチ）
+        StartObject.SetActive(false);
     }
 }
