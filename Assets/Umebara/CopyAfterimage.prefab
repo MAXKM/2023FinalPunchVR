@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 4161573426661179489}
+  capsuleCollider: {fileID: 0}
+  moveingPunching: {fileID: 3789294337182106437, guid: 17975d4b872e3324da35787f5cbfab5b, type: 3}
 --- !u!136 &2946812687339872320
 CapsuleCollider:
   m_ObjectHideFlags: 0
