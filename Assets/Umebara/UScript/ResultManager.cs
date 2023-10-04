@@ -12,12 +12,13 @@ public class ResultManager : MonoBehaviour
     [SerializeField] private AppearAfterimage appearAfterimage;
     [SerializeField] List<Vector3> posM = new List<Vector3>() { };
     [SerializeField] List<Quaternion> rotM = new List<Quaternion>() { };
-    private int listCountP;
-    private int listCountR;
+    public int listCountP;
+    public int listCountR;
     //[SerializeField] float speed = 4;
     private float count;
     private float interval;
     private int caa;
+    //public MeshRenderer meshRenderer;
     void Start()
     {
         count = 10.0f;
@@ -155,6 +156,15 @@ public class ResultManager : MonoBehaviour
 
     }
 
+    /*IEnumerator GM(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        for (int n = 0; n <= listCountP; n++)
+        {
+            meshRenderer = appearAfterimage.pool[n].GetComponent<MeshRenderer>();
+        }
+    }*/
+
     /*IEnumerator AAG1(float wait)
     {
         yield return new WaitForSeconds(wait);
@@ -233,11 +243,15 @@ public class ResultManager : MonoBehaviour
             appearAfterimage.pool[caa].transform.DOMove(new Vector3(0, 0, 1), 0.5f);
             /*if (appearAfterimage.pool[caa].transform.position.z >= 0.8f)
             {
-                appearAfterimage.pool[caa].SetActive(false);
+                meshRenderer = appearAfterimage.pool[caa].GetComponent<MeshRenderer>();
+                meshRenderer.enabled = false;
+                //appearAfterimage.pool[caa].SetActive(false);
             }*/
             /*DOVirtual.DelayedCall(1.5f, () =>
             {
-                appearAfterimage.pool[caa].SetActive(false);
+                //appearAfterimage.pool[caa].SetActive(false);
+                meshRenderer = appearAfterimage.pool[caa].GetComponentInChildren<MeshRenderer>();
+                meshRenderer.enabled = false;
             });*/
             caa++;
         }

@@ -1398,6 +1398,8 @@ MonoBehaviour:
   appearAfterimage: {fileID: 43295075}
   posM: []
   rotM: []
+  listCountP: 0
+  listCountR: 0
 --- !u!4 &1033210380
 Transform:
   m_ObjectHideFlags: 0
