@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] MainDetection mainDetection;
     [SerializeField] ResultManager resultManager;
-    //[SerializeField] TextMeshProUGUI TitleText;   //テキスト
+    [SerializeField] TextMeshProUGUI TitleText;   //テキスト
 
 
     //管理する状態
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //初期状態をタイトル
         SetState(STATE.TITLE);
         //SetState(STATE.GAMESCENE);
     }
@@ -36,12 +37,12 @@ public class GameManager : MonoBehaviour
             case STATE.TITLE:
                 Debug.Log("Title");
                 //UIの表示
-                //TitleText.gameObject.SetActive(true);
+                //TitleText.gameObject.SetActive(true);     //使う
                 //TitleText.gameObject.SetActive(false);
                 break;
 
             case STATE.GAMESCENE:
-                //時間の計測開始、パンチでカウントできるようにする＝maindetectionの有効化
+                //時間の計測開始
                 Debug.Log("Game");
                 timeManager.CountTime();
                 break;
