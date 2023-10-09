@@ -1539,7 +1539,7 @@ MonoBehaviour:
   afterimageManager: {fileID: 1033210381}
   appearAfterimage: {fileID: 43295075}
   moveingPunching: {fileID: 1578301777}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1572190797}
   posM: []
   rotM: []
   score_text: {fileID: 954687666}
