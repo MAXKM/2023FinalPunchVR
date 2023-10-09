@@ -7,16 +7,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResultManager : MonoBehaviour
 {
     [SerializeField] AfterimageManager afterimageManager;
     [SerializeField] AppearAfterimage appearAfterimage;
     [SerializeField] MoveingPunchingBag moveingPunching;
+    [SerializeField] GameManager gameManager;
     [SerializeField] List<Vector3> posM = new List<Vector3>() { };
     [SerializeField] List<Quaternion> rotM = new List<Quaternion>() { };
-    [SerializeField] Text score_text;
-    [SerializeField] Text resultdotweenText;
+    [SerializeField] TextMeshProUGUI score_text;
+    [SerializeField] TextMeshProUGUI resultdotweenText;
     [SerializeField] int score;
     public GameObject pM;
     private int listCountP;
@@ -28,6 +30,8 @@ public class ResultManager : MonoBehaviour
     void Start()
     {
         moveingPunching = pM.GetComponent<MoveingPunchingBag>();
+        var score_text = GetComponent<TextMeshProUGUI>();
+        var resultdotweenText = GetComponent<TextMeshProUGUI>();
         caa = 0;
         score = 0;
         isDefaultScale = true;
@@ -50,7 +54,8 @@ public class ResultManager : MonoBehaviour
         InvokeRepeating("FAA", 6, interval);
         InvokeRepeating("CallPunch", 6.25f, interval);
         InvokeRepeating("PunchCount", 6.25f, interval);
-        StartCoroutine(ResultScore(6.5f + count));
+        Invoke("CallCancell", 6.5f + (0.25f * listCountP));
+        //StartCoroutine(ResultScore(6.5f + count));
         StartCoroutine(ResultScore2(9.5f + count));
         StartCoroutine(SM(15.0f + count));
     }
@@ -140,6 +145,7 @@ public class ResultManager : MonoBehaviour
     IEnumerator SM(float wait)
     {
         yield return new WaitForSeconds(wait);
+        gameManager.SetState(GameManager.STATE.TITLE);
         SceneManager.LoadScene("ResultScene");
     }
 
@@ -162,17 +168,20 @@ public class ResultManager : MonoBehaviour
             score_text.transform.DOScale(new Vector3(0.003f, 0.003f, 0.003f), 0.1f).SetDelay(0.05f);
         }
     }
-    IEnumerator ResultScore(float wait)
+
+    /*IEnumerator ResultScore(float wait)
     {
         yield return new WaitForSeconds(wait);
-        //result_text.text = score.ToString();
+        resultdotweenText.text = score.ToString();
         resultdotweenText.DOCounter(0, score, 3.0f, true);
-    }
+    }*/
+
     IEnumerator ResultScore2(float wait)
     {
         yield return new WaitForSeconds(wait);
         if (isDefaultScale)
         {
+            resultdotweenText.text = score.ToString();
             resultdotweenText.transform.DOScale(new Vector3(0.01f, 0.01f, 0.01f), 0.5f);
             resultdotweenText.transform.DOScale(new Vector3(0.006f, 0.006f, 0.006f), 1.0f).SetDelay(0.5f);
 
@@ -182,5 +191,10 @@ public class ResultManager : MonoBehaviour
     private void CallPunch()
     {
         moveingPunching.KnockBack();
+    }
+
+    private void CallCancell()
+    {
+        CancelInvoke("CallPunch");
     }
 }
