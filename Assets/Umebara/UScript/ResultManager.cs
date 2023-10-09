@@ -57,7 +57,7 @@ public class ResultManager : MonoBehaviour
         Invoke("CallCancell", 6.5f + (0.25f * listCountP));
         //StartCoroutine(ResultScore(6.5f + count));
         StartCoroutine(ResultScore2(7.5f + count));
-        StartCoroutine(SM(12.5f + count));
+        StartCoroutine(SM(15.0f + count));
     }
     
     IEnumerator AA1(float wait)
@@ -146,7 +146,7 @@ public class ResultManager : MonoBehaviour
     {
         yield return new WaitForSeconds(wait);
         gameManager.SetState(GameManager.STATE.TITLE);
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("Game");
     }
 
     private void FAA()
