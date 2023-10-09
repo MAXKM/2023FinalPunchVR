@@ -56,8 +56,8 @@ public class ResultManager : MonoBehaviour
         InvokeRepeating("PunchCount", 6.25f, interval);
         Invoke("CallCancell", 6.5f + (0.25f * listCountP));
         //StartCoroutine(ResultScore(6.5f + count));
-        StartCoroutine(ResultScore2(9.5f + count));
-        StartCoroutine(SM(15.0f + count));
+        StartCoroutine(ResultScore2(7.5f + count));
+        StartCoroutine(SM(12.5f + count));
     }
     
     IEnumerator AA1(float wait)
@@ -183,7 +183,7 @@ public class ResultManager : MonoBehaviour
         {
             resultdotweenText.text = score.ToString();
             resultdotweenText.transform.DOScale(new Vector3(0.01f, 0.01f, 0.01f), 0.5f);
-            resultdotweenText.transform.DOScale(new Vector3(0.006f, 0.006f, 0.006f), 1.0f).SetDelay(0.5f);
+            resultdotweenText.transform.DOScale(new Vector3(0.006f, 0.006f, 0.006f), 0.75f).SetDelay(0.50f);
 
             isDefaultScale = false;
         }
