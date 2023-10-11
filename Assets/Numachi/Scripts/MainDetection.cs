@@ -7,9 +7,12 @@ public class MainDetection : MonoBehaviour
     private Vector3 mainHitPos; // メインの接触座標
     private Vector3 inFrontHitPos; // 手前の接触座標
     private Vector3 direction; // 残像の方向ベクトル
+    private const float difference = 0.5f;
+    private List<GameObject> hitEffectPool = new List<GameObject>(); // ヒットエフェクトのリスト（オブジェクトプール使用）
     [SerializeField] private AfterimageManager afterimageManager;
     [SerializeField] private AppearAfterimage appearAfterimage;
     [SerializeField] private Collider[] handCollider; // 0=>左 1=>右
+    [SerializeField] private GameObject hitEffectPrefab; // ヒットエフェクトのプレファブ
 
     // テスト用
     [SerializeField] private bool isVRTest;
@@ -21,8 +24,13 @@ public class MainDetection : MonoBehaviour
         direction = mainHitPos - inFrontHitPos;
         Quaternion targetRot = Quaternion.FromToRotation(transform.forward,direction);
         appearAfterimage.Appear(inFrontHitPos,targetRot);
+
+        // ヒットエフェクトを表示
+        GameObject hitEffect = GetHitEffectsFromPool(mainHitPos);
+        if (!hitEffect.activeSelf) hitEffect.SetActive(true);
+
         // リザルトに出す残像は少し後ろから表示する
-        inFrontHitPos.z -= 0.5f;
+        inFrontHitPos.z -= difference;
         afterimageManager.Store(inFrontHitPos,targetRot);
         if (!isVRTest) return; // テスト用、後で消す
         if (other.CompareTag("LeftHand"))
@@ -47,5 +55,15 @@ public class MainDetection : MonoBehaviour
     {
         foreach (Collider collider in handCollider) 
             collider.enabled = false;
+    }
+
+    private GameObject GetHitEffectsFromPool(Vector3 _pos)
+    {
+        for (int i = 0; i < hitEffectPool.Count; i++)
+        {
+            if (!hitEffectPool[i].activeSelf) return hitEffectPool[i];
+        }
+        GameObject newEffect = Instantiate(hitEffectPrefab,_pos,Quaternion.identity);
+        return newEffect;
     }
 }
