@@ -18,7 +18,8 @@ public class AppearAfterimage : MonoBehaviour
         afterimage.transform.parent = transform;
         if (!_isDisappear)
         {
-            afterimage.transform.GetChild(1).GetComponent<MeshRenderer>().material = resultMaterial;
+            afterimage.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = resultMaterial;
+            Debug.Log("ok");
             return;
         }
         DOVirtual.DelayedCall(0.5f, () =>
