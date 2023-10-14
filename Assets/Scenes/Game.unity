@@ -1616,6 +1616,7 @@ MonoBehaviour:
   resultdotweenText: {fileID: 2084258898}
   score: 0
   pM: {fileID: 1578301772}
+  parent: {fileID: 43295076}
 --- !u!4 &1033210380
 Transform:
   m_ObjectHideFlags: 0
