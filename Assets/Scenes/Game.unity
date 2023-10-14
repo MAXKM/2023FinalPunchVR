@@ -367,6 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: []
   afterimagePrefab: {fileID: 5712999446097874619, guid: 48ba46cd79c6b5448b68520b1941c934, type: 3}
+  resultMaterial: {fileID: 0}
 --- !u!4 &43295076
 Transform:
   m_ObjectHideFlags: 0
