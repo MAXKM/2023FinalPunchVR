@@ -27,6 +27,9 @@ public class ResultManager : MonoBehaviour
     private float interval;
     private int caa;
     private bool isDefaultScale;
+    [SerializeField] private Transform parent; // 残像の親オブジェクト
+    private Vector3 baseDirection = new Vector3(0, 1, 0);
+    private float angle;
     void Start()
     {
         moveingPunching = pM.GetComponent<MoveingPunchingBag>();
@@ -51,13 +54,14 @@ public class ResultManager : MonoBehaviour
         StartCoroutine(AA3(2));
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
-        InvokeRepeating("FAA", 6, interval);
-        InvokeRepeating("CallPunch", 6.25f, interval);
-        InvokeRepeating("PunchCount", 6.25f, interval);
-        Invoke("CallCancell", 6.5f + (0.25f * listCountP));
+        StartCoroutine(AAM(5));
+        InvokeRepeating("FAA", 10, interval);
+        InvokeRepeating("CallPunch", 10.25f, interval);
+        InvokeRepeating("PunchCount", 10.25f, interval);
+        Invoke("CallCancell", 10.5f + (0.25f * listCountP));
         //StartCoroutine(ResultScore(6.5f + count));
-        StartCoroutine(ResultScore2(7.5f + count));
-        StartCoroutine(SM(15.0f + count));
+        StartCoroutine(ResultScore2(11.5f + count));
+        StartCoroutine(SM(19.0f + count));
     }
     
     IEnumerator AA1(float wait)
@@ -138,6 +142,16 @@ public class ResultManager : MonoBehaviour
             {
                 appearAfterimage.Appear(posM[m], rotM[m], false);
             }
+        }
+    }
+
+    IEnumerator AAM(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        angle = 360f / parent.childCount;
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            parent.GetChild(i).DOMove(Quaternion.Euler(0, 0, angle * i) * baseDirection, 3f);
         }
     }
 

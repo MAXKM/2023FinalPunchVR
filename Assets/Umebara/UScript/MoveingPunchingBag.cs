@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class MoveingPunchingBag : MonoBehaviour
 {
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             KnockBack();
         }
-    }
+    }*/
     public void KnockBack()
     {
         this.transform.DOMove(new Vector3(0f, 0f, 1.75f), 0.075f);
