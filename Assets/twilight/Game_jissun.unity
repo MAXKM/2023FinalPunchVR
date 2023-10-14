@@ -525,6 +525,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: hand3L
       objectReference: {fileID: 0}
+    - target: {fileID: 7167208400834923534, guid: 8f5aa0df968df0945bafc14e90d25ceb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167208400834923534, guid: 8f5aa0df968df0945bafc14e90d25ceb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.897
+      objectReference: {fileID: 0}
     - target: {fileID: 7712201209565363542, guid: 8f5aa0df968df0945bafc14e90d25ceb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -584,7 +592,11 @@ PrefabInstance:
     - target: {fileID: 8828637932470866384, guid: 8f5aa0df968df0945bafc14e90d25ceb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 17cb07df2e053fe4bb6e025ee499e5c1, type: 2}
+      objectReference: {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
+    - target: {fileID: 8828637932470866384, guid: 8f5aa0df968df0945bafc14e90d25ceb, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f5aa0df968df0945bafc14e90d25ceb, type: 3}
 --- !u!1 &397502978
