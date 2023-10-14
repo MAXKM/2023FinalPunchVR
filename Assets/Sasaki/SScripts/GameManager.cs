@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] MainDetection mainDetection;
     [SerializeField] ResultManager resultManager;
-    [SerializeField] TextMeshProUGUI TitleText;   //テキスト
+    //[SerializeField] TextMeshProUGUI TitleText;   //テキスト
+    [SerializeField] GameObject PObj;
 
 
     //管理する状態
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
             case STATE.TITLE:
                 Debug.Log("Title");
                 //UIの表示
-                //TitleText.gameObject.SetActive(true);     //使う
+                //TitleText.gameObject.SetActive(true);     
                 //TitleText.gameObject.SetActive(false);
                 break;
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
 
             case STATE.RESULT:
                 Debug.Log("Result");
+                PObj.SetActive(true);
                 resultManager.AfterImageCome();
                 mainDetection.HandColliderOff();
                 //resultmanagerに通知
