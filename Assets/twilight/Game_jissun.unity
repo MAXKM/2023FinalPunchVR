@@ -1881,6 +1881,7 @@ MonoBehaviour:
   handCollider:
   - {fileID: 1997551284}
   - {fileID: 1287903480}
+  hitEffectPrefab: {fileID: 7594873660671855554, guid: 18ec8534b00449b47bdebcd925a8c05d, type: 3}
   isVRTest: 0
 --- !u!136 &1578301774
 CapsuleCollider:
@@ -2294,6 +2295,7 @@ MonoBehaviour:
   afterimageManager: {fileID: 0}
   appearAfterimage: {fileID: 43295075}
   handCollider: []
+  hitEffectPrefab: {fileID: 0}
   isVRTest: 0
 --- !u!65 &1972148966
 BoxCollider:
