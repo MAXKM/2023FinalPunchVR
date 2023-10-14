@@ -64,6 +64,7 @@ public class MainDetection : MonoBehaviour
             if (!hitEffectPool[i].activeSelf) return hitEffectPool[i];
         }
         GameObject newEffect = Instantiate(hitEffectPrefab,_pos,Quaternion.identity);
+        hitEffectPool.Add(newEffect);
         return newEffect;
     }
 }
