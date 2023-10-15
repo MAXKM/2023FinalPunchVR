@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ResultManager resultManager;
     //[SerializeField] TextMeshProUGUI TitleText;   //テキスト
     [SerializeField] GameObject PObj;
+    [SerializeField] UIManager uiManager;
 
 
     //管理する状態
@@ -45,12 +46,14 @@ public class GameManager : MonoBehaviour
             case STATE.GAMESCENE:
                 //時間の計測開始
                 Debug.Log("Game");
+                uiManager.DisplayGameStateUI();
                 timeManager.CountTime();
                 break;
 
             case STATE.RESULT:
                 Debug.Log("Result");
                 PObj.SetActive(true);
+                uiManager.DisplayStopText();
                 resultManager.AfterImageCome();
                 mainDetection.HandColliderOff();
                 //resultmanagerに通知
