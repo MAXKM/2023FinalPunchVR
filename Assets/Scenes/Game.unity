@@ -367,7 +367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: []
   afterimagePrefab: {fileID: 5712999446097874619, guid: 48ba46cd79c6b5448b68520b1941c934, type: 3}
-  resultMaterial: {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
+  resultMaterials:
+  - {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
+  - {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
 --- !u!4 &43295076
 Transform:
   m_ObjectHideFlags: 0
@@ -1436,7 +1438,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 0.1}
-  m_Center: {x: 0, y: 0, z: -0.5}
+  m_Center: {x: 0, y: 0, z: -0.4}
 --- !u!1 &796882519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &796882520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,7 +2462,7 @@ MonoBehaviour:
   - {fileID: 1997551284}
   - {fileID: 1287903480}
   hitEffectPrefab: {fileID: 7594873660671855554, guid: 18ec8534b00449b47bdebcd925a8c05d, type: 3}
-  isVRTest: 0
+  isVRTest: 1
 --- !u!136 &1578301774
 CapsuleCollider:
   m_ObjectHideFlags: 0

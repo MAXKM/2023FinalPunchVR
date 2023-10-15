@@ -14,10 +14,6 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         TitleUIAnim();
-        DOVirtual.DelayedCall(3f,() =>
-        {
-            DisplayGameStateUI();
-        });
     }
 
     public void TitleUIAnim()
@@ -33,5 +29,10 @@ public class UIManager : MonoBehaviour
         timerText.SetActive(true);
         punchTextTf.DOScale(Vector3.one,1f);
         punchTextTf.GetComponent<CanvasGroup>().DOFade(1,0.7f);
+    }
+
+    public void DisplayStopText()
+    {
+
     }
 }
