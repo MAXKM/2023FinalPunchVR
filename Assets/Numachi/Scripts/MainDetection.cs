@@ -30,7 +30,7 @@ public class MainDetection : MonoBehaviour
         if (!hitEffect.activeSelf) hitEffect.SetActive(true);
 
         // リザルトに出す残像は少し後ろから表示する
-        inFrontHitPos.z -= difference;
+        //inFrontHitPos.z -= difference;
         afterimageManager.Store(inFrontHitPos,targetRot);
         if (!isVRTest) return; // テスト用、後で消す
         if (other.CompareTag("LeftHand"))
@@ -45,6 +45,7 @@ public class MainDetection : MonoBehaviour
         }
     }
 
+    // 手前の当たり判定を一時的に格納
     public void SetInFrontPosition(Vector3 _pos)
     {
         inFrontHitPos = _pos;
@@ -57,6 +58,7 @@ public class MainDetection : MonoBehaviour
             collider.enabled = false;
     }
 
+    // ヒットエフェクトをプールから取得
     private GameObject GetHitEffectsFromPool(Vector3 _pos)
     {
         for (int i = 0; i < hitEffectPool.Count; i++)

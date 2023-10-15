@@ -274,6 +274,18 @@ PrefabInstance:
       value: hand2R_zanzo
       objectReference: {fileID: 0}
     - target: {fileID: 5120341246559611427, guid: ee4c7f7543fe81141a986acac58b3b1e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120341246559611427, guid: ee4c7f7543fe81141a986acac58b3b1e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120341246559611427, guid: ee4c7f7543fe81141a986acac58b3b1e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120341246559611427, guid: ee4c7f7543fe81141a986acac58b3b1e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.78
       objectReference: {fileID: 0}
