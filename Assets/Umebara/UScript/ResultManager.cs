@@ -30,6 +30,8 @@ public class ResultManager : MonoBehaviour
     [SerializeField] private Transform parent; // 残像の親オブジェクト
     private Vector3 baseDirection = new Vector3(0, 1, 0);
     private float angle;
+    private GameObject[] handParent;
+
     void Start()
     {
         moveingPunching = pM.GetComponent<MoveingPunchingBag>();
@@ -49,12 +51,14 @@ public class ResultManager : MonoBehaviour
         count = 0.25f * listCountR;
         interval = count / listCountR;
         moveingPunching.enabled = true;
+        handParent = new GameObject[listCountR];
         StartCoroutine(AA1(0));
         StartCoroutine(AA2(1));
         StartCoroutine(AA3(2));
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
         StartCoroutine(AAM(5));
+        StartCoroutine(Onprefab(9));
         InvokeRepeating("FAA", 10, interval);
         InvokeRepeating("CallPunch", 10.25f, interval);
         InvokeRepeating("PunchCount", 10.25f, interval);
@@ -198,13 +202,22 @@ public class ResultManager : MonoBehaviour
             resultdotweenText.text = score.ToString();
             resultdotweenText.transform.DOScale(new Vector3(0.01f, 0.01f, 0.01f), 0.5f);
             resultdotweenText.transform.DOScale(new Vector3(0.006f, 0.006f, 0.006f), 0.75f).SetDelay(0.50f);
-
             isDefaultScale = false;
         }
     }
     private void CallPunch()
     {
         moveingPunching.KnockBack();
+    }
+
+    IEnumerator Onprefab(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        for(int n=0;n<= listCountP; listCountP++)
+        {
+            handParent[0] = appearAfterimage.pool[0].transform.GetChild(2).gameObject;
+            handParent[n].SetActive(true);
+        }
     }
 
     private void CallCancell()
