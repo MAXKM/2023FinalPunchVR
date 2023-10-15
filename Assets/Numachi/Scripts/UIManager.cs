@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject timerText;
     [SerializeField] private Transform punchTextTf;
+
+    [SerializeField] private Transform stopTextTf;
     private void Start()
     {
         TitleUIAnim();
@@ -33,6 +35,8 @@ public class UIManager : MonoBehaviour
 
     public void DisplayStopText()
     {
-
+        punchTextTf.GetComponent<CanvasGroup>().DOFade(0,0.5f);
+        stopTextTf.GetComponent<CanvasGroup>().DOFade(1,0.7f);
+        stopTextTf.DOScale(Vector3.one,1f);
     }
 }
