@@ -58,7 +58,6 @@ public class ResultManager : MonoBehaviour
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
         StartCoroutine(AAM(5));
-        StartCoroutine(Onprefab(9));
         InvokeRepeating("FAA", 10, interval);
         InvokeRepeating("CallPunch", 10.25f, interval);
         InvokeRepeating("PunchCount", 10.25f, interval);
@@ -154,7 +153,7 @@ public class ResultManager : MonoBehaviour
         angle = 360f / parent.childCount;
         for (int i = 0; i < parent.childCount; i++)
         {
-            parent.GetChild(i).DOMove(Quaternion.Euler(0, 0, angle * i) * baseDirection, 3f);
+            parent.GetChild(i).DOMove(Quaternion.Euler(0, 0, angle * i) * baseDirection, 3f).OnComplete(OnCall);
         }
     }
 
@@ -202,16 +201,14 @@ public class ResultManager : MonoBehaviour
         moveingPunching.KnockBack();
     }
 
-    IEnumerator Onprefab(float wait)
+    private void OnCall()
     {
-        yield return new WaitForSeconds(wait);
-        for(int n = 0; n <= listCountP; listCountP++)
+        for (int n = 0; n <= listCountP; n++)
         {
-            //handParent[n].SetActive(true);
             handParent[n] = appearAfterimage.pool[n].transform.GetChild(2).gameObject;
+            handParent[n].SetActive(true);
         }
     }
-
     private void CallCancell()
     {
         CancelInvoke("CallPunch");
