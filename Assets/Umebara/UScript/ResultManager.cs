@@ -53,19 +53,19 @@ public class ResultManager : MonoBehaviour
         interval = count / listCountR;
         moveingPunching.enabled = true;
         handParent = new GameObject[listCountR];
-        StartCoroutine(AA1(0));
-        StartCoroutine(AA2(1));
-        StartCoroutine(AA3(2));
-        StartCoroutine(AA4(3));
-        StartCoroutine(AA5(4));
-        StartCoroutine(AAM(5));
-        StartCoroutine(ResultBack(3));
-        InvokeRepeating("FAA", 10, interval);
-        InvokeRepeating("CallPunch", 10.25f, interval);
-        InvokeRepeating("PunchCount", 10.25f, interval);
-        Invoke("CallCancell", 10.5f + (0.25f * listCountP));
-        StartCoroutine(ResultScore2(11.5f + count));
-        StartCoroutine(SM(19.0f + count));
+        StartCoroutine(AA1(2));
+        StartCoroutine(AA2(3));
+        StartCoroutine(AA3(4));
+        StartCoroutine(AA4(5));
+        StartCoroutine(AA5(6));
+        StartCoroutine(AAM(7));
+        StartCoroutine(ResultBack(0));
+        InvokeRepeating("FAA", 12, interval);
+        InvokeRepeating("CallPunch", 12.25f, interval);
+        InvokeRepeating("PunchCount", 12.25f, interval);
+        Invoke("CallCancell", 12.5f + (0.25f * listCountP));
+        StartCoroutine(ResultScore2(13.5f + count));
+        StartCoroutine(SM(21.0f + count));
     }
     
     IEnumerator AA1(float wait)
