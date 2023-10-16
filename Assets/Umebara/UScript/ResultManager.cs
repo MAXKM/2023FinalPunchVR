@@ -52,14 +52,13 @@ public class ResultManager : MonoBehaviour
         interval = count / listCountR;
         moveingPunching.enabled = true;
         handParent = new GameObject[listCountR];
-        //handParent = appearAfterimage.pool[0].transform.GetChild(2).gameObject;
         StartCoroutine(AA1(0));
         StartCoroutine(AA2(1));
         StartCoroutine(AA3(2));
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
         StartCoroutine(AAM(5));
-        //StartCoroutine(Onprefab(9));
+        StartCoroutine(Onprefab(9));
         InvokeRepeating("FAA", 10, interval);
         InvokeRepeating("CallPunch", 10.25f, interval);
         InvokeRepeating("PunchCount", 10.25f, interval);
@@ -203,14 +202,15 @@ public class ResultManager : MonoBehaviour
         moveingPunching.KnockBack();
     }
 
-    /*IEnumerator Onprefab(float wait)
+    IEnumerator Onprefab(float wait)
     {
         yield return new WaitForSeconds(wait);
-        for(int n=0;n<= listCountP; listCountP++)
+        for(int n = 0; n <= listCountP; listCountP++)
         {
             //handParent[n].SetActive(true);
+            handParent[n] = appearAfterimage.pool[n].transform.GetChild(2).gameObject;
         }
-    }*/
+    }
 
     private void CallCancell()
     {
