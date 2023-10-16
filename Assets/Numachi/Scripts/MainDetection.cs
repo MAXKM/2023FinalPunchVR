@@ -13,6 +13,7 @@ public class MainDetection : MonoBehaviour
     [SerializeField] private AppearAfterimage appearAfterimage;
     [SerializeField] private Collider[] handCollider; // 0=>左 1=>右
     [SerializeField] private GameObject hitEffectPrefab; // ヒットエフェクトのプレファブ
+    [SerializeField] private GameManager gameManager;
 
     // テスト用
     [SerializeField] private bool isVRTest;
@@ -21,13 +22,17 @@ public class MainDetection : MonoBehaviour
         if (inFrontHitPos == null) return;
         // メインの接触座標を取得
         mainHitPos = other.ClosestPoint(transform.position);
-        direction = mainHitPos - inFrontHitPos;
-        Quaternion targetRot = Quaternion.FromToRotation(transform.forward,direction);
-        appearAfterimage.Appear(inFrontHitPos,targetRot);
 
         // ヒットエフェクトを表示
         GameObject hitEffect = GetHitEffectsFromPool(mainHitPos);
         if (!hitEffect.activeSelf) hitEffect.SetActive(true);
+
+        // 練習状態では残像は表示されない
+        if (!gameManager.SJudge) return;
+        // 残像を表示
+        direction = mainHitPos - inFrontHitPos;
+        Quaternion targetRot = Quaternion.FromToRotation(transform.forward,direction);
+        appearAfterimage.Appear(inFrontHitPos,targetRot);
 
         // リザルトに出す残像は少し後ろから表示する
         //inFrontHitPos.z -= difference;
