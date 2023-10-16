@@ -59,7 +59,7 @@ public class ResultManager : MonoBehaviour
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
         StartCoroutine(AAM(5));
-        StartCoroutine(ResultBack(6));
+        StartCoroutine(ResultBack(3));
         InvokeRepeating("FAA", 10, interval);
         InvokeRepeating("CallPunch", 10.25f, interval);
         InvokeRepeating("PunchCount", 10.25f, interval);
