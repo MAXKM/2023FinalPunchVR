@@ -1,4 +1,4 @@
-Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025ee499e5c1"
+Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/06edf4f598365194da02a2f88d978140"
 {
 	Properties
 	{
@@ -247,51 +247,115 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 		_LightingAdditiveGradientStart ("Gradient Start--{condition_showS:(_LightingAdditiveType==1)}", Range(0, 1)) = 0
 		_LightingAdditiveGradientEnd ("Gradient End--{condition_showS:(_LightingAdditiveType==1)}", Range(0, 1)) = .5
 		[HideInInspector] m_end_PoiShading ("Shading", Float) = 0
-		[HideInInspector] m_start_matcap ("Matcap 0--{reference_property:_MatcapEnable,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/shading/matcap},hover:Documentation}}", Float) = 0
-		[HideInInspector][ThryToggle(POI_MATCAP0)]_MatcapEnable ("Enable Matcap", Float) = 0
-		[ThryWideEnum(UTS Style, 0, Top Pinch, 1, Double Sided, 2)] _MatcapUVMode ("UV Mode", Int) = 1
-		_MatcapColor ("Color--{reference_property:_MatcapColorThemeIndex}", Color) = (1, 1, 1, 1)
-		_MatcapBaseColorMix ("Base Color Mix", Range(0, 1)) = 0
-		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _MatcapColorThemeIndex ("", Int) = 0
-		[sRGBWarning(true)][TextureNoSO]_Matcap ("Matcap", 2D) = "white" { }
-		_MatcapBorder ("Border", Range(0, 5)) = 0.43
-		_MatcapRotation ("Rotation", Range(-1, 1)) = 0
-		[sRGBWarning][ThryRGBAPacker(R Mask, G Nothing, B Nothing, A Smoothness)]_MatcapMask ("Mask--{reference_properties:[_MatcapMaskPan, _MatcapMaskUV, _MatcapMaskChannel, _MatcapMaskInvert]}", 2D) = "white" { }
-		[HideInInspector][Vector2]_MatcapMaskPan ("Panning", Vector) = (0, 0, 0, 0)
-		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _MatcapMaskUV ("UV", Int) = 0
-		[HideInInspector][Enum(R, 0, G, 1, B, 2, A, 3)]_MatcapMaskChannel ("Channel", Float) = 0
-		[HideInInspector][ToggleUI]_MatcapMaskInvert ("Invert", Float) = 0
-		[ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _MatcapMaskGlobalMask ("Global Mask--{reference_property:_MatcapMaskGlobalMaskBlendType}", Int) = 0
-		[HideInInspector][ThryWideEnum(Replace, 0, Darken, 1, Multiply, 2, Color Burn, 3, Linear Burn, 4, Lighten, 5, Screen, 6, Color Dodge, 7, Linear Dodge(Add), 8, Overlay, 9, Soft Lighten, 10, Hard Light, 11, Vivid Light, 12, Linear Light, 13, Pin Light, 14, Hard Mix, 15, Difference, 16, Exclusion, 17, Subtract, 18, Divide, 19)]_MatcapMaskGlobalMaskBlendType ("Blending", Range(0, 1)) = 2
-		_MatcapEmissionStrength ("Emission Strength", Range(0, 20)) = 0
-		_MatcapIntensity ("Intensity", Range(0, 5)) = 1
-		_MatcapLightMask ("Hide in Shadow", Range(0, 1)) = 0
-		_MatcapReplace ("Replace Blend", Range(0, 1)) = 1
-		_MatcapMultiply ("Multiply Blend", Range(0, 1)) = 0
-		_MatcapAdd ("Add Blend", Range(0, 1)) = 0
-		_MatcapMixed ("Mixed Blend", Range(0, 1)) = 0
-		_MatcapScreen ("Screen Blend", Range(0, 1)) = 0
-		_MatcapAddToLight ("Add To Light", Range(0, 1)) = 0
-		_MatcapAlphaOverride ("Override Alpha", Range(0, 1)) = 0
-		[Enum(Vertex, 0, Pixel, 1)] _MatcapNormal ("Normal to use", Int) = 1
-		[ThryToggle(POI_MATCAP0_CUSTOM_NORMAL, true)] _Matcap0CustomNormal ("<size=13><b>  Custom Normal</b></size>", Float) = 0
-		[Normal]_Matcap0NormalMap ("Normal Map--{reference_properties:[_Matcap0NormalMapPan, _Matcap0NormalMapUV, _Matcap0NormalMapScale], condition_showS:(_Matcap0CustomNormal==1)}", 2D) = "bump" { }
-		[HideInInspector][Vector2]_Matcap0NormalMapPan ("Panning", Vector) = (0, 0, 0, 0)
-		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _Matcap0NormalMapUV ("UV", Int) = 0
-		[HideInInspector]_Matcap0NormalMapScale ("Intensity", Range(0, 10)) = 1
-		[ThryToggleUI(true)] _MatcapHueShiftEnabled ("<size=13><b>  Hue Shift</b></size>", Float) = 0
-		_MatcapHueShiftSpeed ("Shift Speed--{condition_showS:(_MatcapHueShiftEnabled==1)}", Float) = 0
-		_MatcapHueShift ("Hue Shift--{condition_showS:(_MatcapHueShiftEnabled==1)}", Range(0, 1)) = 0
-		[ThryToggleUI(true)] _MatcapSmoothnessEnabled ("<size=13><b>  Blur</b></size>", Float) = 0
-		_MatcapSmoothness ("Smoothness--{condition_showS:(_MatcapSmoothnessEnabled==1)}", Range(0, 1)) = 1
-		[ToggleUI]_MatcapMaskSmoothnessApply ("Apply Mask for Smoothness--{condition_showS:(_MatcapSmoothnessEnabled==1)}", Float) = 0
-		[Enum(R, 0, G, 1, B, 2, A, 3)]_MatcapMaskSmoothnessChannel ("Mask Channel for Smoothness--{condition_showS:(_MatcapSmoothnessEnabled==1)}", Int) = 3
-		[HideInInspector] g_start_MatcapTPSMaskGroup ("--{condition_showS:(_TPSPenetratorEnabled==1)}", Float) = 0
-		[ThryToggleUI(true)] _MatcapTPSDepthEnabled ("<size=13><b>  TPS Depth Mask Enabled</b></size>", Float) = 0
-		_MatcapTPSMaskStrength ("TPS Mask Strength--{condition_showS:(_MatcapTPSDepthEnabled==1)}", Range(0, 1)) = 1
-		[HideInInspector] g_end_MatcapTPSMaskGroup ("", Float) = 0
-		[HideInInspector] m_end_matcap ("Matcap--{condition_showS:(_MatcapHueShiftEnabled==1)}", Float) = 0
 		[HideInInspector] m_specialFXCategory ("Special FX", Float) = 0
+		[HideInInspector] m_start_pathing ("Pathing--{reference_property: _EnablePathing,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/special-fx/pathing},hover:Documentation}}", Float) = 0
+		[HideInInspector][ThryToggle(POI_PATHING)] _EnablePathing ("Enable Pathing", Float) = 0
+		[Enum(Split Channels, 0, Merged Channels, 1)]_PathGradientType ("Gradient Type", Float) = 0
+		[ToggleUI]_PathingOverrideAlpha ("Override alpha", Float) = 0
+		[sRGBWarning][ThryRGBAPacker(R Path, G Path, B Path, A Path)]_PathingMap ("RGBA Path Map--{reference_properties:[_PathingMapPan, _PathingMapUV]}", 2D) = "white" { }
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)]_PathingMapUV ("UV", Int) = 0
+		[HideInInspector][Vector2]_PathingMapPan ("Panning", Vector) = (0, 0, 0, 0)
+		[sRGBWarning(true)][ThryRGBAPacker(1, RGB Color, A Mask, 1)]_PathingColorMap ("Color & Mask (Expand)--{reference_properties:[_PathingColorMapPan, _PathingColorMapUV]}", 2D) = "white" { }
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)]_PathingColorMapUV ("UV", Int) = 0
+		[HideInInspector][Vector2]_PathingColorMapPan ("Panning", Vector) = (0, 0, 0, 0)
+		[Enum(Fill, 0, Path, 1, Loop, 2)]_PathTypeR ("R Path Type", Float) = 0
+		[Enum(Fill, 0, Path, 1, Loop, 2)]_PathTypeG ("G Path Type", Float) = 0
+		[Enum(Fill, 0, Path, 1, Loop, 2)]_PathTypeB ("B Path Type", Float) = 0
+		[Enum(Fill, 0, Path, 1, Loop, 2)]_PathTypeA ("A Path Type", Float) = 0
+		[HDR]_PathColorR ("R Color--{reference_property:_PathColorRThemeIndex}", Color) = (1, 1, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _PathColorRThemeIndex ("", Int) = 0
+		[HDR]_PathColorG ("G Color--{reference_property:_PathColorGThemeIndex}", Color) = (1, 1, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _PathColorGThemeIndex ("", Int) = 0
+		[HDR]_PathColorB ("B Color--{reference_property:_PathColorBThemeIndex}", Color) = (1, 1, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _PathColorBThemeIndex ("", Int) = 0
+		[HDR]_PathColorA ("A Color--{reference_property:_PathColorAThemeIndex}", Color) = (1, 1, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _PathColorAThemeIndex ("", Int) = 0
+		[VectorLabel(R,G,B,A)]_PathEmissionStrength ("Emission Strength", Vector) = (0.0, 0.0, 0.0, 0.0)
+		[VectorLabel(R,G,B,A)]_PathSoftness ("Softness", Vector) = (1, 1, 1, 1)
+		[VectorLabel(R,G,B,A)]_PathSpeed ("Speed", Vector) = (1.0, 1.0, 1.0, 1.0)
+		[VectorLabel(R,G,B,A)]_PathWidth ("Length", Vector) = (0.03, 0.03, 0.03, 0.03)
+		[Header(Timing Options)]
+		[VectorLabel(R,G,B,A)]_PathTime ("Manual Timing", Vector) = (-999.0, -999.0, -999.0, -999.0)
+		[VectorLabel(R,G,B,A)]_PathOffset ("Timing Offset", Vector) = (0.0, 0.0, 0.0, 0.0)
+		[VectorLabel(R,G,B,A)]_PathSegments ("Path Segments", Vector) = (0.0, 0.0, 0.0, 0.0)
+		[HideInInspector] m_start_PathAudioLink ("Audio Link ♫--{ condition_showS:_EnableAudioLink==1}", Float) = 0
+		[ThryToggleUI(true)]_PathALTimeOffset ("<size=13><b>  Time Offset</b></size>", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathTimeOffsetBandR ("Band	R--{condition_showS:(_PathALTimeOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathTimeOffsetR ("Offset	R--{condition_showS:(_PathALTimeOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathTimeOffsetBandG ("Band	G--{condition_showS:(_PathALTimeOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathTimeOffsetG ("Offset	G--{condition_showS:(_PathALTimeOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathTimeOffsetBandB ("Band	B--{condition_showS:(_PathALTimeOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathTimeOffsetB ("Offset	B--{condition_showS:(_PathALTimeOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathTimeOffsetBandA ("Band	A--{condition_showS:(_PathALTimeOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathTimeOffsetA ("Offset	A--{condition_showS:(_PathALTimeOffset==1)}", Vector) = (0, 0, 0)
+		[Space(4)]
+		[ThryToggleUI(true)]_PathALEmissionOffset ("<size=13><b>  Emission Offset</b></size>", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathEmissionAddBandR ("Band	R--{condition_showS:(_PathALEmissionOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathEmissionAddR ("Offset	R--{condition_showS:(_PathALEmissionOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathEmissionAddBandG ("Band	G--{condition_showS:(_PathALEmissionOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathEmissionAddG ("Offset	G--{condition_showS:(_PathALEmissionOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathEmissionAddBandB ("Band	B--{condition_showS:(_PathALEmissionOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathEmissionAddB ("Offset	B--{condition_showS:(_PathALEmissionOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathEmissionAddBandA ("Band	A--{condition_showS:(_PathALEmissionOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathEmissionAddA ("Offset	A--{condition_showS:(_PathALEmissionOffset==1)}", Vector) = (0, 0, 0)
+		[Space(4)]
+		[ThryToggleUI(true)]_PathALWidthOffset ("<size=13><b>  Width Offset</b></size>", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathWidthOffsetBandR ("Band	R--{condition_showS:(_PathALWidthOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathWidthOffsetR ("Offset	R--{condition_showS:(_PathALWidthOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathWidthOffsetBandG ("Band	G--{condition_showS:(_PathALWidthOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathWidthOffsetG ("Offset	G--{condition_showS:(_PathALWidthOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathWidthOffsetBandB ("Band	B--{condition_showS:(_PathALWidthOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathWidthOffsetB ("Offset	B--{condition_showS:(_PathALWidthOffset==1)}", Vector) = (0, 0, 0)
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _AudioLinkPathWidthOffsetBandA ("Band	A--{condition_showS:(_PathALWidthOffset==1)}", Int) = 0
+		[VectorLabel(Min, Max)]_AudioLinkPathWidthOffsetA ("Offset	A--{condition_showS:(_PathALWidthOffset==1)}", Vector) = (0, 0, 0)
+		[Space(4)]
+		[ThryToggleUI(true)]_PathALHistory ("<size=13><b>  History</b></size>", Float) = 0
+		[Enum(Mask, 0, Override, 1)] _PathALHistoryMode ("History Mode--{condition_showS:(_PathALHistory==1)}", Float) = 0
+		[ToggleUI]_PathALHistoryR ("R History--{condition_showS:(_PathALHistory==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathALHistoryBandR ("R Band--{condition_showS:(_PathALHistory==1 && _PathALHistoryR==1)}", Int) = 0
+		[MultiSlider]_PathALHistoryRangeR ("R Range--{condition_showS:(_PathALHistory==1 && _PathALHistoryR==1)}", Vector) = (0, 1, 0, 1)
+		[ToggleUI]_PathALHistoryG ("G History--{condition_showS:(_PathALHistory==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathALHistoryBandG ("G Band--{condition_showS:(_PathALHistory==1 && _PathALHistoryG==1)}", Int) = 0
+		[MultiSlider]_PathALHistoryRangeG ("G Range--{condition_showS:(_PathALHistory==1 && _PathALHistoryG==1)}", Vector) = (0, 1, 0, 1)
+		[ToggleUI]_PathALHistoryB ("B History--{condition_showS:(_PathALHistory==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathALHistoryBandB ("B Band--{condition_showS:(_PathALHistory==1 && _PathALHistoryB==1)}", Int) = 0
+		[MultiSlider]_PathALHistoryRangeB ("B Range--{condition_showS:(_PathALHistory==1 && _PathALHistoryB==1)}", Vector) = (0, 1, 0, 1)
+		[ToggleUI]_PathALHistoryA ("A History--{condition_showS:(_PathALHistory==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathALHistoryBandA ("A Band--{condition_showS:(_PathALHistory==1 && _PathALHistoryA==1)}", Int) = 0
+		[MultiSlider]_PathALHistoryRangeA ("A Range--{condition_showS:(_PathALHistory==1 && _PathALHistoryA==1)}", Vector) = (0, 1, 0, 1)
+		[Space(4)]
+		[ThryToggleUI(true)]_PathALChrono ("<size=13><b>  Chrono Time</b></size>", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathChronoBandR ("R Band--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		[ThryWideEnum(Motion increases as intensity of band increases, 0, Above but Smooth, 1, Motion moves back and forth as a function of intensity, 2, Above but Smoooth, 3, Fixed speed increase when the band is dark Stationary when light, 4, Above but Smooooth, 5, Fixed speed increase when the band is dark Fixed speed decrease when light, 6, Above but Smoooooth, 7)]_PathChronoTypeR ("R Motion Type--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		_PathChronoSpeedR ("R Speed--{condition_showS:(_PathALChrono==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathChronoBandG ("G Band--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		[ThryWideEnum(Motion increases as intensity of band increases, 0, Above but Smooth, 1, Motion moves back and forth as a function of intensity, 2, Above but Smoooth, 3, Fixed speed increase when the band is dark Stationary when light, 4, Above but Smooooth, 5, Fixed speed increase when the band is dark Fixed speed decrease when light, 6, Above but Smoooooth, 7)]_PathChronoTypeG ("G Motion Type--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		_PathChronoSpeedG ("G Speed--{condition_showS:(_PathALChrono==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathChronoBandB ("B Band--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		[ThryWideEnum(Motion increases as intensity of band increases, 0, Above but Smooth, 1, Motion moves back and forth as a function of intensity, 2, Above but Smoooth, 3, Fixed speed increase when the band is dark Stationary when light, 4, Above but Smooooth, 5, Fixed speed increase when the band is dark Fixed speed decrease when light, 6, Above but Smoooooth, 7)]_PathChronoTypeB ("B Motion Type--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		_PathChronoSpeedB ("B Speed--{condition_showS:(_PathALChrono==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3)] _PathChronoBandA ("A Band--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		[ThryWideEnum(Motion increases as intensity of band increases, 0, Above but Smooth, 1, Motion moves back and forth as a function of intensity, 2, Above but Smoooth, 3, Fixed speed increase when the band is dark Stationary when light, 4, Above but Smooooth, 5, Fixed speed increase when the band is dark Fixed speed decrease when light, 6, Above but Smoooooth, 7)]_PathChronoTypeA ("A Motion Type--{condition_showS:(_PathALChrono==1)}", Int) = 0
+		_PathChronoSpeedA ("A Speed--{condition_showS:(_PathALChrono==1)}", Float) = 0
+		[Space(4)]
+		[ThryToggleUI(true)]_PathALAutoCorrelator ("<size=13><b>  Auto Correlator</b></size>", Float) = 0
+		[Enum(Mask, 0, Override, 1)] _PathALAutoCorrelatorMode ("Autocorrelator Mode--{condition_showS:(_PathALAutoCorrelator==1)}", Float) = 0
+		[Enum(Off, 0, On, 1, Mirrored, 2)]_PathALAutoCorrelatorR ("R Type--{condition_showS:(_PathALAutoCorrelator==1)}", Int) = 0
+		[MultiSlider]_PathALAutoCorrelatorRangeR ("R Range--{condition_showS:(_PathALAutoCorrelator==1 && _PathALAutoCorrelatorR > 0)}", Vector) = (0.1, .9, 0, 1)
+		[Enum(Off, 0, On, 1, Mirrored, 2)]_PathALAutoCorrelatorG ("G Type--{condition_showS:(_PathALAutoCorrelator==1)}", Int) = 0
+		[MultiSlider]_PathALAutoCorrelatorRangeG ("G Range--{condition_showS:(_PathALAutoCorrelator==1 && _PathALAutoCorrelatorG > 0)}", Vector) = (0.1, .9, 0, 1)
+		[Enum(Off, 0, On, 1, Mirrored, 2)]_PathALAutoCorrelatorB ("B Type--{condition_showS:(_PathALAutoCorrelator==1)}", Int) = 0
+		[MultiSlider]_PathALAutoCorrelatorRangeB ("B Range--{condition_showS:(_PathALAutoCorrelator==1 && _PathALAutoCorrelatorB > 0)}", Vector) = (0.1, 0.9, 0, 1)
+		[Enum(Off, 0, On, 1, Mirrored, 2)]_PathALAutoCorrelatorA ("A Type--{condition_showS:(_PathALAutoCorrelator==1)}", Int) = 0
+		[MultiSlider]_PathALAutoCorrelatorRangeA ("A Range--{condition_showS:(_PathALAutoCorrelator==1 && _PathALAutoCorrelatorA > 0)}", Vector) = (0.1, 0.9, 0, 1)
+		[Space(4)]
+		[ThryToggleUI(true)]_PathALColorChord ("<size=13><b>  Color Chord</b></size>", Float) = 0
+		[ToggleUI]_PathALCCR ("R Color Chord Strip--{condition_showS:(_PathALColorChord==1)}", Float) = 0
+		[ToggleUI]_PathALCCG ("G Color Chord Strip--{condition_showS:(_PathALColorChord==1)}", Float) = 0
+		[ToggleUI]_PathALCCB ("B Color Chord Strip--{condition_showS:(_PathALColorChord==1)}", Float) = 0
+		[ToggleUI]_PathALCCA ("A Color Chord Strip--{condition_showS:(_PathALColorChord==1)}", Float) = 0
+		[HideInInspector] m_end_PathAudioLink ("", Float) = 0
+		[HideInInspector] m_end_pathing ("", Float) = 0
 		[HideInInspector] m_modifierCategory ("Modifiers", Float) = 0
 		[HideInInspector] m_start_Stochastic ("Stochastic Sampling", Float) = 0
 		[KeywordEnum(Deliot Heitz, Hextile, None)] _StochasticMode ("Sampling Mode", Float) = 0
@@ -405,12 +469,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			CGPROGRAM
  #define POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE 
  #define POI_LIGHT_DATA_ADDITIVE_ENABLE 
- #define POI_MATCAP0 
+ #define POI_PATHING 
  #define POI_VERTEXLIGHT_ON 
  #define VIGNETTE_MASKED 
- #define _LIGHTINGMODE_SKIN 
+ #define _LIGHTINGMODE_FLAT 
  #define _STOCHASTICMODE_DELIOT_HEITZ 
- #define PROP_MATCAP 
+ #define PROP_PATHINGMAP 
  #define OPTIMIZER_ENABLED 
 			#pragma target 5.0
 			#pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
@@ -599,70 +663,116 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			float3 _LightingShadowColor;
 			float _LightingGradientStartWrap;
 			float _LightingGradientEndWrap;
-			#ifdef _LIGHTINGMODE_SKIN
-			sampler2D _SkinLUT;
-			float _SssScale;
-			#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _SkinThicknessMap;
-			#endif
-			float4 _SkinThicknessMap_ST;
-			float2 _SkinThicknessMapPan;
-			float _SkinThicknessMapUV;
-			float _SkinThicknessMapInvert;
-			float _SkinThicknessPower;
-			float _SssBumpBlur;
-			float3 _SssTransmissionAbsorption;
-			float3 _SssColorBleedAoWeights;
-			#endif
 			float _LightingAdditiveType;
 			float _LightingAdditiveGradientStart;
 			float _LightingAdditiveGradientEnd;
 			float _LightingAdditiveDetailStrength;
-			#ifdef POI_MATCAP0
-			#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _Matcap;
-			float4 _Matcap_ST;
-			float4 _Matcap_TexelSize;
-			float2 _MatcapPan;
-			float _MatcapUV;
+			#ifdef POI_PATHING
+			#if defined(PROP_PATHINGMAP) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _PathingMap;
+			SamplerState SmpRepeatPoint;
 			#endif
-			#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _MatcapMask;
-			float4 _MatcapMask_ST;
-			float2 _MatcapMaskPan;
-			float _MatcapMaskUV;
-			float _MatcapMaskChannel;
+			float4 _PathingMap_ST;
+			float2 _PathingMapPan;
+			float _PathingMapUV;
+			#if defined(PROP_PATHINGCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _PathingColorMap;
 			#endif
-			float _MatcapUVMode;
-			float _MatcapMaskInvert;
-			float _MatcapMaskGlobalMask;
-			float _MatcapMaskGlobalMaskBlendType;
-			float _MatcapBorder;
-			float _MatcapRotation;
-			float _MatcapSmoothnessEnabled;
-			float _MatcapSmoothness;
-			float _MatcapMaskSmoothnessChannel;
-			float _MatcapMaskSmoothnessApply;
-			float4 _MatcapColor;
-			float _MatcapBaseColorMix;
-			float _MatcapColorThemeIndex;
-			float _MatcapIntensity;
-			float _MatcapReplace;
-			float _MatcapMultiply;
-			float _MatcapAdd;
-			float _MatcapAddToLight;
-			float _MatcapMixed;
-			float _MatcapScreen;
-			float _MatcapAlphaOverride;
-			float _MatcapEnable;
-			float _MatcapLightMask;
-			float _MatcapEmissionStrength;
-			float _MatcapNormal;
-			float _MatcapHueShiftEnabled;
-			float _MatcapHueShiftSpeed;
-			float _MatcapHueShift;
-			float _MatcapTPSDepthEnabled;
-			float _MatcapTPSMaskStrength;
+			float4 _PathingColorMap_ST;
+			float2 _PathingColorMapPan;
+			float _PathingColorMapUV;
+			float _PathingOverrideAlpha;
+			float _PathTypeR;
+			float _PathTypeG;
+			float _PathTypeB;
+			float _PathTypeA;
+			float _PathGradientType;
+			half4 _PathWidth;
+			float4 _PathTime;
+			float4 _PathOffset;
+			float4 _PathSpeed;
+			float4 _PathColorR;
+			float4 _PathColorG;
+			float4 _PathColorB;
+			float4 _PathColorA;
+			float4 _PathEmissionStrength;
+			float4 _PathSoftness;
+			float4 _PathSegments;
+			float _PathColorRThemeIndex;
+			float _PathColorGThemeIndex;
+			float _PathColorBThemeIndex;
+			float _PathColorAThemeIndex;
+			#ifdef POI_AUDIOLINK
+			float _PathALAutoCorrelator;
+			float _PathALAutoCorrelatorMode;
+			float _PathALAutoCorrelatorR;
+			float2 _PathALAutoCorrelatorRangeR;
+			float _PathALAutoCorrelatorG;
+			float2 _PathALAutoCorrelatorRangeG;
+			float _PathALAutoCorrelatorB;
+			float2 _PathALAutoCorrelatorRangeB;
+			float _PathALAutoCorrelatorA;
+			float2 _PathALAutoCorrelatorRangeA;
+			float _PathALHistory;
+			float _PathALHistoryMode;
+			float _PathALHistoryBandR;
+			float2 _PathALHistoryRangeR;
+			float _PathALHistoryR;
+			float _PathALHistoryBandG;
+			float2 _PathALHistoryRangeG;
+			float _PathALHistoryG;
+			float _PathALHistoryBandB;
+			float2 _PathALHistoryRangeB;
+			float _PathALHistoryB;
+			float _PathALHistoryBandA;
+			float2 _PathALHistoryRangeA;
+			float _PathALHistoryA;
+			float _PathALColorChord;
+			float _PathALCCR;
+			float _PathALCCG;
+			float _PathALCCB;
+			float _PathALCCA;
+			float _PathALTimeOffset;
+			half _AudioLinkPathTimeOffsetBandR;
+			half2 _AudioLinkPathTimeOffsetR;
+			half _AudioLinkPathTimeOffsetBandG;
+			half2 _AudioLinkPathTimeOffsetG;
+			half _AudioLinkPathTimeOffsetBandB;
+			half2 _AudioLinkPathTimeOffsetB;
+			half _AudioLinkPathTimeOffsetBandA;
+			half2 _AudioLinkPathTimeOffsetA;
+			float _PathALEmissionOffset;
+			half _AudioLinkPathEmissionAddBandR;
+			half2 _AudioLinkPathEmissionAddR;
+			half _AudioLinkPathEmissionAddBandG;
+			half2 _AudioLinkPathEmissionAddG;
+			half _AudioLinkPathEmissionAddBandB;
+			half2 _AudioLinkPathEmissionAddB;
+			half _AudioLinkPathEmissionAddBandA;
+			half2 _AudioLinkPathEmissionAddA;
+			float _PathALWidthOffset;
+			half _AudioLinkPathWidthOffsetBandR;
+			half2 _AudioLinkPathWidthOffsetR;
+			half _AudioLinkPathWidthOffsetBandG;
+			half2 _AudioLinkPathWidthOffsetG;
+			half _AudioLinkPathWidthOffsetBandB;
+			half2 _AudioLinkPathWidthOffsetB;
+			half _AudioLinkPathWidthOffsetBandA;
+			half2 _AudioLinkPathWidthOffsetA;
+			float _PathALChrono;
+			float _PathChronoBandR;
+			float _PathChronoTypeR;
+			float _PathChronoSpeedR;
+			float _PathChronoBandG;
+			float _PathChronoTypeG;
+			float _PathChronoSpeedG;
+			float _PathChronoBandB;
+			float _PathChronoTypeB;
+			float _PathChronoSpeedB;
+			float _PathChronoBandA;
+			float _PathChronoTypeA;
+			float _PathChronoSpeedA;
+			#endif
 			#endif
 			float _PPLightingMultiplier;
 			float _PPLightingAddition;
@@ -2368,55 +2478,33 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#ifdef POI_PASS_OUTLINE
 				shadowStrength = lerp(0, shadowStrength, _OutlineShadowStrength);
 				#endif
-				#ifdef _LIGHTINGMODE_SKIN
-				float3 ambientNormalWorld = poiMesh.normals[1];//aTangentToWorld(s, s.blurredNormalTangent);
+				#ifdef _LIGHTINGMODE_FLAT
+				poiLight.finalLighting = poiLight.directColor;
 				poiLight.rampedLightMap = poiLight.nDotLSaturated;
-				#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-				float subsurface = 1 - POI2D_SAMPLER_PAN(_SkinThicknessMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_SkinThicknessMapUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
-				#else
-				float subsurface = 1;
-				#endif
-				if((0.0 /*_SkinThicknessMapInvert*/))
-				{
-					subsurface = 1 - subsurface;
-				}
-				if((1.0 /*_SkinThicknessPower*/) != 1)
-				{
-					subsurface = pow(subsurface, (1.0 /*_SkinThicknessPower*/));
-				}
-				float skinScattering = saturate(subsurface * (1.0 /*_SssScale*/) * 2);
-				half3 absorption = exp((1.0h - subsurface) * float4(-8,-40,-64,0).rgb);
-				absorption *= saturate(poiFragData.baseColor * unity_ColorSpaceDouble.rgb);
-				ambientNormalWorld = normalize(lerp(poiMesh.normals[1], ambientNormalWorld, (0.7 /*_SssBumpBlur*/)));
-				float ndlBlur = dot(poiMesh.normals[1], poiLight.direction) * 0.5h + 0.5h;
-				float lumi = dot(poiLight.directColor, half3(0.2126h, 0.7152h, 0.0722h));
-				float4 sssLookupUv = float4(ndlBlur, skinScattering * lumi, 0.0f, 0.0f);
-				half3 sss = poiLight.lightMap * poiLight.attenuation * tex2Dlod(_SkinLUT, sssLookupUv).rgb;
-				poiLight.finalLighting = lerp(poiLight.directColor, min(lerp(poiLight.indirectColor * float4(0.0890862,0.0890862,0.0890862,1), float4(0.0890862,0.0890862,0.0890862,1), (1.0 /*_LightingIgnoreAmbientColor*/)) * poiLight.occlusion + (sss * poiLight.directColor), poiLight.directColor), (1.0 /*_ShadowStrength*/));
 				#endif
 				#endif
 				#ifdef POI_PASS_ADD
-				if ((0.0 /*_LightingAdditiveType*/) == 0)
+				if ((1.0 /*_LightingAdditiveType*/) == 0)
 				{
 					poiLight.rampedLightMap = max(0, poiLight.nDotL);
 					poiLight.finalLighting = poiLight.directColor * poiLight.attenuation * max(0, poiLight.nDotL) * poiLight.detailShadow * poiLight.additiveShadow;
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 1)
+				if ((1.0 /*_LightingAdditiveType*/) == 1)
 				{
 					#if defined(POINT_COOKIE) || defined(DIRECTIONAL_COOKIE)
 					float passthrough = 0;
 					#else
 					float passthrough = (0.5 /*_LightingAdditivePassthrough*/);
 					#endif
-					if ((1.0 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (1.0 /*_LightingAdditiveGradientEnd*/) += 0.001;
-					poiLight.rampedLightMap = smoothstep((1.0 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
+					if ((0.5 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (0.5 /*_LightingAdditiveGradientEnd*/) += 0.001;
+					poiLight.rampedLightMap = smoothstep((0.5 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
 					#if defined(POINT) || defined(SPOT)
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
 					#else
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
 					#endif
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 2)
+				if ((1.0 /*_LightingAdditiveType*/) == 2)
 				{
 				}
 				#endif
@@ -2424,13 +2512,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float3 vertexLighting = float3(0, 0, 0);
 				for (int index = 0; index < 4; index++)
 				{
-					if ((0.0 /*_LightingAdditiveType*/) == 0)
+					if ((1.0 /*_LightingAdditiveType*/) == 0)
 					{
 						vertexLighting += poiLight.vColor[index] * poiLight.vAttenuationDotNL[index] * poiLight.detailShadow; // Realistic
 					}
-					if ((0.0 /*_LightingAdditiveType*/) == 1) // Toon
+					if ((1.0 /*_LightingAdditiveType*/) == 1) // Toon
 					{
-						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
+						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
 					}
 				}
 				float3 mixedLight = poiLight.finalLighting;
@@ -2438,127 +2526,216 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#endif
 			}
 			#endif
-			void blendMatcap(inout PoiLight poiLight, inout PoiFragData poiFragData, in PoiMods poiMods, float add, float lightAdd, float multiply, float replace, float mixed, float screen, float4 matcapColor, float matcapMask, float emissionStrength, float matcapLightMask, uint globalMaskIndex, float globalMaskBlendType)
+			#ifdef POI_PATHING
+			void applyPathing(inout PoiFragData poiFragData, in PoiMesh poiMesh, in PoiMods poiMods)
 			{
-				if (matcapLightMask)
+				float3 albedo = poiFragData.baseColor;
+				float3 pathEmission;
+				#if defined(PROP_PATHINGMAP) || !defined(OPTIMIZER_ENABLED)
+				float4 path = _PathingMap.Sample(SmpRepeatPoint, poiUV(poiMesh.uv[(0.0 /*_PathingMapUV*/)], float4(2,2,0,0)) + float4(0,0,0,0).xy * _Time.x);
+				#else
+				float4 path = float4(1, 1, 1, 1);
+				#endif
+				float4 PathColor[4];
+				half pathAudioLinkPathTimeOffsetBand[4] = {
+					0, 0, 0, 0
+				};
+				half2 pathAudioLinkTimeOffset[4] = {
+					half2(0, 0), half2(0, 0), half2(0, 0), half2(0, 0)
+				};
+				half pathAudioLinkPathWidthOffsetBand[4] = {
+					0, 0, 0, 0
+				};
+				half2 pathAudioLinkWidthOffset[4] = {
+					half2(0, 0), half2(0, 0), half2(0, 0), half2(0, 0)
+				};
+				PathColor[0] = float4(1,0,0,1);
+				PathColor[1] = float4(0,1,0,1);
+				PathColor[2] = float4(0,0,1,1);
+				PathColor[3] = float4(1,0.6588235,0,1);
+				if ((1.0 /*_PathGradientType*/) == 1)
 				{
-					matcapMask *= lerp(1, poiLight.rampedLightMap, matcapLightMask);
+					path = (path.r + path.g + path.b + path.a) * .25;
 				}
-				if (globalMaskIndex > 0)
+				#if defined(PROP_PATHINGCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+				float4 pathColorMap = POI2D_SAMPLER_PAN(_PathingColorMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_PathingColorMapUV*/)], float4(1,1,0,0)), float4(0.5,0,0,0));
+				#else
+				float4 pathColorMap = float4(1, 1, 1, 1);
+				#endif
+				float4 pathAudioLinkEmission = 0;
+				float4 pathTime = 0;
+				float3 pathAlpha[4] = {
+					float3(0.0, 0.0, 0.0), float3(0.0, 0.0, 0.0), float3(0.0, 0.0, 0.0), float3(0.0, 0.0, 0.0)
+				};
+				#ifdef POI_AUDIOLINK
+				float4 chronoType = float4((0.0 /*_PathChronoTypeR*/), (0.0 /*_PathChronoTypeG*/), (0.0 /*_PathChronoTypeB*/), (0.0 /*_PathChronoTypeA*/));
+				float4 chronoBand = float4((0.0 /*_PathChronoBandR*/), (0.0 /*_PathChronoBandG*/), (0.0 /*_PathChronoBandB*/), (0.0 /*_PathChronoBandA*/));
+				float4 chronoSpeed = float4((0.0 /*_PathChronoSpeedR*/), (0.0 /*_PathChronoSpeedG*/), (0.0 /*_PathChronoSpeedB*/), (0.0 /*_PathChronoSpeedA*/));
+				float3 autoCorrelator[4] = {
+					float3((0.0 /*_PathALAutoCorrelatorR*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1]), float3((0.0 /*_PathALAutoCorrelatorG*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1]),
+					float3((0.0 /*_PathALAutoCorrelatorB*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1]), float3((0.0 /*_PathALAutoCorrelatorA*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1])
+				};
+				float4 history[4] = {
+					float4((0.0 /*_PathALHistoryR*/), (0.0 /*_PathALHistoryBandR*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1]), float4((0.0 /*_PathALHistoryG*/), (0.0 /*_PathALHistoryBandG*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1]),
+					float4((0.0 /*_PathALHistoryB*/), (0.0 /*_PathALHistoryBandB*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1]), float4((0.0 /*_PathALHistoryA*/), (0.0 /*_PathALHistoryBandA*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1])
+				};
+				if (poiMods.audioLinkAvailable)
 				{
-					matcapMask = customBlend(matcapMask, poiMods.globalMask[globalMaskIndex - 1], globalMaskBlendType);
-				}
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, matcapColor.rgb, replace * matcapMask * matcapColor.a * .999999);
-				poiFragData.baseColor.rgb *= lerp(1, matcapColor.rgb, multiply * matcapMask * matcapColor.a);
-				poiFragData.baseColor.rgb += matcapColor.rgb * add * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, blendScreen(poiFragData.baseColor.rgb, matcapColor.rgb), screen);
-				poiLight.finalLightAdd += matcapColor.rgb * lightAdd * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, poiFragData.baseColor.rgb + poiFragData.baseColor.rgb * matcapColor.rgb, mixed * matcapMask * matcapColor.a);
-				poiFragData.emission += matcapColor.rgb * emissionStrength * matcapMask * matcapColor.a;
-			}
-			#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-			void applyMatcap(inout PoiFragData poiFragData, in PoiCam poiCam, in PoiMesh poiMesh, inout PoiLight poiLight, in PoiMods poiMods)
-			{
-				float4 matcap = 0;
-				float matcapMask = 0;
-				float4 matcap2 = 0;
-				float matcap2Mask = 0;
-				float4 matcap3 = 0;
-				float matcap3Mask = 0;
-				float4 matcap4 = 0;
-				float matcap4Mask = 0;
-				float2 matcapUV = 0;
-				#ifdef POI_MATCAP0
-				float3 normal0 = poiMesh.normals[(1.0 /*_MatcapNormal*/)];
-				switch((1.0 /*_MatcapUVMode*/))
-				{
-					case 0:
+					if ((0.0 /*_PathALTimeOffset*/))
 					{
-						float3 viewNormal = (mul(UNITY_MATRIX_V, float4(normal0, 0))).rgb;
-						float3 NormalBlend_MatCapUV_Detail = viewNormal.rgb * float3(-1, -1, 1);
-						float3 NormalBlend_MatCapUV_Base = (mul(UNITY_MATRIX_V, float4(poiCam.viewDir, 0)).rgb * float3(-1, -1, 1)) + float3(0, 0, 1);
-						float3 noSknewViewNormal = NormalBlend_MatCapUV_Base * dot(NormalBlend_MatCapUV_Base, NormalBlend_MatCapUV_Detail) / NormalBlend_MatCapUV_Base.b - NormalBlend_MatCapUV_Detail;
-						matcapUV = noSknewViewNormal.rg * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						pathAudioLinkPathTimeOffsetBand[0] = (0.0 /*_AudioLinkPathTimeOffsetBandR*/);
+						pathAudioLinkPathTimeOffsetBand[1] = (0.0 /*_AudioLinkPathTimeOffsetBandG*/);
+						pathAudioLinkPathTimeOffsetBand[2] = (0.0 /*_AudioLinkPathTimeOffsetBandB*/);
+						pathAudioLinkPathTimeOffsetBand[3] = (0.0 /*_AudioLinkPathTimeOffsetBandA*/);
+						pathAudioLinkTimeOffset[0] = float4(0,0,0,1).xy;
+						pathAudioLinkTimeOffset[1] = float4(0,0,0,1).xy;
+						pathAudioLinkTimeOffset[2] = float4(0,0,0,1).xy;
+						pathAudioLinkTimeOffset[3] = float4(0,0,0,1).xy;
 					}
-					case 1:
+					if ((0.0 /*_PathALWidthOffset*/))
 					{
-						float3 worldViewUp = normalize(float3(0, 1, 0) - poiCam.viewDir * dot(poiCam.viewDir, float3(0, 1, 0)));
-						float3 worldViewRight = normalize(cross(poiCam.viewDir, worldViewUp));
-						matcapUV = float2(dot(worldViewRight, normal0), dot(worldViewUp, normal0)) * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						pathAudioLinkPathWidthOffsetBand[0] = (0.0 /*_AudioLinkPathWidthOffsetBandR*/);
+						pathAudioLinkPathWidthOffsetBand[1] = (0.0 /*_AudioLinkPathWidthOffsetBandG*/);
+						pathAudioLinkPathWidthOffsetBand[2] = (0.0 /*_AudioLinkPathWidthOffsetBandB*/);
+						pathAudioLinkPathWidthOffsetBand[3] = (0.0 /*_AudioLinkPathWidthOffsetBandA*/);
+						pathAudioLinkWidthOffset[0] = float4(0,0,0,1).xy;
+						pathAudioLinkWidthOffset[1] = float4(0,0,0,1).xy;
+						pathAudioLinkWidthOffset[2] = float4(0,0,0,1).xy;
+						pathAudioLinkWidthOffset[3] = float4(0,0,0,1).xy;
 					}
-					case 2:
+					if ((0.0 /*_PathALEmissionOffset*/))
 					{
-						float3 reflection = reflect(-poiCam.viewDir, normal0);
-						float2 uv = float2(dot(reflection, float3(1, 0, 0)), dot(reflection, float3(0, 1, 0)));
-						matcapUV = uv * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						pathAudioLinkEmission.r += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandR*/)]);
+						pathAudioLinkEmission.g += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandG*/)]);
+						pathAudioLinkEmission.b += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandB*/)]);
+						pathAudioLinkEmission.a += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandA*/)]);
+					}
+					if((0.0 /*_PathALColorChord*/))
+					{
+						if ((0.0 /*_PathALCCR*/))
+						{
+							PathColor[0] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[0] * AUDIOLINK_WIDTH, 0));
+						}
+						if ((0.0 /*_PathALCCG*/))
+						{
+							PathColor[1] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[1] * AUDIOLINK_WIDTH, 0));
+						}
+						if ((0.0 /*_PathALCCB*/))
+						{
+							PathColor[2] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[2] * AUDIOLINK_WIDTH, 0));
+						}
+						if ((0.0 /*_PathALCCA*/))
+						{
+							PathColor[3] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[3] * AUDIOLINK_WIDTH, 0));
+						}
 					}
 				}
-				matcapUV = RotateUV(matcapUV, (0.0 /*_MatcapRotation*/)*PI, float2(.5,.5), 1.0f);
-				if (IsInMirror())
+				#endif
+				[unroll]
+				for (int index = 0; index < 4; index++)
 				{
-					matcapUV.x = 1 - matcapUV.x;
-				}
-				float matcapSmoothness;
-				float mipCount0 = 9;
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
-				{
-					if (float4(0.001953125,0.001953125,512,512).z == 8192) mipCount0 = 13;
-					if (float4(0.001953125,0.001953125,512,512).z == 4096) mipCount0 = 12;
-					if (float4(0.001953125,0.001953125,512,512).z == 2048) mipCount0 = 11;
-					if (float4(0.001953125,0.001953125,512,512).z == 1024) mipCount0 = 10;
-					if (float4(0.001953125,0.001953125,512,512).z == 512) mipCount0 = 9;
-					if (float4(0.001953125,0.001953125,512,512).z == 256) mipCount0 = 8;
-					if (float4(0.001953125,0.001953125,512,512).z == 128) mipCount0 = 7;
-					if (float4(0.001953125,0.001953125,512,512).z == 64) mipCount0 = 6;
-					if (float4(0.001953125,0.001953125,512,512).z == 32) mipCount0 = 5;
-					matcapSmoothness = (1.0 /*_MatcapSmoothness*/);
-					if ((0.0 /*_MatcapMaskSmoothnessApply*/))
+					float timeOffset = 0;
+					#ifdef POI_AUDIOLINK
+					
+					if (poiMods.audioLinkAvailable)
 					{
-						#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-						matcapSmoothness *= POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(3.0 /*_MatcapMaskSmoothnessChannel*/)];
+						if ((0.0 /*_PathALTimeOffset*/))
+						{
+							timeOffset += lerp(pathAudioLinkTimeOffset[index].x, pathAudioLinkTimeOffset[index].y, poiMods.audioLink[pathAudioLinkPathTimeOffsetBand[index]]);
+						}
+						if ((0.0 /*_PathALChrono*/))
+						{
+							timeOffset += AudioLinkGetChronoTime(chronoType[index], chronoBand[index]) * chronoSpeed[index];
+						}
+					}
+					#endif
+					pathTime[index] = float4(-999,-999,-999,-999)[index] != -999.0f ? frac(float4(-999,-999,-999,-999)[index] + float4(0,0,0,0)[index] + timeOffset) : frac(_Time.x * float4(1,0.75,0.5,0.25)[index] + float4(0,0,0,0)[index] + timeOffset);
+					if (float4(0,0,0,0)[index])
+					{
+						float pathSegments = abs(float4(0,0,0,0)[index]);
+						pathTime = (ceil(pathTime * pathSegments) - .5) / pathSegments;
+					}
+					if (path[index])
+					{
+						half pathWidth = float4(0.04,0.04,0.04,0.04)[index] * .5;
+						#ifdef POI_AUDIOLINK
+						
+						if (poiMods.audioLinkAvailable)
+						{
+							if ((0.0 /*_PathALWidthOffset*/))
+							{
+								pathWidth += lerp(pathAudioLinkWidthOffset[index].x, pathAudioLinkWidthOffset[index].y, poiMods.audioLink[pathAudioLinkPathWidthOffsetBand[index]]);
+							}
+						}
+						#endif
+						pathAlpha[index].x = pathTime[index] > path[index];
+						pathAlpha[index].y = saturate((1 - abs(lerp(-pathWidth, 1 + pathWidth, pathTime[index]) - path[index])) - (1 - pathWidth)) * (1 / pathWidth);
+						pathAlpha[index].z = saturate((1 - distance(pathTime[index], path[index])) - (1 - pathWidth)) * (1 / pathWidth);
+						pathAlpha[index].z += saturate(distance(pathTime[index], path[index]) - (1 - pathWidth)) * (1 / pathWidth);
+						pathAlpha[index] = smoothstep(0, float4(0.4,0.4,0.4,0.4)[index] + .00001, pathAlpha[index]);
+						#ifdef POI_AUDIOLINK
+						if (poiMods.audioLinkAvailable)
+						{
+							if ((0.0 /*_PathALHistory*/) && history[index][0])
+							{
+								float historyUV = lerp(history[index][2], history[index][3], path[index]);
+								if (float4(0,0,0,0)[index])
+								{
+									float pathSegments = abs(float4(0,0,0,0)[index]);
+									historyUV = (ceil(historyUV * pathSegments) - .5) / pathSegments;
+								}
+								historyUV *= AUDIOLINK_WIDTH;
+								float historyValue = AudioLinkLerp(ALPASS_AUDIOLINK + float2(historyUV, history[index][1]))[0];
+								if((0.0 /*_PathALHistoryMode*/) == 0) // Mask
+								pathAlpha[index] *= historyValue;
+								else // Override
+								pathAlpha[index] = historyValue;
+							}
+							if ((0.0 /*_PathALAutoCorrelator*/) && autoCorrelator[index][0] != 0)
+							{
+								float autoCorrelatorUV = lerp(autoCorrelator[index][1], autoCorrelator[index][2], path[index]);
+								if (autoCorrelator[index][0] == 2) // Mirror
+								{
+									autoCorrelatorUV = abs(1. - autoCorrelatorUV * 2.);
+								}
+								if (float4(0,0,0,0)[index])
+								{
+									float pathSegments = abs(float4(0,0,0,0)[index]);
+									autoCorrelatorUV = (ceil(autoCorrelatorUV * pathSegments) - .5) / pathSegments;
+								}
+								float autoCorrelatorValue = AudioLinkLerp(ALPASS_AUTOCORRELATOR + float2(autoCorrelatorUV * AUDIOLINK_WIDTH, 0))[0];
+								float autoCorrelatorMax = AudioLinkLerp(ALPASS_AUTOCORRELATOR);
+								autoCorrelatorValue = saturate(abs(autoCorrelatorValue) * rcp(autoCorrelatorMax));
+								float4 vu = AudioLinkData(ALPASS_FILTEREDVU_INTENSITY + uint2(0, 0));
+								autoCorrelatorValue *= smoothstep(0.01, 0.2, vu);
+								if((0.0 /*_PathALAutoCorrelatorMode*/) == 0) // Mask
+								pathAlpha[index] *= autoCorrelatorValue;
+								else // Override
+								pathAlpha[index] = autoCorrelatorValue;
+							}
+						}
 						#endif
 					}
-					matcapSmoothness = (1 - matcapSmoothness) * mipCount0;
 				}
-				#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
-				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER_LOD(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap), matcapSmoothness) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				}
-				else
-				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap)) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				}
-				#else
-				matcap = float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				#endif
-				matcap.rgb *= (1.0 /*_MatcapIntensity*/);
-				matcap.rgb = lerp(matcap.rgb, matcap.rgb * poiFragData.baseColor.rgb, (0.0 /*_MatcapBaseColorMix*/));
-				#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-				matcapMask = POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(0.0 /*_MatcapMaskChannel*/)];
-				#else
-				matcapMask = 1;
-				#endif
-				if ((0.0 /*_MatcapMaskInvert*/))
-				{
-					matcapMask = 1 - matcapMask;
-				}
-				#ifdef TPS_Penetrator
-				if ((0.0 /*_MatcapTPSDepthEnabled*/))
-				{
-					matcapMask = lerp(0, matcapMask * TPSBufferedDepth(poiMesh.localPos, poiMesh.vertexColor), (1.0 /*_MatcapTPSMaskStrength*/));
-				}
-				#endif
-				poiFragData.alpha *= lerp(1, matcap.a, matcapMask * (0.0 /*_MatcapAlphaOverride*/));
-				if ((0.0 /*_MatcapHueShiftEnabled*/))
-				{
-					matcap.rgb = hueShift(matcap.rgb, (0.0 /*_MatcapHueShift*/) + _Time.x * (0.0 /*_MatcapHueShiftSpeed*/));
-				}
-				blendMatcap(poiLight, poiFragData, poiMods, (1.0 /*_MatcapAdd*/), (0.0 /*_MatcapAddToLight*/), (0.0 /*_MatcapMultiply*/), (0.0 /*_MatcapReplace*/), (0.0 /*_MatcapMixed*/), (0.0 /*_MatcapScreen*/), matcap, matcapMask, (0.0 /*_MatcapEmissionStrength*/), (0.0 /*_MatcapLightMask*/), (0.0 /*_MatcapMaskGlobalMask*/), (2.0 /*_MatcapMaskGlobalMaskBlendType*/));
-				#endif
+				pathEmission = 0;
+				pathEmission += pathAlpha[0][(2.0 /*_PathTypeR*/)] * poiThemeColor(poiMods, PathColor[0].rgb, (0.0 /*_PathColorRThemeIndex*/)) * (float4(0,0,0,0)[0] + pathAudioLinkEmission.r);
+				pathEmission += pathAlpha[1][(2.0 /*_PathTypeG*/)] * poiThemeColor(poiMods, PathColor[1].rgb, (0.0 /*_PathColorGThemeIndex*/)) * (float4(0,0,0,0)[1] + pathAudioLinkEmission.g);
+				pathEmission += pathAlpha[2][(2.0 /*_PathTypeB*/)] * poiThemeColor(poiMods, PathColor[2].rgb, (0.0 /*_PathColorBThemeIndex*/)) * (float4(0,0,0,0)[2] + pathAudioLinkEmission.b);
+				pathEmission += pathAlpha[3][(2.0 /*_PathTypeA*/)] * poiThemeColor(poiMods, PathColor[3].rgb, (0.0 /*_PathColorAThemeIndex*/)) * (float4(0,0,0,0)[3] + pathAudioLinkEmission.a);
+				pathEmission *= pathColorMap.rgb * pathColorMap.a;
+				float3 colorReplace = 0;
+				colorReplace = pathAlpha[0][(2.0 /*_PathTypeR*/)] * poiThemeColor(poiMods, PathColor[0].rgb, (0.0 /*_PathColorRThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[0].a * pathAlpha[0][(2.0 /*_PathTypeR*/)]);
+				colorReplace = pathAlpha[1][(2.0 /*_PathTypeG*/)] * poiThemeColor(poiMods, PathColor[1].rgb, (0.0 /*_PathColorGThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[1].a * pathAlpha[1][(2.0 /*_PathTypeG*/)]);
+				colorReplace = pathAlpha[2][(2.0 /*_PathTypeB*/)] * poiThemeColor(poiMods, PathColor[2].rgb, (0.0 /*_PathColorBThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[2].a * pathAlpha[2][(2.0 /*_PathTypeB*/)]);
+				colorReplace = pathAlpha[3][(2.0 /*_PathTypeA*/)] * poiThemeColor(poiMods, PathColor[3].rgb, (0.0 /*_PathColorAThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[3].a * pathAlpha[3][(2.0 /*_PathTypeA*/)]);
+				float alpha = max(max(max(pathAlpha[0][(2.0 /*_PathTypeR*/)], pathAlpha[1][(2.0 /*_PathTypeG*/)]), pathAlpha[2][(2.0 /*_PathTypeB*/)]), pathAlpha[3][(2.0 /*_PathTypeA*/)]);
+				poiFragData.alpha *= lerp(1, alpha, (0.0 /*_PathingOverrideAlpha*/));
+				poiFragData.baseColor = albedo.rgb;
+				poiFragData.emission += pathEmission;
 			}
 			#endif
 			float4 frag(VertexOut i, uint facing : SV_IsFrontFace) : SV_Target
@@ -2922,8 +3099,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.vertexNDotH = max(0.00001, dot(poiMesh.normals[0], poiLight.halfDir));
 				poiLight.lightMap = 1;
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,0.4035474,0.1542947,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,0.4035474,0.1542947,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
 				#if defined(PROP_CLIPPINGMASK) || !defined(OPTIMIZER_ENABLED)
 				float alphaMask = POI2D_SAMPLER_PAN(_ClippingMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ClippingMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
 				if ((0.0 /*_Inverse_Clipping*/))
@@ -2957,8 +3134,10 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.finalLighting = 1;
 				poiLight.rampedLightMap = poiEdgeNonLinear(poiLight.nDotL, 0.1, .1);
 				#endif
-				#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-				applyMatcap(poiFragData, poiCam, poiMesh, poiLight, poiMods);
+				#ifdef POI_PATHING
+				#if defined(PROP_PATHINGMAP) || !defined(OPTIMIZER_ENABLED)
+				applyPathing(poiFragData, poiMesh, poiMods);
+				#endif
 				#endif
 				
 				if ((0.0 /*_AlphaPremultiply*/))
@@ -3014,12 +3193,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			CGPROGRAM
  #define POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE 
  #define POI_LIGHT_DATA_ADDITIVE_ENABLE 
- #define POI_MATCAP0 
+ #define POI_PATHING 
  #define POI_VERTEXLIGHT_ON 
  #define VIGNETTE_MASKED 
- #define _LIGHTINGMODE_SKIN 
+ #define _LIGHTINGMODE_FLAT 
  #define _STOCHASTICMODE_DELIOT_HEITZ 
- #define PROP_MATCAP 
+ #define PROP_PATHINGMAP 
  #define OPTIMIZER_ENABLED 
 			#pragma target 5.0
 			#pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
@@ -3207,70 +3386,116 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			float3 _LightingShadowColor;
 			float _LightingGradientStartWrap;
 			float _LightingGradientEndWrap;
-			#ifdef _LIGHTINGMODE_SKIN
-			sampler2D _SkinLUT;
-			float _SssScale;
-			#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _SkinThicknessMap;
-			#endif
-			float4 _SkinThicknessMap_ST;
-			float2 _SkinThicknessMapPan;
-			float _SkinThicknessMapUV;
-			float _SkinThicknessMapInvert;
-			float _SkinThicknessPower;
-			float _SssBumpBlur;
-			float3 _SssTransmissionAbsorption;
-			float3 _SssColorBleedAoWeights;
-			#endif
 			float _LightingAdditiveType;
 			float _LightingAdditiveGradientStart;
 			float _LightingAdditiveGradientEnd;
 			float _LightingAdditiveDetailStrength;
-			#ifdef POI_MATCAP0
-			#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _Matcap;
-			float4 _Matcap_ST;
-			float4 _Matcap_TexelSize;
-			float2 _MatcapPan;
-			float _MatcapUV;
+			#ifdef POI_PATHING
+			#if defined(PROP_PATHINGMAP) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _PathingMap;
+			SamplerState SmpRepeatPoint;
 			#endif
-			#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _MatcapMask;
-			float4 _MatcapMask_ST;
-			float2 _MatcapMaskPan;
-			float _MatcapMaskUV;
-			float _MatcapMaskChannel;
+			float4 _PathingMap_ST;
+			float2 _PathingMapPan;
+			float _PathingMapUV;
+			#if defined(PROP_PATHINGCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _PathingColorMap;
 			#endif
-			float _MatcapUVMode;
-			float _MatcapMaskInvert;
-			float _MatcapMaskGlobalMask;
-			float _MatcapMaskGlobalMaskBlendType;
-			float _MatcapBorder;
-			float _MatcapRotation;
-			float _MatcapSmoothnessEnabled;
-			float _MatcapSmoothness;
-			float _MatcapMaskSmoothnessChannel;
-			float _MatcapMaskSmoothnessApply;
-			float4 _MatcapColor;
-			float _MatcapBaseColorMix;
-			float _MatcapColorThemeIndex;
-			float _MatcapIntensity;
-			float _MatcapReplace;
-			float _MatcapMultiply;
-			float _MatcapAdd;
-			float _MatcapAddToLight;
-			float _MatcapMixed;
-			float _MatcapScreen;
-			float _MatcapAlphaOverride;
-			float _MatcapEnable;
-			float _MatcapLightMask;
-			float _MatcapEmissionStrength;
-			float _MatcapNormal;
-			float _MatcapHueShiftEnabled;
-			float _MatcapHueShiftSpeed;
-			float _MatcapHueShift;
-			float _MatcapTPSDepthEnabled;
-			float _MatcapTPSMaskStrength;
+			float4 _PathingColorMap_ST;
+			float2 _PathingColorMapPan;
+			float _PathingColorMapUV;
+			float _PathingOverrideAlpha;
+			float _PathTypeR;
+			float _PathTypeG;
+			float _PathTypeB;
+			float _PathTypeA;
+			float _PathGradientType;
+			half4 _PathWidth;
+			float4 _PathTime;
+			float4 _PathOffset;
+			float4 _PathSpeed;
+			float4 _PathColorR;
+			float4 _PathColorG;
+			float4 _PathColorB;
+			float4 _PathColorA;
+			float4 _PathEmissionStrength;
+			float4 _PathSoftness;
+			float4 _PathSegments;
+			float _PathColorRThemeIndex;
+			float _PathColorGThemeIndex;
+			float _PathColorBThemeIndex;
+			float _PathColorAThemeIndex;
+			#ifdef POI_AUDIOLINK
+			float _PathALAutoCorrelator;
+			float _PathALAutoCorrelatorMode;
+			float _PathALAutoCorrelatorR;
+			float2 _PathALAutoCorrelatorRangeR;
+			float _PathALAutoCorrelatorG;
+			float2 _PathALAutoCorrelatorRangeG;
+			float _PathALAutoCorrelatorB;
+			float2 _PathALAutoCorrelatorRangeB;
+			float _PathALAutoCorrelatorA;
+			float2 _PathALAutoCorrelatorRangeA;
+			float _PathALHistory;
+			float _PathALHistoryMode;
+			float _PathALHistoryBandR;
+			float2 _PathALHistoryRangeR;
+			float _PathALHistoryR;
+			float _PathALHistoryBandG;
+			float2 _PathALHistoryRangeG;
+			float _PathALHistoryG;
+			float _PathALHistoryBandB;
+			float2 _PathALHistoryRangeB;
+			float _PathALHistoryB;
+			float _PathALHistoryBandA;
+			float2 _PathALHistoryRangeA;
+			float _PathALHistoryA;
+			float _PathALColorChord;
+			float _PathALCCR;
+			float _PathALCCG;
+			float _PathALCCB;
+			float _PathALCCA;
+			float _PathALTimeOffset;
+			half _AudioLinkPathTimeOffsetBandR;
+			half2 _AudioLinkPathTimeOffsetR;
+			half _AudioLinkPathTimeOffsetBandG;
+			half2 _AudioLinkPathTimeOffsetG;
+			half _AudioLinkPathTimeOffsetBandB;
+			half2 _AudioLinkPathTimeOffsetB;
+			half _AudioLinkPathTimeOffsetBandA;
+			half2 _AudioLinkPathTimeOffsetA;
+			float _PathALEmissionOffset;
+			half _AudioLinkPathEmissionAddBandR;
+			half2 _AudioLinkPathEmissionAddR;
+			half _AudioLinkPathEmissionAddBandG;
+			half2 _AudioLinkPathEmissionAddG;
+			half _AudioLinkPathEmissionAddBandB;
+			half2 _AudioLinkPathEmissionAddB;
+			half _AudioLinkPathEmissionAddBandA;
+			half2 _AudioLinkPathEmissionAddA;
+			float _PathALWidthOffset;
+			half _AudioLinkPathWidthOffsetBandR;
+			half2 _AudioLinkPathWidthOffsetR;
+			half _AudioLinkPathWidthOffsetBandG;
+			half2 _AudioLinkPathWidthOffsetG;
+			half _AudioLinkPathWidthOffsetBandB;
+			half2 _AudioLinkPathWidthOffsetB;
+			half _AudioLinkPathWidthOffsetBandA;
+			half2 _AudioLinkPathWidthOffsetA;
+			float _PathALChrono;
+			float _PathChronoBandR;
+			float _PathChronoTypeR;
+			float _PathChronoSpeedR;
+			float _PathChronoBandG;
+			float _PathChronoTypeG;
+			float _PathChronoSpeedG;
+			float _PathChronoBandB;
+			float _PathChronoTypeB;
+			float _PathChronoSpeedB;
+			float _PathChronoBandA;
+			float _PathChronoTypeA;
+			float _PathChronoSpeedA;
+			#endif
 			#endif
 			struct appdata
 			{
@@ -4972,55 +5197,33 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#ifdef POI_PASS_OUTLINE
 				shadowStrength = lerp(0, shadowStrength, _OutlineShadowStrength);
 				#endif
-				#ifdef _LIGHTINGMODE_SKIN
-				float3 ambientNormalWorld = poiMesh.normals[1];//aTangentToWorld(s, s.blurredNormalTangent);
+				#ifdef _LIGHTINGMODE_FLAT
+				poiLight.finalLighting = poiLight.directColor;
 				poiLight.rampedLightMap = poiLight.nDotLSaturated;
-				#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-				float subsurface = 1 - POI2D_SAMPLER_PAN(_SkinThicknessMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_SkinThicknessMapUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
-				#else
-				float subsurface = 1;
-				#endif
-				if((0.0 /*_SkinThicknessMapInvert*/))
-				{
-					subsurface = 1 - subsurface;
-				}
-				if((1.0 /*_SkinThicknessPower*/) != 1)
-				{
-					subsurface = pow(subsurface, (1.0 /*_SkinThicknessPower*/));
-				}
-				float skinScattering = saturate(subsurface * (1.0 /*_SssScale*/) * 2);
-				half3 absorption = exp((1.0h - subsurface) * float4(-8,-40,-64,0).rgb);
-				absorption *= saturate(poiFragData.baseColor * unity_ColorSpaceDouble.rgb);
-				ambientNormalWorld = normalize(lerp(poiMesh.normals[1], ambientNormalWorld, (0.7 /*_SssBumpBlur*/)));
-				float ndlBlur = dot(poiMesh.normals[1], poiLight.direction) * 0.5h + 0.5h;
-				float lumi = dot(poiLight.directColor, half3(0.2126h, 0.7152h, 0.0722h));
-				float4 sssLookupUv = float4(ndlBlur, skinScattering * lumi, 0.0f, 0.0f);
-				half3 sss = poiLight.lightMap * poiLight.attenuation * tex2Dlod(_SkinLUT, sssLookupUv).rgb;
-				poiLight.finalLighting = lerp(poiLight.directColor, min(lerp(poiLight.indirectColor * float4(0.0890862,0.0890862,0.0890862,1), float4(0.0890862,0.0890862,0.0890862,1), (1.0 /*_LightingIgnoreAmbientColor*/)) * poiLight.occlusion + (sss * poiLight.directColor), poiLight.directColor), (1.0 /*_ShadowStrength*/));
 				#endif
 				#endif
 				#ifdef POI_PASS_ADD
-				if ((0.0 /*_LightingAdditiveType*/) == 0)
+				if ((1.0 /*_LightingAdditiveType*/) == 0)
 				{
 					poiLight.rampedLightMap = max(0, poiLight.nDotL);
 					poiLight.finalLighting = poiLight.directColor * poiLight.attenuation * max(0, poiLight.nDotL) * poiLight.detailShadow * poiLight.additiveShadow;
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 1)
+				if ((1.0 /*_LightingAdditiveType*/) == 1)
 				{
 					#if defined(POINT_COOKIE) || defined(DIRECTIONAL_COOKIE)
 					float passthrough = 0;
 					#else
 					float passthrough = (0.5 /*_LightingAdditivePassthrough*/);
 					#endif
-					if ((1.0 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (1.0 /*_LightingAdditiveGradientEnd*/) += 0.001;
-					poiLight.rampedLightMap = smoothstep((1.0 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
+					if ((0.5 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (0.5 /*_LightingAdditiveGradientEnd*/) += 0.001;
+					poiLight.rampedLightMap = smoothstep((0.5 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
 					#if defined(POINT) || defined(SPOT)
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
 					#else
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
 					#endif
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 2)
+				if ((1.0 /*_LightingAdditiveType*/) == 2)
 				{
 				}
 				#endif
@@ -5028,13 +5231,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float3 vertexLighting = float3(0, 0, 0);
 				for (int index = 0; index < 4; index++)
 				{
-					if ((0.0 /*_LightingAdditiveType*/) == 0)
+					if ((1.0 /*_LightingAdditiveType*/) == 0)
 					{
 						vertexLighting += poiLight.vColor[index] * poiLight.vAttenuationDotNL[index] * poiLight.detailShadow; // Realistic
 					}
-					if ((0.0 /*_LightingAdditiveType*/) == 1) // Toon
+					if ((1.0 /*_LightingAdditiveType*/) == 1) // Toon
 					{
-						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
+						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
 					}
 				}
 				float3 mixedLight = poiLight.finalLighting;
@@ -5042,127 +5245,216 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#endif
 			}
 			#endif
-			void blendMatcap(inout PoiLight poiLight, inout PoiFragData poiFragData, in PoiMods poiMods, float add, float lightAdd, float multiply, float replace, float mixed, float screen, float4 matcapColor, float matcapMask, float emissionStrength, float matcapLightMask, uint globalMaskIndex, float globalMaskBlendType)
+			#ifdef POI_PATHING
+			void applyPathing(inout PoiFragData poiFragData, in PoiMesh poiMesh, in PoiMods poiMods)
 			{
-				if (matcapLightMask)
+				float3 albedo = poiFragData.baseColor;
+				float3 pathEmission;
+				#if defined(PROP_PATHINGMAP) || !defined(OPTIMIZER_ENABLED)
+				float4 path = _PathingMap.Sample(SmpRepeatPoint, poiUV(poiMesh.uv[(0.0 /*_PathingMapUV*/)], float4(2,2,0,0)) + float4(0,0,0,0).xy * _Time.x);
+				#else
+				float4 path = float4(1, 1, 1, 1);
+				#endif
+				float4 PathColor[4];
+				half pathAudioLinkPathTimeOffsetBand[4] = {
+					0, 0, 0, 0
+				};
+				half2 pathAudioLinkTimeOffset[4] = {
+					half2(0, 0), half2(0, 0), half2(0, 0), half2(0, 0)
+				};
+				half pathAudioLinkPathWidthOffsetBand[4] = {
+					0, 0, 0, 0
+				};
+				half2 pathAudioLinkWidthOffset[4] = {
+					half2(0, 0), half2(0, 0), half2(0, 0), half2(0, 0)
+				};
+				PathColor[0] = float4(1,0,0,1);
+				PathColor[1] = float4(0,1,0,1);
+				PathColor[2] = float4(0,0,1,1);
+				PathColor[3] = float4(1,0.6588235,0,1);
+				if ((1.0 /*_PathGradientType*/) == 1)
 				{
-					matcapMask *= lerp(1, poiLight.rampedLightMap, matcapLightMask);
+					path = (path.r + path.g + path.b + path.a) * .25;
 				}
-				if (globalMaskIndex > 0)
+				#if defined(PROP_PATHINGCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+				float4 pathColorMap = POI2D_SAMPLER_PAN(_PathingColorMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_PathingColorMapUV*/)], float4(1,1,0,0)), float4(0.5,0,0,0));
+				#else
+				float4 pathColorMap = float4(1, 1, 1, 1);
+				#endif
+				float4 pathAudioLinkEmission = 0;
+				float4 pathTime = 0;
+				float3 pathAlpha[4] = {
+					float3(0.0, 0.0, 0.0), float3(0.0, 0.0, 0.0), float3(0.0, 0.0, 0.0), float3(0.0, 0.0, 0.0)
+				};
+				#ifdef POI_AUDIOLINK
+				float4 chronoType = float4((0.0 /*_PathChronoTypeR*/), (0.0 /*_PathChronoTypeG*/), (0.0 /*_PathChronoTypeB*/), (0.0 /*_PathChronoTypeA*/));
+				float4 chronoBand = float4((0.0 /*_PathChronoBandR*/), (0.0 /*_PathChronoBandG*/), (0.0 /*_PathChronoBandB*/), (0.0 /*_PathChronoBandA*/));
+				float4 chronoSpeed = float4((0.0 /*_PathChronoSpeedR*/), (0.0 /*_PathChronoSpeedG*/), (0.0 /*_PathChronoSpeedB*/), (0.0 /*_PathChronoSpeedA*/));
+				float3 autoCorrelator[4] = {
+					float3((0.0 /*_PathALAutoCorrelatorR*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1]), float3((0.0 /*_PathALAutoCorrelatorG*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1]),
+					float3((0.0 /*_PathALAutoCorrelatorB*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1]), float3((0.0 /*_PathALAutoCorrelatorA*/), float4(0.1,0.9,0,1)[0], float4(0.1,0.9,0,1)[1])
+				};
+				float4 history[4] = {
+					float4((0.0 /*_PathALHistoryR*/), (0.0 /*_PathALHistoryBandR*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1]), float4((0.0 /*_PathALHistoryG*/), (0.0 /*_PathALHistoryBandG*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1]),
+					float4((0.0 /*_PathALHistoryB*/), (0.0 /*_PathALHistoryBandB*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1]), float4((0.0 /*_PathALHistoryA*/), (0.0 /*_PathALHistoryBandA*/), float4(0,1,0,1)[0], float4(0,1,0,1)[1])
+				};
+				if (poiMods.audioLinkAvailable)
 				{
-					matcapMask = customBlend(matcapMask, poiMods.globalMask[globalMaskIndex - 1], globalMaskBlendType);
-				}
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, matcapColor.rgb, replace * matcapMask * matcapColor.a * .999999);
-				poiFragData.baseColor.rgb *= lerp(1, matcapColor.rgb, multiply * matcapMask * matcapColor.a);
-				poiFragData.baseColor.rgb += matcapColor.rgb * add * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, blendScreen(poiFragData.baseColor.rgb, matcapColor.rgb), screen);
-				poiLight.finalLightAdd += matcapColor.rgb * lightAdd * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, poiFragData.baseColor.rgb + poiFragData.baseColor.rgb * matcapColor.rgb, mixed * matcapMask * matcapColor.a);
-				poiFragData.emission += matcapColor.rgb * emissionStrength * matcapMask * matcapColor.a;
-			}
-			#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-			void applyMatcap(inout PoiFragData poiFragData, in PoiCam poiCam, in PoiMesh poiMesh, inout PoiLight poiLight, in PoiMods poiMods)
-			{
-				float4 matcap = 0;
-				float matcapMask = 0;
-				float4 matcap2 = 0;
-				float matcap2Mask = 0;
-				float4 matcap3 = 0;
-				float matcap3Mask = 0;
-				float4 matcap4 = 0;
-				float matcap4Mask = 0;
-				float2 matcapUV = 0;
-				#ifdef POI_MATCAP0
-				float3 normal0 = poiMesh.normals[(1.0 /*_MatcapNormal*/)];
-				switch((1.0 /*_MatcapUVMode*/))
-				{
-					case 0:
+					if ((0.0 /*_PathALTimeOffset*/))
 					{
-						float3 viewNormal = (mul(UNITY_MATRIX_V, float4(normal0, 0))).rgb;
-						float3 NormalBlend_MatCapUV_Detail = viewNormal.rgb * float3(-1, -1, 1);
-						float3 NormalBlend_MatCapUV_Base = (mul(UNITY_MATRIX_V, float4(poiCam.viewDir, 0)).rgb * float3(-1, -1, 1)) + float3(0, 0, 1);
-						float3 noSknewViewNormal = NormalBlend_MatCapUV_Base * dot(NormalBlend_MatCapUV_Base, NormalBlend_MatCapUV_Detail) / NormalBlend_MatCapUV_Base.b - NormalBlend_MatCapUV_Detail;
-						matcapUV = noSknewViewNormal.rg * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						pathAudioLinkPathTimeOffsetBand[0] = (0.0 /*_AudioLinkPathTimeOffsetBandR*/);
+						pathAudioLinkPathTimeOffsetBand[1] = (0.0 /*_AudioLinkPathTimeOffsetBandG*/);
+						pathAudioLinkPathTimeOffsetBand[2] = (0.0 /*_AudioLinkPathTimeOffsetBandB*/);
+						pathAudioLinkPathTimeOffsetBand[3] = (0.0 /*_AudioLinkPathTimeOffsetBandA*/);
+						pathAudioLinkTimeOffset[0] = float4(0,0,0,1).xy;
+						pathAudioLinkTimeOffset[1] = float4(0,0,0,1).xy;
+						pathAudioLinkTimeOffset[2] = float4(0,0,0,1).xy;
+						pathAudioLinkTimeOffset[3] = float4(0,0,0,1).xy;
 					}
-					case 1:
+					if ((0.0 /*_PathALWidthOffset*/))
 					{
-						float3 worldViewUp = normalize(float3(0, 1, 0) - poiCam.viewDir * dot(poiCam.viewDir, float3(0, 1, 0)));
-						float3 worldViewRight = normalize(cross(poiCam.viewDir, worldViewUp));
-						matcapUV = float2(dot(worldViewRight, normal0), dot(worldViewUp, normal0)) * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						pathAudioLinkPathWidthOffsetBand[0] = (0.0 /*_AudioLinkPathWidthOffsetBandR*/);
+						pathAudioLinkPathWidthOffsetBand[1] = (0.0 /*_AudioLinkPathWidthOffsetBandG*/);
+						pathAudioLinkPathWidthOffsetBand[2] = (0.0 /*_AudioLinkPathWidthOffsetBandB*/);
+						pathAudioLinkPathWidthOffsetBand[3] = (0.0 /*_AudioLinkPathWidthOffsetBandA*/);
+						pathAudioLinkWidthOffset[0] = float4(0,0,0,1).xy;
+						pathAudioLinkWidthOffset[1] = float4(0,0,0,1).xy;
+						pathAudioLinkWidthOffset[2] = float4(0,0,0,1).xy;
+						pathAudioLinkWidthOffset[3] = float4(0,0,0,1).xy;
 					}
-					case 2:
+					if ((0.0 /*_PathALEmissionOffset*/))
 					{
-						float3 reflection = reflect(-poiCam.viewDir, normal0);
-						float2 uv = float2(dot(reflection, float3(1, 0, 0)), dot(reflection, float3(0, 1, 0)));
-						matcapUV = uv * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						pathAudioLinkEmission.r += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandR*/)]);
+						pathAudioLinkEmission.g += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandG*/)]);
+						pathAudioLinkEmission.b += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandB*/)]);
+						pathAudioLinkEmission.a += lerp(float4(0,0,0,1).x, float4(0,0,0,1).y, poiMods.audioLink[(0.0 /*_AudioLinkPathEmissionAddBandA*/)]);
+					}
+					if((0.0 /*_PathALColorChord*/))
+					{
+						if ((0.0 /*_PathALCCR*/))
+						{
+							PathColor[0] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[0] * AUDIOLINK_WIDTH, 0));
+						}
+						if ((0.0 /*_PathALCCG*/))
+						{
+							PathColor[1] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[1] * AUDIOLINK_WIDTH, 0));
+						}
+						if ((0.0 /*_PathALCCB*/))
+						{
+							PathColor[2] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[2] * AUDIOLINK_WIDTH, 0));
+						}
+						if ((0.0 /*_PathALCCA*/))
+						{
+							PathColor[3] *= AudioLinkLerp(ALPASS_CCSTRIP + float2(path[3] * AUDIOLINK_WIDTH, 0));
+						}
 					}
 				}
-				matcapUV = RotateUV(matcapUV, (0.0 /*_MatcapRotation*/)*PI, float2(.5,.5), 1.0f);
-				if (IsInMirror())
+				#endif
+				[unroll]
+				for (int index = 0; index < 4; index++)
 				{
-					matcapUV.x = 1 - matcapUV.x;
-				}
-				float matcapSmoothness;
-				float mipCount0 = 9;
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
-				{
-					if (float4(0.001953125,0.001953125,512,512).z == 8192) mipCount0 = 13;
-					if (float4(0.001953125,0.001953125,512,512).z == 4096) mipCount0 = 12;
-					if (float4(0.001953125,0.001953125,512,512).z == 2048) mipCount0 = 11;
-					if (float4(0.001953125,0.001953125,512,512).z == 1024) mipCount0 = 10;
-					if (float4(0.001953125,0.001953125,512,512).z == 512) mipCount0 = 9;
-					if (float4(0.001953125,0.001953125,512,512).z == 256) mipCount0 = 8;
-					if (float4(0.001953125,0.001953125,512,512).z == 128) mipCount0 = 7;
-					if (float4(0.001953125,0.001953125,512,512).z == 64) mipCount0 = 6;
-					if (float4(0.001953125,0.001953125,512,512).z == 32) mipCount0 = 5;
-					matcapSmoothness = (1.0 /*_MatcapSmoothness*/);
-					if ((0.0 /*_MatcapMaskSmoothnessApply*/))
+					float timeOffset = 0;
+					#ifdef POI_AUDIOLINK
+					
+					if (poiMods.audioLinkAvailable)
 					{
-						#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-						matcapSmoothness *= POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(3.0 /*_MatcapMaskSmoothnessChannel*/)];
+						if ((0.0 /*_PathALTimeOffset*/))
+						{
+							timeOffset += lerp(pathAudioLinkTimeOffset[index].x, pathAudioLinkTimeOffset[index].y, poiMods.audioLink[pathAudioLinkPathTimeOffsetBand[index]]);
+						}
+						if ((0.0 /*_PathALChrono*/))
+						{
+							timeOffset += AudioLinkGetChronoTime(chronoType[index], chronoBand[index]) * chronoSpeed[index];
+						}
+					}
+					#endif
+					pathTime[index] = float4(-999,-999,-999,-999)[index] != -999.0f ? frac(float4(-999,-999,-999,-999)[index] + float4(0,0,0,0)[index] + timeOffset) : frac(_Time.x * float4(1,0.75,0.5,0.25)[index] + float4(0,0,0,0)[index] + timeOffset);
+					if (float4(0,0,0,0)[index])
+					{
+						float pathSegments = abs(float4(0,0,0,0)[index]);
+						pathTime = (ceil(pathTime * pathSegments) - .5) / pathSegments;
+					}
+					if (path[index])
+					{
+						half pathWidth = float4(0.04,0.04,0.04,0.04)[index] * .5;
+						#ifdef POI_AUDIOLINK
+						
+						if (poiMods.audioLinkAvailable)
+						{
+							if ((0.0 /*_PathALWidthOffset*/))
+							{
+								pathWidth += lerp(pathAudioLinkWidthOffset[index].x, pathAudioLinkWidthOffset[index].y, poiMods.audioLink[pathAudioLinkPathWidthOffsetBand[index]]);
+							}
+						}
+						#endif
+						pathAlpha[index].x = pathTime[index] > path[index];
+						pathAlpha[index].y = saturate((1 - abs(lerp(-pathWidth, 1 + pathWidth, pathTime[index]) - path[index])) - (1 - pathWidth)) * (1 / pathWidth);
+						pathAlpha[index].z = saturate((1 - distance(pathTime[index], path[index])) - (1 - pathWidth)) * (1 / pathWidth);
+						pathAlpha[index].z += saturate(distance(pathTime[index], path[index]) - (1 - pathWidth)) * (1 / pathWidth);
+						pathAlpha[index] = smoothstep(0, float4(0.4,0.4,0.4,0.4)[index] + .00001, pathAlpha[index]);
+						#ifdef POI_AUDIOLINK
+						if (poiMods.audioLinkAvailable)
+						{
+							if ((0.0 /*_PathALHistory*/) && history[index][0])
+							{
+								float historyUV = lerp(history[index][2], history[index][3], path[index]);
+								if (float4(0,0,0,0)[index])
+								{
+									float pathSegments = abs(float4(0,0,0,0)[index]);
+									historyUV = (ceil(historyUV * pathSegments) - .5) / pathSegments;
+								}
+								historyUV *= AUDIOLINK_WIDTH;
+								float historyValue = AudioLinkLerp(ALPASS_AUDIOLINK + float2(historyUV, history[index][1]))[0];
+								if((0.0 /*_PathALHistoryMode*/) == 0) // Mask
+								pathAlpha[index] *= historyValue;
+								else // Override
+								pathAlpha[index] = historyValue;
+							}
+							if ((0.0 /*_PathALAutoCorrelator*/) && autoCorrelator[index][0] != 0)
+							{
+								float autoCorrelatorUV = lerp(autoCorrelator[index][1], autoCorrelator[index][2], path[index]);
+								if (autoCorrelator[index][0] == 2) // Mirror
+								{
+									autoCorrelatorUV = abs(1. - autoCorrelatorUV * 2.);
+								}
+								if (float4(0,0,0,0)[index])
+								{
+									float pathSegments = abs(float4(0,0,0,0)[index]);
+									autoCorrelatorUV = (ceil(autoCorrelatorUV * pathSegments) - .5) / pathSegments;
+								}
+								float autoCorrelatorValue = AudioLinkLerp(ALPASS_AUTOCORRELATOR + float2(autoCorrelatorUV * AUDIOLINK_WIDTH, 0))[0];
+								float autoCorrelatorMax = AudioLinkLerp(ALPASS_AUTOCORRELATOR);
+								autoCorrelatorValue = saturate(abs(autoCorrelatorValue) * rcp(autoCorrelatorMax));
+								float4 vu = AudioLinkData(ALPASS_FILTEREDVU_INTENSITY + uint2(0, 0));
+								autoCorrelatorValue *= smoothstep(0.01, 0.2, vu);
+								if((0.0 /*_PathALAutoCorrelatorMode*/) == 0) // Mask
+								pathAlpha[index] *= autoCorrelatorValue;
+								else // Override
+								pathAlpha[index] = autoCorrelatorValue;
+							}
+						}
 						#endif
 					}
-					matcapSmoothness = (1 - matcapSmoothness) * mipCount0;
 				}
-				#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
-				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER_LOD(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap), matcapSmoothness) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				}
-				else
-				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap)) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				}
-				#else
-				matcap = float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				#endif
-				matcap.rgb *= (1.0 /*_MatcapIntensity*/);
-				matcap.rgb = lerp(matcap.rgb, matcap.rgb * poiFragData.baseColor.rgb, (0.0 /*_MatcapBaseColorMix*/));
-				#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-				matcapMask = POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(0.0 /*_MatcapMaskChannel*/)];
-				#else
-				matcapMask = 1;
-				#endif
-				if ((0.0 /*_MatcapMaskInvert*/))
-				{
-					matcapMask = 1 - matcapMask;
-				}
-				#ifdef TPS_Penetrator
-				if ((0.0 /*_MatcapTPSDepthEnabled*/))
-				{
-					matcapMask = lerp(0, matcapMask * TPSBufferedDepth(poiMesh.localPos, poiMesh.vertexColor), (1.0 /*_MatcapTPSMaskStrength*/));
-				}
-				#endif
-				poiFragData.alpha *= lerp(1, matcap.a, matcapMask * (0.0 /*_MatcapAlphaOverride*/));
-				if ((0.0 /*_MatcapHueShiftEnabled*/))
-				{
-					matcap.rgb = hueShift(matcap.rgb, (0.0 /*_MatcapHueShift*/) + _Time.x * (0.0 /*_MatcapHueShiftSpeed*/));
-				}
-				blendMatcap(poiLight, poiFragData, poiMods, (1.0 /*_MatcapAdd*/), (0.0 /*_MatcapAddToLight*/), (0.0 /*_MatcapMultiply*/), (0.0 /*_MatcapReplace*/), (0.0 /*_MatcapMixed*/), (0.0 /*_MatcapScreen*/), matcap, matcapMask, (0.0 /*_MatcapEmissionStrength*/), (0.0 /*_MatcapLightMask*/), (0.0 /*_MatcapMaskGlobalMask*/), (2.0 /*_MatcapMaskGlobalMaskBlendType*/));
-				#endif
+				pathEmission = 0;
+				pathEmission += pathAlpha[0][(2.0 /*_PathTypeR*/)] * poiThemeColor(poiMods, PathColor[0].rgb, (0.0 /*_PathColorRThemeIndex*/)) * (float4(0,0,0,0)[0] + pathAudioLinkEmission.r);
+				pathEmission += pathAlpha[1][(2.0 /*_PathTypeG*/)] * poiThemeColor(poiMods, PathColor[1].rgb, (0.0 /*_PathColorGThemeIndex*/)) * (float4(0,0,0,0)[1] + pathAudioLinkEmission.g);
+				pathEmission += pathAlpha[2][(2.0 /*_PathTypeB*/)] * poiThemeColor(poiMods, PathColor[2].rgb, (0.0 /*_PathColorBThemeIndex*/)) * (float4(0,0,0,0)[2] + pathAudioLinkEmission.b);
+				pathEmission += pathAlpha[3][(2.0 /*_PathTypeA*/)] * poiThemeColor(poiMods, PathColor[3].rgb, (0.0 /*_PathColorAThemeIndex*/)) * (float4(0,0,0,0)[3] + pathAudioLinkEmission.a);
+				pathEmission *= pathColorMap.rgb * pathColorMap.a;
+				float3 colorReplace = 0;
+				colorReplace = pathAlpha[0][(2.0 /*_PathTypeR*/)] * poiThemeColor(poiMods, PathColor[0].rgb, (0.0 /*_PathColorRThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[0].a * pathAlpha[0][(2.0 /*_PathTypeR*/)]);
+				colorReplace = pathAlpha[1][(2.0 /*_PathTypeG*/)] * poiThemeColor(poiMods, PathColor[1].rgb, (0.0 /*_PathColorGThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[1].a * pathAlpha[1][(2.0 /*_PathTypeG*/)]);
+				colorReplace = pathAlpha[2][(2.0 /*_PathTypeB*/)] * poiThemeColor(poiMods, PathColor[2].rgb, (0.0 /*_PathColorBThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[2].a * pathAlpha[2][(2.0 /*_PathTypeB*/)]);
+				colorReplace = pathAlpha[3][(2.0 /*_PathTypeA*/)] * poiThemeColor(poiMods, PathColor[3].rgb, (0.0 /*_PathColorAThemeIndex*/)) * pathColorMap.rgb;
+				albedo.rgb = lerp(albedo.rgb, colorReplace + albedo.rgb * 0.00001, pathColorMap.a * PathColor[3].a * pathAlpha[3][(2.0 /*_PathTypeA*/)]);
+				float alpha = max(max(max(pathAlpha[0][(2.0 /*_PathTypeR*/)], pathAlpha[1][(2.0 /*_PathTypeG*/)]), pathAlpha[2][(2.0 /*_PathTypeB*/)]), pathAlpha[3][(2.0 /*_PathTypeA*/)]);
+				poiFragData.alpha *= lerp(1, alpha, (0.0 /*_PathingOverrideAlpha*/));
+				poiFragData.baseColor = albedo.rgb;
+				poiFragData.emission += pathEmission;
 			}
 			#endif
 			float4 frag(VertexOut i, uint facing : SV_IsFrontFace) : SV_Target
@@ -5526,8 +5818,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.vertexNDotH = max(0.00001, dot(poiMesh.normals[0], poiLight.halfDir));
 				poiLight.lightMap = 1;
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,0.4035474,0.1542947,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,0.4035474,0.1542947,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
 				#if defined(PROP_CLIPPINGMASK) || !defined(OPTIMIZER_ENABLED)
 				float alphaMask = POI2D_SAMPLER_PAN(_ClippingMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ClippingMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
 				if ((0.0 /*_Inverse_Clipping*/))
@@ -5561,8 +5853,10 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.finalLighting = 1;
 				poiLight.rampedLightMap = poiEdgeNonLinear(poiLight.nDotL, 0.1, .1);
 				#endif
-				#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-				applyMatcap(poiFragData, poiCam, poiMesh, poiLight, poiMods);
+				#ifdef POI_PATHING
+				#if defined(PROP_PATHINGMAP) || !defined(OPTIMIZER_ENABLED)
+				applyPathing(poiFragData, poiMesh, poiMods);
+				#endif
 				#endif
 				if ((0.0 /*_AlphaPremultiply*/))
 				{
@@ -5621,12 +5915,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			CGPROGRAM
  #define POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE 
  #define POI_LIGHT_DATA_ADDITIVE_ENABLE 
- #define POI_MATCAP0 
+ #define POI_PATHING 
  #define POI_VERTEXLIGHT_ON 
  #define VIGNETTE_MASKED 
- #define _LIGHTINGMODE_SKIN 
+ #define _LIGHTINGMODE_FLAT 
  #define _STOCHASTICMODE_DELIOT_HEITZ 
- #define PROP_MATCAP 
+ #define PROP_PATHINGMAP 
  #define OPTIMIZER_ENABLED 
 			#pragma target 5.0
 			#pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
@@ -7161,8 +7455,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiCam.vDotN = abs(dot(poiCam.viewDir, poiMesh.normals[1]));
 				poiCam.clipPos = i.pos;
 				poiCam.worldDirection = i.worldDirection;
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,0.4035474,0.1542947,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,0.4035474,0.1542947,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
 				#if defined(PROP_CLIPPINGMASK) || !defined(OPTIMIZER_ENABLED)
 				float alphaMask = POI2D_SAMPLER_PAN(_ClippingMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ClippingMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
 				if ((0.0 /*_Inverse_Clipping*/))

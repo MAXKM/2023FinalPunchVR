@@ -1,4 +1,4 @@
-Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025ee499e5c1"
+Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/e41c3ae22febb2941b81d61ae77282e1"
 {
 	Properties
 	{
@@ -247,51 +247,57 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 		_LightingAdditiveGradientStart ("Gradient Start--{condition_showS:(_LightingAdditiveType==1)}", Range(0, 1)) = 0
 		_LightingAdditiveGradientEnd ("Gradient End--{condition_showS:(_LightingAdditiveType==1)}", Range(0, 1)) = .5
 		[HideInInspector] m_end_PoiShading ("Shading", Float) = 0
-		[HideInInspector] m_start_matcap ("Matcap 0--{reference_property:_MatcapEnable,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/shading/matcap},hover:Documentation}}", Float) = 0
-		[HideInInspector][ThryToggle(POI_MATCAP0)]_MatcapEnable ("Enable Matcap", Float) = 0
-		[ThryWideEnum(UTS Style, 0, Top Pinch, 1, Double Sided, 2)] _MatcapUVMode ("UV Mode", Int) = 1
-		_MatcapColor ("Color--{reference_property:_MatcapColorThemeIndex}", Color) = (1, 1, 1, 1)
-		_MatcapBaseColorMix ("Base Color Mix", Range(0, 1)) = 0
-		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _MatcapColorThemeIndex ("", Int) = 0
-		[sRGBWarning(true)][TextureNoSO]_Matcap ("Matcap", 2D) = "white" { }
-		_MatcapBorder ("Border", Range(0, 5)) = 0.43
-		_MatcapRotation ("Rotation", Range(-1, 1)) = 0
-		[sRGBWarning][ThryRGBAPacker(R Mask, G Nothing, B Nothing, A Smoothness)]_MatcapMask ("Mask--{reference_properties:[_MatcapMaskPan, _MatcapMaskUV, _MatcapMaskChannel, _MatcapMaskInvert]}", 2D) = "white" { }
-		[HideInInspector][Vector2]_MatcapMaskPan ("Panning", Vector) = (0, 0, 0, 0)
-		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _MatcapMaskUV ("UV", Int) = 0
-		[HideInInspector][Enum(R, 0, G, 1, B, 2, A, 3)]_MatcapMaskChannel ("Channel", Float) = 0
-		[HideInInspector][ToggleUI]_MatcapMaskInvert ("Invert", Float) = 0
-		[ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _MatcapMaskGlobalMask ("Global Mask--{reference_property:_MatcapMaskGlobalMaskBlendType}", Int) = 0
-		[HideInInspector][ThryWideEnum(Replace, 0, Darken, 1, Multiply, 2, Color Burn, 3, Linear Burn, 4, Lighten, 5, Screen, 6, Color Dodge, 7, Linear Dodge(Add), 8, Overlay, 9, Soft Lighten, 10, Hard Light, 11, Vivid Light, 12, Linear Light, 13, Pin Light, 14, Hard Mix, 15, Difference, 16, Exclusion, 17, Subtract, 18, Divide, 19)]_MatcapMaskGlobalMaskBlendType ("Blending", Range(0, 1)) = 2
-		_MatcapEmissionStrength ("Emission Strength", Range(0, 20)) = 0
-		_MatcapIntensity ("Intensity", Range(0, 5)) = 1
-		_MatcapLightMask ("Hide in Shadow", Range(0, 1)) = 0
-		_MatcapReplace ("Replace Blend", Range(0, 1)) = 1
-		_MatcapMultiply ("Multiply Blend", Range(0, 1)) = 0
-		_MatcapAdd ("Add Blend", Range(0, 1)) = 0
-		_MatcapMixed ("Mixed Blend", Range(0, 1)) = 0
-		_MatcapScreen ("Screen Blend", Range(0, 1)) = 0
-		_MatcapAddToLight ("Add To Light", Range(0, 1)) = 0
-		_MatcapAlphaOverride ("Override Alpha", Range(0, 1)) = 0
-		[Enum(Vertex, 0, Pixel, 1)] _MatcapNormal ("Normal to use", Int) = 1
-		[ThryToggle(POI_MATCAP0_CUSTOM_NORMAL, true)] _Matcap0CustomNormal ("<size=13><b>  Custom Normal</b></size>", Float) = 0
-		[Normal]_Matcap0NormalMap ("Normal Map--{reference_properties:[_Matcap0NormalMapPan, _Matcap0NormalMapUV, _Matcap0NormalMapScale], condition_showS:(_Matcap0CustomNormal==1)}", 2D) = "bump" { }
-		[HideInInspector][Vector2]_Matcap0NormalMapPan ("Panning", Vector) = (0, 0, 0, 0)
-		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _Matcap0NormalMapUV ("UV", Int) = 0
-		[HideInInspector]_Matcap0NormalMapScale ("Intensity", Range(0, 10)) = 1
-		[ThryToggleUI(true)] _MatcapHueShiftEnabled ("<size=13><b>  Hue Shift</b></size>", Float) = 0
-		_MatcapHueShiftSpeed ("Shift Speed--{condition_showS:(_MatcapHueShiftEnabled==1)}", Float) = 0
-		_MatcapHueShift ("Hue Shift--{condition_showS:(_MatcapHueShiftEnabled==1)}", Range(0, 1)) = 0
-		[ThryToggleUI(true)] _MatcapSmoothnessEnabled ("<size=13><b>  Blur</b></size>", Float) = 0
-		_MatcapSmoothness ("Smoothness--{condition_showS:(_MatcapSmoothnessEnabled==1)}", Range(0, 1)) = 1
-		[ToggleUI]_MatcapMaskSmoothnessApply ("Apply Mask for Smoothness--{condition_showS:(_MatcapSmoothnessEnabled==1)}", Float) = 0
-		[Enum(R, 0, G, 1, B, 2, A, 3)]_MatcapMaskSmoothnessChannel ("Mask Channel for Smoothness--{condition_showS:(_MatcapSmoothnessEnabled==1)}", Int) = 3
-		[HideInInspector] g_start_MatcapTPSMaskGroup ("--{condition_showS:(_TPSPenetratorEnabled==1)}", Float) = 0
-		[ThryToggleUI(true)] _MatcapTPSDepthEnabled ("<size=13><b>  TPS Depth Mask Enabled</b></size>", Float) = 0
-		_MatcapTPSMaskStrength ("TPS Mask Strength--{condition_showS:(_MatcapTPSDepthEnabled==1)}", Range(0, 1)) = 1
-		[HideInInspector] g_end_MatcapTPSMaskGroup ("", Float) = 0
-		[HideInInspector] m_end_matcap ("Matcap--{condition_showS:(_MatcapHueShiftEnabled==1)}", Float) = 0
 		[HideInInspector] m_specialFXCategory ("Special FX", Float) = 0
+		[HideInInspector] m_start_glitter ("Glitter / Sparkle--{reference_property:_GlitterEnable,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/special-fx/glitter},hover:Documentation}}", Float) = 0
+		[HideInInspector][ThryToggle(_SUNDISK_SIMPLE)]_GlitterEnable ("Enable Glitter", Float) = 0
+		[ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _GlitterUV ("UV", Int) = 0
+		[Enum(Angle, 0, Linear Emission, 1, Light Reflections, 2)]_GlitterMode ("Mode", Int) = 0
+		[Enum(Circle, 0, Square, 1)]_GlitterShape ("Shape", Int) = 0
+		[Enum(Add, 0, Replace, 1)] _GlitterBlendType ("Blend Mode", Int) = 0
+		_GlitterUseNormals ("Use Normals", Range(0, 1)) = 0
+		[HDR]_GlitterColor ("Color--{reference_property:_GlitterColorThemeIndex}", Color) = (1, 1, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _GlitterColorThemeIndex ("", Int) = 0
+		_GlitterUseSurfaceColor ("Use Surface Color", Range(0, 1)) = 0
+		[sRGBWarning(true)]_GlitterColorMap ("Glitter Color Map--{reference_properties:[_GlitterColorMapPan, _GlitterColorMapUV]}", 2D) = "white" { }
+		[HideInInspector][Vector2]_GlitterColorMapPan ("Panning", Vector) = (0, 0, 0, 0)
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _GlitterColorMapUV ("UV", Int) = 0
+		[HideInInspector][Vector2]_GlitterPan ("Panning", Vector) = (0, 0, 0, 0)
+		[sRGBWarning]_GlitterMask ("Glitter Mask--{reference_properties:[_GlitterMaskPan, _GlitterMaskUV, _GlitterMaskChannel]}", 2D) = "white" { }
+		[HideInInspector][Vector2]_GlitterMaskPan ("Panning", Vector) = (0, 0, 0, 0)
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos XZ, 5, Polar UV, 6, Distorted UV, 7)] _GlitterMaskUV ("UV", Int) = 0
+		[HideInInspector][Enum(R, 0, G, 1, B, 2, A, 3)]_GlitterMaskChannel ("Channel", Float) = 0
+		[ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _GlitterMaskGlobalMask ("Global Mask--{reference_property:_GlitterMaskGlobalMaskBlendType}", Int) = 0
+		[HideInInspector][ThryWideEnum(Replace, 0, Darken, 1, Multiply, 2, Color Burn, 3, Linear Burn, 4, Lighten, 5, Screen, 6, Color Dodge, 7, Linear Dodge(Add), 8, Overlay, 9, Soft Lighten, 10, Hard Light, 11, Vivid Light, 12, Linear Light, 13, Pin Light, 14, Hard Mix, 15, Difference, 16, Exclusion, 17, Subtract, 18, Divide, 19)]_GlitterMaskGlobalMaskBlendType ("Blending", Range(0, 1)) = 2
+		_GlitterTexture ("Glitter Texture--{reference_properties:[_GlitterTexturePan]}", 2D) = "white" { }
+		[HideInInspector][Vector2]_GlitterTexturePan ("Panning", Vector) = (0, 0, 0, 0)
+		[Vector2]_GlitterUVPanning ("Panning Speed", Vector) = (0, 0, 0, 0)
+		_GlitterTextureRotation ("Rotation Speed", Float) = 0
+		_GlitterFrequency ("Glitter Density", Float) = 300.0
+		_GlitterJitter ("Glitter Jitter", Range(0, 1)) = 1.0
+		_GlitterSpeed ("Glitter Speed", Float) = 10.0
+		_GlitterSize ("Glitter Size", Range(0, 1)) = .3
+		_GlitterContrast ("Glitter Contrast--{condition_showS:(_GlitterMode==0||_GlitterMode==2)}", Range(1, 1000)) = 300
+		_GlitterAngleRange ("Glitter Angle Range--{condition_showS:(_GlitterMode==0||_GlitterMode==2)}", Range(0, 90)) = 90
+		_GlitterMinBrightness ("Glitter Min Brightness", Range(0, 1)) = 0
+		_GlitterBrightness ("Glitter Max Brightness", Range(0, 40)) = 3
+		_GlitterBias ("Glitter Bias--{condition_show:(_GlitterMode==0)}", Range(0, 1)) = .8
+		_GlitterHideInShadow ("Hide in shadow", Range(0, 1)) = 0
+		_GlitterCenterSize ("dim light--{condition_show:{type:AND,condition1:{type:PROPERTY_BOOL,data:_GlitterMode==1},condition2:{type:PROPERTY_BOOL,data:_GlitterShape==1}}}", Range(0, 1)) = .08
+		_glitterFrequencyLinearEmissive ("Frequency--{condition_show:{type:PROPERTY_BOOL,data:_GlitterMode==1}}", Range(0, 100)) = 20
+		_GlitterJaggyFix ("Jaggy Fix--{condition_show:{type:PROPERTY_BOOL,data:_GlitterShape==1}}", Range(0, .1)) = .0
+		[Space(10)]
+		[ThryToggleUI(true)]_GlitterHueShiftEnabled ("<size=13><b>  Hue Shift</b></size>", Float) = 0
+		_GlitterHueShiftSpeed ("Shift Speed--{condition_showS:(_GlitterHueShiftEnabled==1)}", Float) = 0
+		_GlitterHueShift ("Hue Shift--{condition_showS:(_GlitterHueShiftEnabled==1)}", Range(0, 1)) = 0
+		[HideInInspector] m_start_GlitterRandomStuff ("Random Stuff", Float) = 0
+		[ToggleUI]_GlitterRandomColors ("Random Colors", Float) = 0
+		[MultiSlider]_GlitterMinMaxSaturation ("Saturation Range", Vector) = (0.8, 1, 0, 1)
+		[MultiSlider]_GlitterMinMaxBrightness ("Brightness Range", Vector) = (0.8, 1, 0, 1)
+		[ToggleUI]_GlitterRandomSize ("Random Size", Float) = 0
+		[MultiSlider]_GlitterMinMaxSize ("Size Range", Vector) = (0.1, 0.5, 0, 1)
+		[ToggleUI]_GlitterRandomRotation ("Random Tex Rotation", Float) = 0
+		[HideInInspector] m_end_GlitterRandomStuff ("Random Stuff", Float) = 0
+		[HideInInspector] m_end_glitter ("Glitter / Sparkle", Float) = 0
 		[HideInInspector] m_modifierCategory ("Modifiers", Float) = 0
 		[HideInInspector] m_start_Stochastic ("Stochastic Sampling", Float) = 0
 		[KeywordEnum(Deliot Heitz, Hextile, None)] _StochasticMode ("Sampling Mode", Float) = 0
@@ -405,12 +411,11 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			CGPROGRAM
  #define POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE 
  #define POI_LIGHT_DATA_ADDITIVE_ENABLE 
- #define POI_MATCAP0 
  #define POI_VERTEXLIGHT_ON 
  #define VIGNETTE_MASKED 
- #define _LIGHTINGMODE_SKIN 
+ #define _LIGHTINGMODE_FLAT 
  #define _STOCHASTICMODE_DELIOT_HEITZ 
- #define PROP_MATCAP 
+ #define _SUNDISK_SIMPLE 
  #define OPTIMIZER_ENABLED 
 			#pragma target 5.0
 			#pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
@@ -599,70 +604,65 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			float3 _LightingShadowColor;
 			float _LightingGradientStartWrap;
 			float _LightingGradientEndWrap;
-			#ifdef _LIGHTINGMODE_SKIN
-			sampler2D _SkinLUT;
-			float _SssScale;
-			#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _SkinThicknessMap;
-			#endif
-			float4 _SkinThicknessMap_ST;
-			float2 _SkinThicknessMapPan;
-			float _SkinThicknessMapUV;
-			float _SkinThicknessMapInvert;
-			float _SkinThicknessPower;
-			float _SssBumpBlur;
-			float3 _SssTransmissionAbsorption;
-			float3 _SssColorBleedAoWeights;
-			#endif
 			float _LightingAdditiveType;
 			float _LightingAdditiveGradientStart;
 			float _LightingAdditiveGradientEnd;
 			float _LightingAdditiveDetailStrength;
-			#ifdef POI_MATCAP0
-			#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _Matcap;
-			float4 _Matcap_ST;
-			float4 _Matcap_TexelSize;
-			float2 _MatcapPan;
-			float _MatcapUV;
+			#ifdef _SUNDISK_SIMPLE
+			float _GlitterUseNormals;
+			float _GlitterUV;
+			half3 _GlitterColor;
+			float _GlitterColorThemeIndex;
+			float2 _GlitterPan;
+			half _GlitterSpeed;
+			half _GlitterBrightness;
+			float _GlitterFrequency;
+			float _GlitterJitter;
+			half _GlitterSize;
+			half _GlitterContrast;
+			half _GlitterAngleRange;
+			half _GlitterMinBrightness;
+			half _GlitterBias;
+			fixed _GlitterUseSurfaceColor;
+			float _GlitterBlendType;
+			float _GlitterMode;
+			float _GlitterShape;
+			float _GlitterCenterSize;
+			float _glitterFrequencyLinearEmissive;
+			float _GlitterJaggyFix;
+			float _GlitterTextureRotation;
+			float2 _GlitterUVPanning;
+			float _GlitterHueShiftEnabled;
+			float _GlitterHueShiftSpeed;
+			float _GlitterHueShift;
+			float _GlitterHideInShadow;
+			float _GlitterRandomColors;
+			float2 _GlitterMinMaxSaturation;
+			float2 _GlitterMinMaxBrightness;
+			float _GlitterRandomSize;
+			float4 _GlitterMinMaxSize;
+			float _GlitterRandomRotation;
+			#if defined(PROP_GLITTERMASK) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _GlitterMask;
 			#endif
-			#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _MatcapMask;
-			float4 _MatcapMask_ST;
-			float2 _MatcapMaskPan;
-			float _MatcapMaskUV;
-			float _MatcapMaskChannel;
+			float4 _GlitterMask_ST;
+			float2 _GlitterMaskPan;
+			float _GlitterMaskUV;
+			float _GlitterMaskChannel;
+			float _GlitterMaskGlobalMask;
+			float _GlitterMaskGlobalMaskBlendType;
+			#if defined(PROP_GLITTERCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _GlitterColorMap;
 			#endif
-			float _MatcapUVMode;
-			float _MatcapMaskInvert;
-			float _MatcapMaskGlobalMask;
-			float _MatcapMaskGlobalMaskBlendType;
-			float _MatcapBorder;
-			float _MatcapRotation;
-			float _MatcapSmoothnessEnabled;
-			float _MatcapSmoothness;
-			float _MatcapMaskSmoothnessChannel;
-			float _MatcapMaskSmoothnessApply;
-			float4 _MatcapColor;
-			float _MatcapBaseColorMix;
-			float _MatcapColorThemeIndex;
-			float _MatcapIntensity;
-			float _MatcapReplace;
-			float _MatcapMultiply;
-			float _MatcapAdd;
-			float _MatcapAddToLight;
-			float _MatcapMixed;
-			float _MatcapScreen;
-			float _MatcapAlphaOverride;
-			float _MatcapEnable;
-			float _MatcapLightMask;
-			float _MatcapEmissionStrength;
-			float _MatcapNormal;
-			float _MatcapHueShiftEnabled;
-			float _MatcapHueShiftSpeed;
-			float _MatcapHueShift;
-			float _MatcapTPSDepthEnabled;
-			float _MatcapTPSMaskStrength;
+			float4 _GlitterColorMap_ST;
+			float2 _GlitterColorMapPan;
+			float _GlitterColorMapUV;
+			#if defined(PROP_GLITTERTEXTURE) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _GlitterTexture;
+			#endif
+			float4 _GlitterTexture_ST;
+			float2 _GlitterTexturePan;
+			float _GlitterTextureUV;
 			#endif
 			float _PPLightingMultiplier;
 			float _PPLightingAddition;
@@ -2368,55 +2368,33 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#ifdef POI_PASS_OUTLINE
 				shadowStrength = lerp(0, shadowStrength, _OutlineShadowStrength);
 				#endif
-				#ifdef _LIGHTINGMODE_SKIN
-				float3 ambientNormalWorld = poiMesh.normals[1];//aTangentToWorld(s, s.blurredNormalTangent);
+				#ifdef _LIGHTINGMODE_FLAT
+				poiLight.finalLighting = poiLight.directColor;
 				poiLight.rampedLightMap = poiLight.nDotLSaturated;
-				#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-				float subsurface = 1 - POI2D_SAMPLER_PAN(_SkinThicknessMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_SkinThicknessMapUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
-				#else
-				float subsurface = 1;
-				#endif
-				if((0.0 /*_SkinThicknessMapInvert*/))
-				{
-					subsurface = 1 - subsurface;
-				}
-				if((1.0 /*_SkinThicknessPower*/) != 1)
-				{
-					subsurface = pow(subsurface, (1.0 /*_SkinThicknessPower*/));
-				}
-				float skinScattering = saturate(subsurface * (1.0 /*_SssScale*/) * 2);
-				half3 absorption = exp((1.0h - subsurface) * float4(-8,-40,-64,0).rgb);
-				absorption *= saturate(poiFragData.baseColor * unity_ColorSpaceDouble.rgb);
-				ambientNormalWorld = normalize(lerp(poiMesh.normals[1], ambientNormalWorld, (0.7 /*_SssBumpBlur*/)));
-				float ndlBlur = dot(poiMesh.normals[1], poiLight.direction) * 0.5h + 0.5h;
-				float lumi = dot(poiLight.directColor, half3(0.2126h, 0.7152h, 0.0722h));
-				float4 sssLookupUv = float4(ndlBlur, skinScattering * lumi, 0.0f, 0.0f);
-				half3 sss = poiLight.lightMap * poiLight.attenuation * tex2Dlod(_SkinLUT, sssLookupUv).rgb;
-				poiLight.finalLighting = lerp(poiLight.directColor, min(lerp(poiLight.indirectColor * float4(0.0890862,0.0890862,0.0890862,1), float4(0.0890862,0.0890862,0.0890862,1), (1.0 /*_LightingIgnoreAmbientColor*/)) * poiLight.occlusion + (sss * poiLight.directColor), poiLight.directColor), (1.0 /*_ShadowStrength*/));
 				#endif
 				#endif
 				#ifdef POI_PASS_ADD
-				if ((0.0 /*_LightingAdditiveType*/) == 0)
+				if ((1.0 /*_LightingAdditiveType*/) == 0)
 				{
 					poiLight.rampedLightMap = max(0, poiLight.nDotL);
 					poiLight.finalLighting = poiLight.directColor * poiLight.attenuation * max(0, poiLight.nDotL) * poiLight.detailShadow * poiLight.additiveShadow;
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 1)
+				if ((1.0 /*_LightingAdditiveType*/) == 1)
 				{
 					#if defined(POINT_COOKIE) || defined(DIRECTIONAL_COOKIE)
 					float passthrough = 0;
 					#else
 					float passthrough = (0.5 /*_LightingAdditivePassthrough*/);
 					#endif
-					if ((1.0 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (1.0 /*_LightingAdditiveGradientEnd*/) += 0.001;
-					poiLight.rampedLightMap = smoothstep((1.0 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
+					if ((0.5 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (0.5 /*_LightingAdditiveGradientEnd*/) += 0.001;
+					poiLight.rampedLightMap = smoothstep((0.5 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
 					#if defined(POINT) || defined(SPOT)
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
 					#else
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
 					#endif
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 2)
+				if ((1.0 /*_LightingAdditiveType*/) == 2)
 				{
 				}
 				#endif
@@ -2424,13 +2402,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float3 vertexLighting = float3(0, 0, 0);
 				for (int index = 0; index < 4; index++)
 				{
-					if ((0.0 /*_LightingAdditiveType*/) == 0)
+					if ((1.0 /*_LightingAdditiveType*/) == 0)
 					{
 						vertexLighting += poiLight.vColor[index] * poiLight.vAttenuationDotNL[index] * poiLight.detailShadow; // Realistic
 					}
-					if ((0.0 /*_LightingAdditiveType*/) == 1) // Toon
+					if ((1.0 /*_LightingAdditiveType*/) == 1) // Toon
 					{
-						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
+						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
 					}
 				}
 				float3 mixedLight = poiLight.finalLighting;
@@ -2438,127 +2416,183 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#endif
 			}
 			#endif
-			void blendMatcap(inout PoiLight poiLight, inout PoiFragData poiFragData, in PoiMods poiMods, float add, float lightAdd, float multiply, float replace, float mixed, float screen, float4 matcapColor, float matcapMask, float emissionStrength, float matcapLightMask, uint globalMaskIndex, float globalMaskBlendType)
+			#ifdef _SUNDISK_SIMPLE
+			float3 RandomColorFromPoint(float2 rando)
 			{
-				if (matcapLightMask)
-				{
-					matcapMask *= lerp(1, poiLight.rampedLightMap, matcapLightMask);
-				}
-				if (globalMaskIndex > 0)
-				{
-					matcapMask = customBlend(matcapMask, poiMods.globalMask[globalMaskIndex - 1], globalMaskBlendType);
-				}
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, matcapColor.rgb, replace * matcapMask * matcapColor.a * .999999);
-				poiFragData.baseColor.rgb *= lerp(1, matcapColor.rgb, multiply * matcapMask * matcapColor.a);
-				poiFragData.baseColor.rgb += matcapColor.rgb * add * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, blendScreen(poiFragData.baseColor.rgb, matcapColor.rgb), screen);
-				poiLight.finalLightAdd += matcapColor.rgb * lightAdd * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, poiFragData.baseColor.rgb + poiFragData.baseColor.rgb * matcapColor.rgb, mixed * matcapMask * matcapColor.a);
-				poiFragData.emission += matcapColor.rgb * emissionStrength * matcapMask * matcapColor.a;
+				fixed hue = random2(rando.x + rando.y).x;
+				fixed saturation = lerp(float4(0.8,1,0,1).x, float4(0.8,1,0,1).y, rando.x);
+				fixed value = lerp(float4(0.8,1,0,1).x, float4(0.8,1,0,1).y, rando.y);
+				float3 hsv = float3(hue, saturation, value);
+				return HSVtoRGB(hsv);
 			}
-			#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-			void applyMatcap(inout PoiFragData poiFragData, in PoiCam poiCam, in PoiMesh poiMesh, inout PoiLight poiLight, in PoiMods poiMods)
+			void applyGlitter(inout PoiFragData poiFragData, in PoiMesh poiMesh, in PoiCam poiCam, in PoiLight poiLight, in PoiMods poiMods)
 			{
-				float4 matcap = 0;
-				float matcapMask = 0;
-				float4 matcap2 = 0;
-				float matcap2Mask = 0;
-				float4 matcap3 = 0;
-				float matcap3Mask = 0;
-				float4 matcap4 = 0;
-				float matcap4Mask = 0;
-				float2 matcapUV = 0;
-				#ifdef POI_MATCAP0
-				float3 normal0 = poiMesh.normals[(1.0 /*_MatcapNormal*/)];
-				switch((1.0 /*_MatcapUVMode*/))
+				float2 st = frac(poiMesh.uv[(0.0 /*_GlitterUV*/)] + float4(0,0.2,0,0).xy * _Time.x) * (60.0 /*_GlitterFrequency*/);
+				float2 i_st = floor(st);
+				float2 f_st = frac(st);
+				float m_dist = 10.;  // minimun distance
+				float2 m_point = 0;        // minimum point
+				float2 randoPoint = 0;
+				float2 dank;
+				for (int j = -1; j <= 1; j++)
+				{
+					for (int i = -1; i <= 1; i++)
+					{
+						float2 neighbor = float2(i, j);
+						float2 pos = random2(i_st + neighbor);
+						float2 rando = pos;
+						pos = 0.5 + 0.5 * sin((0.297 /*_GlitterJitter*/) * 6.2831 * pos);
+						float2 diff = neighbor + pos - f_st;
+						float dist = length(diff);
+						if (dist < m_dist)
+						{
+							dank = diff;
+							m_dist = dist;
+							m_point = pos;
+							randoPoint = rando;
+						}
+					}
+				}
+				float randomFromPoint = random(randoPoint);
+				float size = (0.152 /*_GlitterSize*/);
+				
+				if ((1.0 /*_GlitterRandomSize*/))
+				{
+					size = remapClamped(0, 1, randomFromPoint, float4(0,0.2810126,0,1).x, float4(0,0.2810126,0,1).y);
+				}
+				half glitterAlpha = 1;
+				switch((1.0 /*_GlitterShape*/))
+				{
+					case 0: //circle
+					glitterAlpha = saturate((size - m_dist) / clamp(fwidth(m_dist), 0.0001, 1.0));
+					break;
+					case 1: //sqaure
+					float jaggyFix = pow(poiCam.distanceToVert, 2) * (0.0 /*_GlitterJaggyFix*/);
+					
+					if ((0.0 /*_GlitterRandomRotation*/) == 1 || (5.0 /*_GlitterTextureRotation*/) != 0)
+					{
+						float2 center = float2(0, 0);
+						float randomBoy = 0;
+						
+						if ((0.0 /*_GlitterRandomRotation*/))
+						{
+							randomBoy = random(randoPoint);
+						}
+						float theta = radians((randomBoy + _Time.x * (5.0 /*_GlitterTextureRotation*/)) * 360);
+						float cs = cos(theta);
+						float sn = sin(theta);
+						dank = float2((dank.x - center.x) * cs - (dank.y - center.y) * sn + center.x, (dank.x - center.x) * sn + (dank.y - center.y) * cs + center.y);
+						glitterAlpha = (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.x))) * (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.y)));
+					}
+					else
+					{
+						glitterAlpha = (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.x))) * (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.y)));
+					}
+					break;
+				}
+				float3 finalGlitter = 0;
+				half3 glitterColor = poiThemeColor(poiMods, float4(1,1,1,1), (0.0 /*_GlitterColorThemeIndex*/));
+				float3 norm = lerp(poiMesh.normals[0], poiMesh.normals[1], (0.0 /*_GlitterUseNormals*/));
+				float3 randomRotation = 0;
+				switch((0.0 /*_GlitterMode*/))
 				{
 					case 0:
+					
+					if ((10.0 /*_GlitterSpeed*/) > 0)
 					{
-						float3 viewNormal = (mul(UNITY_MATRIX_V, float4(normal0, 0))).rgb;
-						float3 NormalBlend_MatCapUV_Detail = viewNormal.rgb * float3(-1, -1, 1);
-						float3 NormalBlend_MatCapUV_Base = (mul(UNITY_MATRIX_V, float4(poiCam.viewDir, 0)).rgb * float3(-1, -1, 1)) + float3(0, 0, 1);
-						float3 noSknewViewNormal = NormalBlend_MatCapUV_Base * dot(NormalBlend_MatCapUV_Base, NormalBlend_MatCapUV_Detail) / NormalBlend_MatCapUV_Base.b - NormalBlend_MatCapUV_Detail;
-						matcapUV = noSknewViewNormal.rg * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						randomRotation = randomFloat3WiggleRange(randoPoint, (90.0 /*_GlitterAngleRange*/), (10.0 /*_GlitterSpeed*/));
 					}
+					else
+					{
+						randomRotation = randomFloat3Range(randoPoint, (90.0 /*_GlitterAngleRange*/));
+					}
+					float3 glitterReflectionDirection = normalize(mul(poiRotationMatrixFromAngles(randomRotation), norm));
+					finalGlitter = lerp(0, (0.0 /*_GlitterMinBrightness*/) * glitterAlpha, glitterAlpha) + max(pow(saturate(dot(lerp(glitterReflectionDirection, poiCam.viewDir, (0.8 /*_GlitterBias*/)), poiCam.viewDir)), (36.0 /*_GlitterContrast*/)), 0);
+					finalGlitter *= glitterAlpha;
+					break;
 					case 1:
-					{
-						float3 worldViewUp = normalize(float3(0, 1, 0) - poiCam.viewDir * dot(poiCam.viewDir, float3(0, 1, 0)));
-						float3 worldViewRight = normalize(cross(poiCam.viewDir, worldViewUp));
-						matcapUV = float2(dot(worldViewRight, normal0), dot(worldViewUp, normal0)) * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
-					}
+					float offset = random(randoPoint);
+					float brightness = sin((_Time.x + offset) * (10.0 /*_GlitterSpeed*/)) * (20.0 /*_glitterFrequencyLinearEmissive*/) - ((20.0 /*_glitterFrequencyLinearEmissive*/) - 1);
+					finalGlitter = max((0.0 /*_GlitterMinBrightness*/) * glitterAlpha, brightness * glitterAlpha * smoothstep(0, 1, 1 - m_dist * (0.08 /*_GlitterCenterSize*/) * 10));
+					break;
 					case 2:
+					if ((10.0 /*_GlitterSpeed*/) > 0)
 					{
-						float3 reflection = reflect(-poiCam.viewDir, normal0);
-						float2 uv = float2(dot(reflection, float3(1, 0, 0)), dot(reflection, float3(0, 1, 0)));
-						matcapUV = uv * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						randomRotation = randomFloat3WiggleRange(randoPoint, (90.0 /*_GlitterAngleRange*/), (10.0 /*_GlitterSpeed*/));
 					}
-				}
-				matcapUV = RotateUV(matcapUV, (0.0 /*_MatcapRotation*/)*PI, float2(.5,.5), 1.0f);
-				if (IsInMirror())
-				{
-					matcapUV.x = 1 - matcapUV.x;
-				}
-				float matcapSmoothness;
-				float mipCount0 = 9;
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
-				{
-					if (float4(0.001953125,0.001953125,512,512).z == 8192) mipCount0 = 13;
-					if (float4(0.001953125,0.001953125,512,512).z == 4096) mipCount0 = 12;
-					if (float4(0.001953125,0.001953125,512,512).z == 2048) mipCount0 = 11;
-					if (float4(0.001953125,0.001953125,512,512).z == 1024) mipCount0 = 10;
-					if (float4(0.001953125,0.001953125,512,512).z == 512) mipCount0 = 9;
-					if (float4(0.001953125,0.001953125,512,512).z == 256) mipCount0 = 8;
-					if (float4(0.001953125,0.001953125,512,512).z == 128) mipCount0 = 7;
-					if (float4(0.001953125,0.001953125,512,512).z == 64) mipCount0 = 6;
-					if (float4(0.001953125,0.001953125,512,512).z == 32) mipCount0 = 5;
-					matcapSmoothness = (1.0 /*_MatcapSmoothness*/);
-					if ((0.0 /*_MatcapMaskSmoothnessApply*/))
+					else
 					{
-						#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-						matcapSmoothness *= POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(3.0 /*_MatcapMaskSmoothnessChannel*/)];
-						#endif
+						randomRotation = randomFloat3Range(randoPoint, (90.0 /*_GlitterAngleRange*/));
 					}
-					matcapSmoothness = (1 - matcapSmoothness) * mipCount0;
+					float3 glitterLightReflectionDirection = normalize(mul(poiRotationMatrixFromAngles(randomRotation), norm));
+					#ifdef POI_PASS_ADD
+					glitterAlpha *= poiLight.nDotLSaturated * poiLight.attenuation;
+					#endif
+					#ifdef UNITY_PASS_FORWARDBASE
+					glitterAlpha *= poiLight.nDotLSaturated;
+					#endif
+					float3 halfDir = normalize(poiLight.direction + poiCam.viewDir);
+					float specAngle = max(dot(halfDir, glitterLightReflectionDirection), 0.0);
+					finalGlitter = lerp(0, (0.0 /*_GlitterMinBrightness*/) * glitterAlpha, glitterAlpha) + max(pow(specAngle, (36.0 /*_GlitterContrast*/)), 0);
+					glitterColor *= poiLight.directColor;
+					finalGlitter *= glitterAlpha;
+					break;
 				}
-				#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
+				glitterColor *= lerp(1, poiFragData.baseColor, (0.0 /*_GlitterUseSurfaceColor*/));
+				#if defined(PROP_GLITTERCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+				glitterColor *= POI2D_SAMPLER_PAN(_GlitterColorMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_GlitterColorMapUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).rgb;
+				#endif
+				float2 uv = remapClamped(-size, size, dank, 0, 1);
+				
+				if ((0.0 /*_GlitterRandomRotation*/) == 1 || (5.0 /*_GlitterTextureRotation*/) != 0 && !(1.0 /*_GlitterShape*/))
 				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER_LOD(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap), matcapSmoothness) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
+					float2 fakeUVCenter = float2(.5, .5);
+					float randomBoy = 0;
+					
+					if ((0.0 /*_GlitterRandomRotation*/))
+					{
+						randomBoy = random(randoPoint);
+					}
+					float theta = radians((randomBoy + _Time.x * (5.0 /*_GlitterTextureRotation*/)) * 360);
+					float cs = cos(theta);
+					float sn = sin(theta);
+					uv = float2((uv.x - fakeUVCenter.x) * cs - (uv.y - fakeUVCenter.y) * sn + fakeUVCenter.x, (uv.x - fakeUVCenter.x) * sn + (uv.y - fakeUVCenter.y) * cs + fakeUVCenter.y);
+				}
+				#if defined(PROP_GLITTERTEXTURE) || !defined(OPTIMIZER_ENABLED)
+				float4 glitterTexture = POI2D_SAMPLER_PAN(_GlitterTexture, _MainTex, poiUV(uv, float4(1,1,0,0)), float4(0,0,0,0));
+				#else
+				float4 glitterTexture = 1;
+				#endif
+				glitterColor *= glitterTexture.rgb;
+				#if defined(PROP_GLITTERMASK) || !defined(OPTIMIZER_ENABLED)
+				float glitterMask = POI2D_SAMPLER_PAN(_GlitterMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_GlitterMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(0.0 /*_GlitterMaskChannel*/)];
+				#else
+				float glitterMask = 1;
+				#endif
+				glitterMask *= lerp(1, poiLight.rampedLightMap, (0.0 /*_GlitterHideInShadow*/));
+				if ((0.0 /*_GlitterMaskGlobalMask*/) > 0)
+				{
+					glitterMask = customBlend(glitterMask, poiMods.globalMask[(0.0 /*_GlitterMaskGlobalMask*/) - 1], (2.0 /*_GlitterMaskGlobalMaskBlendType*/));
+				}
+				if ((1.0 /*_GlitterRandomColors*/))
+				{
+					glitterColor *= RandomColorFromPoint(random2(randoPoint.x + randoPoint.y));
+				}
+				
+				if ((0.0 /*_GlitterHueShiftEnabled*/))
+				{
+					glitterColor.rgb = hueShift(glitterColor.rgb, (0.0 /*_GlitterHueShift*/) + _Time.x * (0.0 /*_GlitterHueShiftSpeed*/));
+				}
+				
+				if ((0.0 /*_GlitterBlendType*/) == 1)
+				{
+					poiFragData.baseColor = lerp(poiFragData.baseColor, finalGlitter * glitterColor * (4.0 /*_GlitterBrightness*/), finalGlitter * glitterTexture.a * glitterMask);
+					poiFragData.emission += finalGlitter * glitterColor * max(0, ((4.0 /*_GlitterBrightness*/) - 1) * glitterTexture.a) * glitterMask;
 				}
 				else
 				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap)) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
+					poiFragData.emission += finalGlitter * glitterColor * (4.0 /*_GlitterBrightness*/) * glitterTexture.a * glitterMask;
 				}
-				#else
-				matcap = float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				#endif
-				matcap.rgb *= (1.0 /*_MatcapIntensity*/);
-				matcap.rgb = lerp(matcap.rgb, matcap.rgb * poiFragData.baseColor.rgb, (0.0 /*_MatcapBaseColorMix*/));
-				#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-				matcapMask = POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(0.0 /*_MatcapMaskChannel*/)];
-				#else
-				matcapMask = 1;
-				#endif
-				if ((0.0 /*_MatcapMaskInvert*/))
-				{
-					matcapMask = 1 - matcapMask;
-				}
-				#ifdef TPS_Penetrator
-				if ((0.0 /*_MatcapTPSDepthEnabled*/))
-				{
-					matcapMask = lerp(0, matcapMask * TPSBufferedDepth(poiMesh.localPos, poiMesh.vertexColor), (1.0 /*_MatcapTPSMaskStrength*/));
-				}
-				#endif
-				poiFragData.alpha *= lerp(1, matcap.a, matcapMask * (0.0 /*_MatcapAlphaOverride*/));
-				if ((0.0 /*_MatcapHueShiftEnabled*/))
-				{
-					matcap.rgb = hueShift(matcap.rgb, (0.0 /*_MatcapHueShift*/) + _Time.x * (0.0 /*_MatcapHueShiftSpeed*/));
-				}
-				blendMatcap(poiLight, poiFragData, poiMods, (1.0 /*_MatcapAdd*/), (0.0 /*_MatcapAddToLight*/), (0.0 /*_MatcapMultiply*/), (0.0 /*_MatcapReplace*/), (0.0 /*_MatcapMixed*/), (0.0 /*_MatcapScreen*/), matcap, matcapMask, (0.0 /*_MatcapEmissionStrength*/), (0.0 /*_MatcapLightMask*/), (0.0 /*_MatcapMaskGlobalMask*/), (2.0 /*_MatcapMaskGlobalMaskBlendType*/));
-				#endif
 			}
 			#endif
 			float4 frag(VertexOut i, uint facing : SV_IsFrontFace) : SV_Target
@@ -2625,7 +2659,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float2 mainUV = poiMesh.uv[(0.0 /*_MainTexUV*/)].xy;
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.0004882813,0.0004882813,2048,2048), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, poiUV(mainUV, float4(1,1,0,0)), float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -2922,8 +2956,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.vertexNDotH = max(0.00001, dot(poiMesh.normals[0], poiLight.halfDir));
 				poiLight.lightMap = 1;
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,0.4035474,0.1542947,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,0.4035474,0.1542947,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
 				#if defined(PROP_CLIPPINGMASK) || !defined(OPTIMIZER_ENABLED)
 				float alphaMask = POI2D_SAMPLER_PAN(_ClippingMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ClippingMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
 				if ((0.0 /*_Inverse_Clipping*/))
@@ -2957,8 +2991,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.finalLighting = 1;
 				poiLight.rampedLightMap = poiEdgeNonLinear(poiLight.nDotL, 0.1, .1);
 				#endif
-				#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-				applyMatcap(poiFragData, poiCam, poiMesh, poiLight, poiMods);
+				#ifdef _SUNDISK_SIMPLE
+				applyGlitter(poiFragData, poiMesh, poiCam, poiLight, poiMods);
 				#endif
 				
 				if ((0.0 /*_AlphaPremultiply*/))
@@ -3014,12 +3048,11 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			CGPROGRAM
  #define POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE 
  #define POI_LIGHT_DATA_ADDITIVE_ENABLE 
- #define POI_MATCAP0 
  #define POI_VERTEXLIGHT_ON 
  #define VIGNETTE_MASKED 
- #define _LIGHTINGMODE_SKIN 
+ #define _LIGHTINGMODE_FLAT 
  #define _STOCHASTICMODE_DELIOT_HEITZ 
- #define PROP_MATCAP 
+ #define _SUNDISK_SIMPLE 
  #define OPTIMIZER_ENABLED 
 			#pragma target 5.0
 			#pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
@@ -3207,70 +3240,65 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			float3 _LightingShadowColor;
 			float _LightingGradientStartWrap;
 			float _LightingGradientEndWrap;
-			#ifdef _LIGHTINGMODE_SKIN
-			sampler2D _SkinLUT;
-			float _SssScale;
-			#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _SkinThicknessMap;
-			#endif
-			float4 _SkinThicknessMap_ST;
-			float2 _SkinThicknessMapPan;
-			float _SkinThicknessMapUV;
-			float _SkinThicknessMapInvert;
-			float _SkinThicknessPower;
-			float _SssBumpBlur;
-			float3 _SssTransmissionAbsorption;
-			float3 _SssColorBleedAoWeights;
-			#endif
 			float _LightingAdditiveType;
 			float _LightingAdditiveGradientStart;
 			float _LightingAdditiveGradientEnd;
 			float _LightingAdditiveDetailStrength;
-			#ifdef POI_MATCAP0
-			#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _Matcap;
-			float4 _Matcap_ST;
-			float4 _Matcap_TexelSize;
-			float2 _MatcapPan;
-			float _MatcapUV;
+			#ifdef _SUNDISK_SIMPLE
+			float _GlitterUseNormals;
+			float _GlitterUV;
+			half3 _GlitterColor;
+			float _GlitterColorThemeIndex;
+			float2 _GlitterPan;
+			half _GlitterSpeed;
+			half _GlitterBrightness;
+			float _GlitterFrequency;
+			float _GlitterJitter;
+			half _GlitterSize;
+			half _GlitterContrast;
+			half _GlitterAngleRange;
+			half _GlitterMinBrightness;
+			half _GlitterBias;
+			fixed _GlitterUseSurfaceColor;
+			float _GlitterBlendType;
+			float _GlitterMode;
+			float _GlitterShape;
+			float _GlitterCenterSize;
+			float _glitterFrequencyLinearEmissive;
+			float _GlitterJaggyFix;
+			float _GlitterTextureRotation;
+			float2 _GlitterUVPanning;
+			float _GlitterHueShiftEnabled;
+			float _GlitterHueShiftSpeed;
+			float _GlitterHueShift;
+			float _GlitterHideInShadow;
+			float _GlitterRandomColors;
+			float2 _GlitterMinMaxSaturation;
+			float2 _GlitterMinMaxBrightness;
+			float _GlitterRandomSize;
+			float4 _GlitterMinMaxSize;
+			float _GlitterRandomRotation;
+			#if defined(PROP_GLITTERMASK) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _GlitterMask;
 			#endif
-			#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-			Texture2D _MatcapMask;
-			float4 _MatcapMask_ST;
-			float2 _MatcapMaskPan;
-			float _MatcapMaskUV;
-			float _MatcapMaskChannel;
+			float4 _GlitterMask_ST;
+			float2 _GlitterMaskPan;
+			float _GlitterMaskUV;
+			float _GlitterMaskChannel;
+			float _GlitterMaskGlobalMask;
+			float _GlitterMaskGlobalMaskBlendType;
+			#if defined(PROP_GLITTERCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _GlitterColorMap;
 			#endif
-			float _MatcapUVMode;
-			float _MatcapMaskInvert;
-			float _MatcapMaskGlobalMask;
-			float _MatcapMaskGlobalMaskBlendType;
-			float _MatcapBorder;
-			float _MatcapRotation;
-			float _MatcapSmoothnessEnabled;
-			float _MatcapSmoothness;
-			float _MatcapMaskSmoothnessChannel;
-			float _MatcapMaskSmoothnessApply;
-			float4 _MatcapColor;
-			float _MatcapBaseColorMix;
-			float _MatcapColorThemeIndex;
-			float _MatcapIntensity;
-			float _MatcapReplace;
-			float _MatcapMultiply;
-			float _MatcapAdd;
-			float _MatcapAddToLight;
-			float _MatcapMixed;
-			float _MatcapScreen;
-			float _MatcapAlphaOverride;
-			float _MatcapEnable;
-			float _MatcapLightMask;
-			float _MatcapEmissionStrength;
-			float _MatcapNormal;
-			float _MatcapHueShiftEnabled;
-			float _MatcapHueShiftSpeed;
-			float _MatcapHueShift;
-			float _MatcapTPSDepthEnabled;
-			float _MatcapTPSMaskStrength;
+			float4 _GlitterColorMap_ST;
+			float2 _GlitterColorMapPan;
+			float _GlitterColorMapUV;
+			#if defined(PROP_GLITTERTEXTURE) || !defined(OPTIMIZER_ENABLED)
+			Texture2D _GlitterTexture;
+			#endif
+			float4 _GlitterTexture_ST;
+			float2 _GlitterTexturePan;
+			float _GlitterTextureUV;
 			#endif
 			struct appdata
 			{
@@ -4972,55 +5000,33 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#ifdef POI_PASS_OUTLINE
 				shadowStrength = lerp(0, shadowStrength, _OutlineShadowStrength);
 				#endif
-				#ifdef _LIGHTINGMODE_SKIN
-				float3 ambientNormalWorld = poiMesh.normals[1];//aTangentToWorld(s, s.blurredNormalTangent);
+				#ifdef _LIGHTINGMODE_FLAT
+				poiLight.finalLighting = poiLight.directColor;
 				poiLight.rampedLightMap = poiLight.nDotLSaturated;
-				#if defined(PROP_SKINTHICKNESS) || !defined(OPTIMIZER_ENABLED)
-				float subsurface = 1 - POI2D_SAMPLER_PAN(_SkinThicknessMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_SkinThicknessMapUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
-				#else
-				float subsurface = 1;
-				#endif
-				if((0.0 /*_SkinThicknessMapInvert*/))
-				{
-					subsurface = 1 - subsurface;
-				}
-				if((1.0 /*_SkinThicknessPower*/) != 1)
-				{
-					subsurface = pow(subsurface, (1.0 /*_SkinThicknessPower*/));
-				}
-				float skinScattering = saturate(subsurface * (1.0 /*_SssScale*/) * 2);
-				half3 absorption = exp((1.0h - subsurface) * float4(-8,-40,-64,0).rgb);
-				absorption *= saturate(poiFragData.baseColor * unity_ColorSpaceDouble.rgb);
-				ambientNormalWorld = normalize(lerp(poiMesh.normals[1], ambientNormalWorld, (0.7 /*_SssBumpBlur*/)));
-				float ndlBlur = dot(poiMesh.normals[1], poiLight.direction) * 0.5h + 0.5h;
-				float lumi = dot(poiLight.directColor, half3(0.2126h, 0.7152h, 0.0722h));
-				float4 sssLookupUv = float4(ndlBlur, skinScattering * lumi, 0.0f, 0.0f);
-				half3 sss = poiLight.lightMap * poiLight.attenuation * tex2Dlod(_SkinLUT, sssLookupUv).rgb;
-				poiLight.finalLighting = lerp(poiLight.directColor, min(lerp(poiLight.indirectColor * float4(0.0890862,0.0890862,0.0890862,1), float4(0.0890862,0.0890862,0.0890862,1), (1.0 /*_LightingIgnoreAmbientColor*/)) * poiLight.occlusion + (sss * poiLight.directColor), poiLight.directColor), (1.0 /*_ShadowStrength*/));
 				#endif
 				#endif
 				#ifdef POI_PASS_ADD
-				if ((0.0 /*_LightingAdditiveType*/) == 0)
+				if ((1.0 /*_LightingAdditiveType*/) == 0)
 				{
 					poiLight.rampedLightMap = max(0, poiLight.nDotL);
 					poiLight.finalLighting = poiLight.directColor * poiLight.attenuation * max(0, poiLight.nDotL) * poiLight.detailShadow * poiLight.additiveShadow;
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 1)
+				if ((1.0 /*_LightingAdditiveType*/) == 1)
 				{
 					#if defined(POINT_COOKIE) || defined(DIRECTIONAL_COOKIE)
 					float passthrough = 0;
 					#else
 					float passthrough = (0.5 /*_LightingAdditivePassthrough*/);
 					#endif
-					if ((1.0 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (1.0 /*_LightingAdditiveGradientEnd*/) += 0.001;
-					poiLight.rampedLightMap = smoothstep((1.0 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
+					if ((0.5 /*_LightingAdditiveGradientEnd*/) == (0.0 /*_LightingAdditiveGradientStart*/)) (0.5 /*_LightingAdditiveGradientEnd*/) += 0.001;
+					poiLight.rampedLightMap = smoothstep((0.5 /*_LightingAdditiveGradientEnd*/), (0.0 /*_LightingAdditiveGradientStart*/), 1 - (.5 * poiLight.nDotL + .5));
 					#if defined(POINT) || defined(SPOT)
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.additiveShadow, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5))) * poiLight.attenuation;
 					#else
-					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
+					poiLight.finalLighting = lerp(poiLight.directColor * max(min(poiLight.attenuation, poiLight.detailShadow), passthrough), poiLight.indirectColor, smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), 1 - (.5 * poiLight.nDotL + .5)));
 					#endif
 				}
-				if ((0.0 /*_LightingAdditiveType*/) == 2)
+				if ((1.0 /*_LightingAdditiveType*/) == 2)
 				{
 				}
 				#endif
@@ -5028,13 +5034,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float3 vertexLighting = float3(0, 0, 0);
 				for (int index = 0; index < 4; index++)
 				{
-					if ((0.0 /*_LightingAdditiveType*/) == 0)
+					if ((1.0 /*_LightingAdditiveType*/) == 0)
 					{
 						vertexLighting += poiLight.vColor[index] * poiLight.vAttenuationDotNL[index] * poiLight.detailShadow; // Realistic
 					}
-					if ((0.0 /*_LightingAdditiveType*/) == 1) // Toon
+					if ((1.0 /*_LightingAdditiveType*/) == 1) // Toon
 					{
-						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (1.0 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
+						vertexLighting += lerp(poiLight.vColor[index] * poiLight.vAttenuation[index], poiLight.vColor[index] * (0.5 /*_LightingAdditivePassthrough*/) * poiLight.vAttenuation[index], smoothstep((0.0 /*_LightingAdditiveGradientStart*/), (0.5 /*_LightingAdditiveGradientEnd*/), .5 * poiLight.vDotNL[index] + .5)) * poiLight.detailShadow;
 					}
 				}
 				float3 mixedLight = poiLight.finalLighting;
@@ -5042,127 +5048,183 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				#endif
 			}
 			#endif
-			void blendMatcap(inout PoiLight poiLight, inout PoiFragData poiFragData, in PoiMods poiMods, float add, float lightAdd, float multiply, float replace, float mixed, float screen, float4 matcapColor, float matcapMask, float emissionStrength, float matcapLightMask, uint globalMaskIndex, float globalMaskBlendType)
+			#ifdef _SUNDISK_SIMPLE
+			float3 RandomColorFromPoint(float2 rando)
 			{
-				if (matcapLightMask)
-				{
-					matcapMask *= lerp(1, poiLight.rampedLightMap, matcapLightMask);
-				}
-				if (globalMaskIndex > 0)
-				{
-					matcapMask = customBlend(matcapMask, poiMods.globalMask[globalMaskIndex - 1], globalMaskBlendType);
-				}
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, matcapColor.rgb, replace * matcapMask * matcapColor.a * .999999);
-				poiFragData.baseColor.rgb *= lerp(1, matcapColor.rgb, multiply * matcapMask * matcapColor.a);
-				poiFragData.baseColor.rgb += matcapColor.rgb * add * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, blendScreen(poiFragData.baseColor.rgb, matcapColor.rgb), screen);
-				poiLight.finalLightAdd += matcapColor.rgb * lightAdd * matcapMask * matcapColor.a;
-				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor.rgb, poiFragData.baseColor.rgb + poiFragData.baseColor.rgb * matcapColor.rgb, mixed * matcapMask * matcapColor.a);
-				poiFragData.emission += matcapColor.rgb * emissionStrength * matcapMask * matcapColor.a;
+				fixed hue = random2(rando.x + rando.y).x;
+				fixed saturation = lerp(float4(0.8,1,0,1).x, float4(0.8,1,0,1).y, rando.x);
+				fixed value = lerp(float4(0.8,1,0,1).x, float4(0.8,1,0,1).y, rando.y);
+				float3 hsv = float3(hue, saturation, value);
+				return HSVtoRGB(hsv);
 			}
-			#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-			void applyMatcap(inout PoiFragData poiFragData, in PoiCam poiCam, in PoiMesh poiMesh, inout PoiLight poiLight, in PoiMods poiMods)
+			void applyGlitter(inout PoiFragData poiFragData, in PoiMesh poiMesh, in PoiCam poiCam, in PoiLight poiLight, in PoiMods poiMods)
 			{
-				float4 matcap = 0;
-				float matcapMask = 0;
-				float4 matcap2 = 0;
-				float matcap2Mask = 0;
-				float4 matcap3 = 0;
-				float matcap3Mask = 0;
-				float4 matcap4 = 0;
-				float matcap4Mask = 0;
-				float2 matcapUV = 0;
-				#ifdef POI_MATCAP0
-				float3 normal0 = poiMesh.normals[(1.0 /*_MatcapNormal*/)];
-				switch((1.0 /*_MatcapUVMode*/))
+				float2 st = frac(poiMesh.uv[(0.0 /*_GlitterUV*/)] + float4(0,0.2,0,0).xy * _Time.x) * (60.0 /*_GlitterFrequency*/);
+				float2 i_st = floor(st);
+				float2 f_st = frac(st);
+				float m_dist = 10.;  // minimun distance
+				float2 m_point = 0;        // minimum point
+				float2 randoPoint = 0;
+				float2 dank;
+				for (int j = -1; j <= 1; j++)
+				{
+					for (int i = -1; i <= 1; i++)
+					{
+						float2 neighbor = float2(i, j);
+						float2 pos = random2(i_st + neighbor);
+						float2 rando = pos;
+						pos = 0.5 + 0.5 * sin((0.297 /*_GlitterJitter*/) * 6.2831 * pos);
+						float2 diff = neighbor + pos - f_st;
+						float dist = length(diff);
+						if (dist < m_dist)
+						{
+							dank = diff;
+							m_dist = dist;
+							m_point = pos;
+							randoPoint = rando;
+						}
+					}
+				}
+				float randomFromPoint = random(randoPoint);
+				float size = (0.152 /*_GlitterSize*/);
+				
+				if ((1.0 /*_GlitterRandomSize*/))
+				{
+					size = remapClamped(0, 1, randomFromPoint, float4(0,0.2810126,0,1).x, float4(0,0.2810126,0,1).y);
+				}
+				half glitterAlpha = 1;
+				switch((1.0 /*_GlitterShape*/))
+				{
+					case 0: //circle
+					glitterAlpha = saturate((size - m_dist) / clamp(fwidth(m_dist), 0.0001, 1.0));
+					break;
+					case 1: //sqaure
+					float jaggyFix = pow(poiCam.distanceToVert, 2) * (0.0 /*_GlitterJaggyFix*/);
+					
+					if ((0.0 /*_GlitterRandomRotation*/) == 1 || (5.0 /*_GlitterTextureRotation*/) != 0)
+					{
+						float2 center = float2(0, 0);
+						float randomBoy = 0;
+						
+						if ((0.0 /*_GlitterRandomRotation*/))
+						{
+							randomBoy = random(randoPoint);
+						}
+						float theta = radians((randomBoy + _Time.x * (5.0 /*_GlitterTextureRotation*/)) * 360);
+						float cs = cos(theta);
+						float sn = sin(theta);
+						dank = float2((dank.x - center.x) * cs - (dank.y - center.y) * sn + center.x, (dank.x - center.x) * sn + (dank.y - center.y) * cs + center.y);
+						glitterAlpha = (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.x))) * (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.y)));
+					}
+					else
+					{
+						glitterAlpha = (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.x))) * (1. - smoothstep(size - .1 * jaggyFix, size, abs(dank.y)));
+					}
+					break;
+				}
+				float3 finalGlitter = 0;
+				half3 glitterColor = poiThemeColor(poiMods, float4(1,1,1,1), (0.0 /*_GlitterColorThemeIndex*/));
+				float3 norm = lerp(poiMesh.normals[0], poiMesh.normals[1], (0.0 /*_GlitterUseNormals*/));
+				float3 randomRotation = 0;
+				switch((0.0 /*_GlitterMode*/))
 				{
 					case 0:
+					
+					if ((10.0 /*_GlitterSpeed*/) > 0)
 					{
-						float3 viewNormal = (mul(UNITY_MATRIX_V, float4(normal0, 0))).rgb;
-						float3 NormalBlend_MatCapUV_Detail = viewNormal.rgb * float3(-1, -1, 1);
-						float3 NormalBlend_MatCapUV_Base = (mul(UNITY_MATRIX_V, float4(poiCam.viewDir, 0)).rgb * float3(-1, -1, 1)) + float3(0, 0, 1);
-						float3 noSknewViewNormal = NormalBlend_MatCapUV_Base * dot(NormalBlend_MatCapUV_Base, NormalBlend_MatCapUV_Detail) / NormalBlend_MatCapUV_Base.b - NormalBlend_MatCapUV_Detail;
-						matcapUV = noSknewViewNormal.rg * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						randomRotation = randomFloat3WiggleRange(randoPoint, (90.0 /*_GlitterAngleRange*/), (10.0 /*_GlitterSpeed*/));
 					}
+					else
+					{
+						randomRotation = randomFloat3Range(randoPoint, (90.0 /*_GlitterAngleRange*/));
+					}
+					float3 glitterReflectionDirection = normalize(mul(poiRotationMatrixFromAngles(randomRotation), norm));
+					finalGlitter = lerp(0, (0.0 /*_GlitterMinBrightness*/) * glitterAlpha, glitterAlpha) + max(pow(saturate(dot(lerp(glitterReflectionDirection, poiCam.viewDir, (0.8 /*_GlitterBias*/)), poiCam.viewDir)), (36.0 /*_GlitterContrast*/)), 0);
+					finalGlitter *= glitterAlpha;
+					break;
 					case 1:
-					{
-						float3 worldViewUp = normalize(float3(0, 1, 0) - poiCam.viewDir * dot(poiCam.viewDir, float3(0, 1, 0)));
-						float3 worldViewRight = normalize(cross(poiCam.viewDir, worldViewUp));
-						matcapUV = float2(dot(worldViewRight, normal0), dot(worldViewUp, normal0)) * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
-					}
+					float offset = random(randoPoint);
+					float brightness = sin((_Time.x + offset) * (10.0 /*_GlitterSpeed*/)) * (20.0 /*_glitterFrequencyLinearEmissive*/) - ((20.0 /*_glitterFrequencyLinearEmissive*/) - 1);
+					finalGlitter = max((0.0 /*_GlitterMinBrightness*/) * glitterAlpha, brightness * glitterAlpha * smoothstep(0, 1, 1 - m_dist * (0.08 /*_GlitterCenterSize*/) * 10));
+					break;
 					case 2:
+					if ((10.0 /*_GlitterSpeed*/) > 0)
 					{
-						float3 reflection = reflect(-poiCam.viewDir, normal0);
-						float2 uv = float2(dot(reflection, float3(1, 0, 0)), dot(reflection, float3(0, 1, 0)));
-						matcapUV = uv * (0.43 /*_MatcapBorder*/) + 0.5;
-						break;
+						randomRotation = randomFloat3WiggleRange(randoPoint, (90.0 /*_GlitterAngleRange*/), (10.0 /*_GlitterSpeed*/));
 					}
-				}
-				matcapUV = RotateUV(matcapUV, (0.0 /*_MatcapRotation*/)*PI, float2(.5,.5), 1.0f);
-				if (IsInMirror())
-				{
-					matcapUV.x = 1 - matcapUV.x;
-				}
-				float matcapSmoothness;
-				float mipCount0 = 9;
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
-				{
-					if (float4(0.001953125,0.001953125,512,512).z == 8192) mipCount0 = 13;
-					if (float4(0.001953125,0.001953125,512,512).z == 4096) mipCount0 = 12;
-					if (float4(0.001953125,0.001953125,512,512).z == 2048) mipCount0 = 11;
-					if (float4(0.001953125,0.001953125,512,512).z == 1024) mipCount0 = 10;
-					if (float4(0.001953125,0.001953125,512,512).z == 512) mipCount0 = 9;
-					if (float4(0.001953125,0.001953125,512,512).z == 256) mipCount0 = 8;
-					if (float4(0.001953125,0.001953125,512,512).z == 128) mipCount0 = 7;
-					if (float4(0.001953125,0.001953125,512,512).z == 64) mipCount0 = 6;
-					if (float4(0.001953125,0.001953125,512,512).z == 32) mipCount0 = 5;
-					matcapSmoothness = (1.0 /*_MatcapSmoothness*/);
-					if ((0.0 /*_MatcapMaskSmoothnessApply*/))
+					else
 					{
-						#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-						matcapSmoothness *= POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(3.0 /*_MatcapMaskSmoothnessChannel*/)];
-						#endif
+						randomRotation = randomFloat3Range(randoPoint, (90.0 /*_GlitterAngleRange*/));
 					}
-					matcapSmoothness = (1 - matcapSmoothness) * mipCount0;
+					float3 glitterLightReflectionDirection = normalize(mul(poiRotationMatrixFromAngles(randomRotation), norm));
+					#ifdef POI_PASS_ADD
+					glitterAlpha *= poiLight.nDotLSaturated * poiLight.attenuation;
+					#endif
+					#ifdef UNITY_PASS_FORWARDBASE
+					glitterAlpha *= poiLight.nDotLSaturated;
+					#endif
+					float3 halfDir = normalize(poiLight.direction + poiCam.viewDir);
+					float specAngle = max(dot(halfDir, glitterLightReflectionDirection), 0.0);
+					finalGlitter = lerp(0, (0.0 /*_GlitterMinBrightness*/) * glitterAlpha, glitterAlpha) + max(pow(specAngle, (36.0 /*_GlitterContrast*/)), 0);
+					glitterColor *= poiLight.directColor;
+					finalGlitter *= glitterAlpha;
+					break;
 				}
-				#if defined(PROP_MATCAP) || !defined(OPTIMIZER_ENABLED)
-				if ((0.0 /*_MatcapSmoothnessEnabled*/))
+				glitterColor *= lerp(1, poiFragData.baseColor, (0.0 /*_GlitterUseSurfaceColor*/));
+				#if defined(PROP_GLITTERCOLORMAP) || !defined(OPTIMIZER_ENABLED)
+				glitterColor *= POI2D_SAMPLER_PAN(_GlitterColorMap, _MainTex, poiUV(poiMesh.uv[(0.0 /*_GlitterColorMapUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).rgb;
+				#endif
+				float2 uv = remapClamped(-size, size, dank, 0, 1);
+				
+				if ((0.0 /*_GlitterRandomRotation*/) == 1 || (5.0 /*_GlitterTextureRotation*/) != 0 && !(1.0 /*_GlitterShape*/))
 				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER_LOD(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap), matcapSmoothness) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
+					float2 fakeUVCenter = float2(.5, .5);
+					float randomBoy = 0;
+					
+					if ((0.0 /*_GlitterRandomRotation*/))
+					{
+						randomBoy = random(randoPoint);
+					}
+					float theta = radians((randomBoy + _Time.x * (5.0 /*_GlitterTextureRotation*/)) * 360);
+					float cs = cos(theta);
+					float sn = sin(theta);
+					uv = float2((uv.x - fakeUVCenter.x) * cs - (uv.y - fakeUVCenter.y) * sn + fakeUVCenter.x, (uv.x - fakeUVCenter.x) * sn + (uv.y - fakeUVCenter.y) * cs + fakeUVCenter.y);
+				}
+				#if defined(PROP_GLITTERTEXTURE) || !defined(OPTIMIZER_ENABLED)
+				float4 glitterTexture = POI2D_SAMPLER_PAN(_GlitterTexture, _MainTex, poiUV(uv, float4(1,1,0,0)), float4(0,0,0,0));
+				#else
+				float4 glitterTexture = 1;
+				#endif
+				glitterColor *= glitterTexture.rgb;
+				#if defined(PROP_GLITTERMASK) || !defined(OPTIMIZER_ENABLED)
+				float glitterMask = POI2D_SAMPLER_PAN(_GlitterMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_GlitterMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(0.0 /*_GlitterMaskChannel*/)];
+				#else
+				float glitterMask = 1;
+				#endif
+				glitterMask *= lerp(1, poiLight.rampedLightMap, (0.0 /*_GlitterHideInShadow*/));
+				if ((0.0 /*_GlitterMaskGlobalMask*/) > 0)
+				{
+					glitterMask = customBlend(glitterMask, poiMods.globalMask[(0.0 /*_GlitterMaskGlobalMask*/) - 1], (2.0 /*_GlitterMaskGlobalMaskBlendType*/));
+				}
+				if ((1.0 /*_GlitterRandomColors*/))
+				{
+					glitterColor *= RandomColorFromPoint(random2(randoPoint.x + randoPoint.y));
+				}
+				
+				if ((0.0 /*_GlitterHueShiftEnabled*/))
+				{
+					glitterColor.rgb = hueShift(glitterColor.rgb, (0.0 /*_GlitterHueShift*/) + _Time.x * (0.0 /*_GlitterHueShiftSpeed*/));
+				}
+				
+				if ((0.0 /*_GlitterBlendType*/) == 1)
+				{
+					poiFragData.baseColor = lerp(poiFragData.baseColor, finalGlitter * glitterColor * (4.0 /*_GlitterBrightness*/), finalGlitter * glitterTexture.a * glitterMask);
+					poiFragData.emission += finalGlitter * glitterColor * max(0, ((4.0 /*_GlitterBrightness*/) - 1) * glitterTexture.a) * glitterMask;
 				}
 				else
 				{
-					matcap = UNITY_SAMPLE_TEX2D_SAMPLER(_Matcap, _MainTex, TRANSFORM_TEX(matcapUV, _Matcap)) * float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
+					poiFragData.emission += finalGlitter * glitterColor * (4.0 /*_GlitterBrightness*/) * glitterTexture.a * glitterMask;
 				}
-				#else
-				matcap = float4(poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_MatcapColorThemeIndex*/)), float4(1,1,1,1).a);
-				#endif
-				matcap.rgb *= (1.0 /*_MatcapIntensity*/);
-				matcap.rgb = lerp(matcap.rgb, matcap.rgb * poiFragData.baseColor.rgb, (0.0 /*_MatcapBaseColorMix*/));
-				#if defined(PROP_MATCAPMASK) || !defined(OPTIMIZER_ENABLED)
-				matcapMask = POI2D_SAMPLER_PAN(_MatcapMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_MatcapMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0))[(0.0 /*_MatcapMaskChannel*/)];
-				#else
-				matcapMask = 1;
-				#endif
-				if ((0.0 /*_MatcapMaskInvert*/))
-				{
-					matcapMask = 1 - matcapMask;
-				}
-				#ifdef TPS_Penetrator
-				if ((0.0 /*_MatcapTPSDepthEnabled*/))
-				{
-					matcapMask = lerp(0, matcapMask * TPSBufferedDepth(poiMesh.localPos, poiMesh.vertexColor), (1.0 /*_MatcapTPSMaskStrength*/));
-				}
-				#endif
-				poiFragData.alpha *= lerp(1, matcap.a, matcapMask * (0.0 /*_MatcapAlphaOverride*/));
-				if ((0.0 /*_MatcapHueShiftEnabled*/))
-				{
-					matcap.rgb = hueShift(matcap.rgb, (0.0 /*_MatcapHueShift*/) + _Time.x * (0.0 /*_MatcapHueShiftSpeed*/));
-				}
-				blendMatcap(poiLight, poiFragData, poiMods, (1.0 /*_MatcapAdd*/), (0.0 /*_MatcapAddToLight*/), (0.0 /*_MatcapMultiply*/), (0.0 /*_MatcapReplace*/), (0.0 /*_MatcapMixed*/), (0.0 /*_MatcapScreen*/), matcap, matcapMask, (0.0 /*_MatcapEmissionStrength*/), (0.0 /*_MatcapLightMask*/), (0.0 /*_MatcapMaskGlobalMask*/), (2.0 /*_MatcapMaskGlobalMaskBlendType*/));
-				#endif
 			}
 			#endif
 			float4 frag(VertexOut i, uint facing : SV_IsFrontFace) : SV_Target
@@ -5229,7 +5291,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float2 mainUV = poiMesh.uv[(0.0 /*_MainTexUV*/)].xy;
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.0004882813,0.0004882813,2048,2048), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, poiUV(mainUV, float4(1,1,0,0)), float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -5526,8 +5588,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.vertexNDotH = max(0.00001, dot(poiMesh.normals[0], poiLight.halfDir));
 				poiLight.lightMap = 1;
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,0.4035474,0.1542947,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,0.4035474,0.1542947,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
 				#if defined(PROP_CLIPPINGMASK) || !defined(OPTIMIZER_ENABLED)
 				float alphaMask = POI2D_SAMPLER_PAN(_ClippingMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ClippingMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
 				if ((0.0 /*_Inverse_Clipping*/))
@@ -5561,8 +5623,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiLight.finalLighting = 1;
 				poiLight.rampedLightMap = poiEdgeNonLinear(poiLight.nDotL, 0.1, .1);
 				#endif
-				#if defined(POI_MATCAP0) || defined(COLOR_GRADING_HDR_3D) || defined(POI_MATCAP2) || defined(POI_MATCAP3)
-				applyMatcap(poiFragData, poiCam, poiMesh, poiLight, poiMods);
+				#ifdef _SUNDISK_SIMPLE
+				applyGlitter(poiFragData, poiMesh, poiCam, poiLight, poiMods);
 				#endif
 				if ((0.0 /*_AlphaPremultiply*/))
 				{
@@ -5621,12 +5683,11 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 			CGPROGRAM
  #define POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE 
  #define POI_LIGHT_DATA_ADDITIVE_ENABLE 
- #define POI_MATCAP0 
  #define POI_VERTEXLIGHT_ON 
  #define VIGNETTE_MASKED 
- #define _LIGHTINGMODE_SKIN 
+ #define _LIGHTINGMODE_FLAT 
  #define _STOCHASTICMODE_DELIOT_HEITZ 
- #define PROP_MATCAP 
+ #define _SUNDISK_SIMPLE 
  #define OPTIMIZER_ENABLED 
 			#pragma target 5.0
 			#pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
@@ -7136,7 +7197,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				float2 mainUV = poiMesh.uv[(0.0 /*_MainTexUV*/)].xy;
 				if ((0.0 /*_MainPixelMode*/))
 				{
-					mainUV = sharpSample(float4(1,1,1,1), mainUV);
+					mainUV = sharpSample(float4(0.0004882813,0.0004882813,2048,2048), mainUV);
 				}
 				float4 mainTexture = POI2D_SAMPLER_PAN_STOCHASTIC(_MainTex, _MainTex, poiUV(mainUV, float4(1,1,0,0)), float4(0,0,0,0), (0.0 /*_MainTexStochastic*/));
 				#if defined(PROP_BUMPMAP) || !defined(OPTIMIZER_ENABLED)
@@ -7161,8 +7222,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi Toon/17cb07df2e053fe4bb6e025e
 				poiCam.vDotN = abs(dot(poiCam.viewDir, poiMesh.normals[1]));
 				poiCam.clipPos = i.pos;
 				poiCam.worldDirection = i.worldDirection;
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,0.4035474,0.1542947,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,0.4035474,0.1542947,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
 				#if defined(PROP_CLIPPINGMASK) || !defined(OPTIMIZER_ENABLED)
 				float alphaMask = POI2D_SAMPLER_PAN(_ClippingMask, _MainTex, poiUV(poiMesh.uv[(0.0 /*_ClippingMaskUV*/)], float4(1,1,0,0)), float4(0,0,0,0)).r;
 				if ((0.0 /*_Inverse_Clipping*/))
