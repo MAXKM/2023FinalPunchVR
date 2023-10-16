@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] TextMeshProUGUI TitleText;   //テキスト
     [SerializeField] GameObject PObj;
     [SerializeField] UIManager uiManager;
+    [SerializeField] GameObject Control;
     public bool SJudge = false;
 
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
                 //時間の計測開始
                 Debug.Log("Game");
                 SJudge = true;
+                Control.GetComponent<OVRPlayerController>().enabled = false;
                 uiManager.DisplayGameStateUI();
                 timeManager.CountTime();
                 break;
