@@ -31,6 +31,7 @@ public class ResultManager : MonoBehaviour
     private Vector3 baseDirection = new Vector3(0, 1, 0);
     private float angle;
     private GameObject[] handParent;
+    [SerializeField] GameObject OVR;
 
     void Start()
     {
@@ -58,6 +59,7 @@ public class ResultManager : MonoBehaviour
         StartCoroutine(AA4(3));
         StartCoroutine(AA5(4));
         StartCoroutine(AAM(5));
+        StartCoroutine(ResultBack(6));
         InvokeRepeating("FAA", 10, interval);
         InvokeRepeating("CallPunch", 10.25f, interval);
         InvokeRepeating("PunchCount", 10.25f, interval);
@@ -212,5 +214,11 @@ public class ResultManager : MonoBehaviour
     private void CallCancell()
     {
         CancelInvoke("CallPunch");
+    }
+
+    IEnumerator ResultBack(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        OVR.transform.DOMove(new Vector3(0, 0, -3), 2);
     }
 }

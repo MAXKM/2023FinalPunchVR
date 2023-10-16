@@ -2190,6 +2190,7 @@ MonoBehaviour:
   score: 0
   pM: {fileID: 1578301772}
   parent: {fileID: 43295076}
+  OVR: {fileID: 1566344021}
 --- !u!4 &1033210380
 Transform:
   m_ObjectHideFlags: 0
@@ -2569,6 +2570,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &1566344021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+  m_PrefabInstance: {fileID: 14696795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1572190796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,6 +2609,7 @@ MonoBehaviour:
   resultManager: {fileID: 1033210379}
   PObj: {fileID: 2075292382}
   uiManager: {fileID: 258676672}
+  SJudge: 0
   state: 0
 --- !u!4 &1572190798
 Transform:
@@ -2657,6 +2664,7 @@ MonoBehaviour:
   - {fileID: 1997551284}
   - {fileID: 1287903480}
   hitEffectPrefab: {fileID: 7594873660671855554, guid: 18ec8534b00449b47bdebcd925a8c05d, type: 3}
+  gameManager: {fileID: 1572190797}
   isVRTest: 0
 --- !u!136 &1578301774
 CapsuleCollider:
@@ -3284,6 +3292,7 @@ MonoBehaviour:
   appearAfterimage: {fileID: 43295075}
   handCollider: []
   hitEffectPrefab: {fileID: 0}
+  gameManager: {fileID: 0}
   isVRTest: 0
 --- !u!65 &1972148966
 BoxCollider:
