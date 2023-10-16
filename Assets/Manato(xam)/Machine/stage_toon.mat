@@ -8,22 +8,19 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: stage_toon
-  m_Shader: {fileID: 4800000, guid: 784867d15973a4847b1a6048d42c1565, type: 3}
-  m_ValidKeywords:
-  - POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE
-  - POI_LIGHT_DATA_ADDITIVE_ENABLE
-  - POI_VERTEXLIGHT_ON
-  - VIGNETTE_MASKED
+  m_Shader: {fileID: 4800000, guid: e0221294c45a83a4e85167bc6d740f03, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _LIGHTINGMODE_FLAT
-  - _RIM2STYLE_POIYOMI
-  - _RIMSTYLE_POIYOMI
   - _STOCHASTICMODE_DELIOT_HEITZ
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
-  stringTagMap: {}
+  stringTagMap:
+    OriginalKeywords: _LIGHTINGMODE_FLAT _STOCHASTICMODE_DELIOT_HEITZ
+    OriginalShader: .poiyomi/Poiyomi 8.1/Poiyomi World
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -2102,7 +2099,7 @@ Material:
     - _Set_HighColorMaskChannel: 1
     - _Set_HighColorMaskUV: 0
     - _ShadeColor_Step: 0
-    - _ShaderOptimizerEnabled: 0
+    - _ShaderOptimizerEnabled: 1
     - _ShadingEnabled: 1
     - _ShadingShadeMapBlendType: 0
     - _Shadow2ndBlur: 0.3
