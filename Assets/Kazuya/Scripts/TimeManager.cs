@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
-    [SerializeField] private Text timerText; // §ŒÀŠÔ‚ğŠi”[‚·‚é•Ï”
+    [SerializeField] private TextMeshProUGUI timerText; // §ŒÀŠÔ‚ğŠi”[‚·‚é•Ï”
     [SerializeField] private float limit;
     public enum STATE { RESULT };
     [SerializeField] GameManager gameManager;
