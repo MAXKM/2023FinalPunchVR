@@ -11,12 +11,16 @@ public class titleDetection : MonoBehaviour
     //public Text StartObject;      //Text用
     public GameObject StartObject;　//TMPro用
 
+    private int count = 0; 
+
     private void Start()
     {       
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        count++;
+        if (count < 10) return;
         gameManager.SetState(GameManager.STATE.GAMESCENE);
 
         //テキスト削除
