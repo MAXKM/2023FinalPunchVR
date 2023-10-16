@@ -14,7 +14,7 @@ Material:
   - POI_LIGHT_DATA_ADDITIVE_ENABLE
   - POI_VERTEXLIGHT_ON
   - VIGNETTE_MASKED
-  - _LIGHTINGMODE_REALISTIC
+  - _LIGHTINGMODE_FLAT
   - _RIM2STYLE_POIYOMI
   - _RIMSTYLE_POIYOMI
   - _STOCHASTICMODE_DELIOT_HEITZ
@@ -1634,7 +1634,7 @@ Material:
     - _LightingIndirectUsesNormals: 0
     - _LightingMapMode: 0
     - _LightingMinLightBrightness: 0
-    - _LightingMode: 6
+    - _LightingMode: 5
     - _LightingMonochromatic: 0
     - _LightingMulitlayerNonLinear: 1
     - _LightingShadowMaskStrengthA: 0
@@ -2468,7 +2468,7 @@ Material:
     - m_end_vertexManipulation: 0
     - m_end_videoEffects: 0
     - m_lightingCategory: 1
-    - m_mainCategory: 0
+    - m_mainCategory: 1
     - m_modifierCategory: 0
     - m_postprocessing: 0
     - m_renderingCategory: 0
