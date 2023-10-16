@@ -12,12 +12,14 @@ public class GameManager : MonoBehaviour
     //[SerializeField] TextMeshProUGUI TitleText;   //テキスト
     [SerializeField] GameObject PObj;
     [SerializeField] UIManager uiManager;
+    public bool SJudge = false;
 
 
     //管理する状態
     public enum STATE
     {
         TITLE, //タイトル
+        //PRACTICE, //練習
         GAMESCENE, //ゲームシーン
         RESULT, //リザルト
     }
@@ -43,9 +45,14 @@ public class GameManager : MonoBehaviour
                 //TitleText.gameObject.SetActive(false);
                 break;
 
+            //case STATE.PRACTICE:
+            //    Debug.Log("Practice");
+            //    break;
+
             case STATE.GAMESCENE:
                 //時間の計測開始
                 Debug.Log("Game");
+                SJudge = true;
                 uiManager.DisplayGameStateUI();
                 timeManager.CountTime();
                 break;
