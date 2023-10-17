@@ -34,7 +34,7 @@ public class titleDetection : MonoBehaviour
         //StartText.gameObject.SetActive(false);
 
         // 変更しました（ヌマチ）
-        StartObject.SetActive(false);
+        //StartObject.SetActive(false);
         this.enabled = false;
     }
 }
