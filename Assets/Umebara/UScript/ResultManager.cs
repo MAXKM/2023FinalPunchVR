@@ -182,8 +182,8 @@ public class ResultManager : MonoBehaviour
         {
             score++;
             score_text.text = score.ToString();
-            score_text.transform.DOScale(new Vector3(0.005f, 0.005f, 0.005f), 0.05f);
-            score_text.transform.DOScale(new Vector3(0.003f, 0.003f, 0.003f), 0.1f).SetDelay(0.05f);
+            score_text.transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.05f);
+            score_text.transform.DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.1f).SetDelay(0.05f);
         }
     }
 
@@ -193,8 +193,8 @@ public class ResultManager : MonoBehaviour
         if (isDefaultScale)
         {
             resultdotweenText.text = score.ToString();
-            resultdotweenText.transform.DOScale(new Vector3(0.01f, 0.01f, 0.01f), 0.5f);
-            resultdotweenText.transform.DOScale(new Vector3(0.006f, 0.006f, 0.006f), 0.75f).SetDelay(0.50f);
+            resultdotweenText.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.5f);
+            resultdotweenText.transform.DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.75f).SetDelay(0.50f);
             isDefaultScale = false;
         }
     }
