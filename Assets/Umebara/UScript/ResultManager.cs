@@ -32,6 +32,7 @@ public class ResultManager : MonoBehaviour
     private float angle;
     private GameObject[] handParent;
     [SerializeField] GameObject OVR;
+    public GameObject scoretext;
 
     void Start()
     {
@@ -190,10 +191,11 @@ public class ResultManager : MonoBehaviour
     IEnumerator ResultScore2(float wait)
     {
         yield return new WaitForSeconds(wait);
+        scoretext.SetActive(false);
         if (isDefaultScale)
         {
             resultdotweenText.text = score.ToString();
-            resultdotweenText.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.5f);
+            resultdotweenText.transform.DOScale(new Vector3(1.3f, 1.3f, 1.3f), 0.5f);
             resultdotweenText.transform.DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.75f).SetDelay(0.50f);
             isDefaultScale = false;
         }
