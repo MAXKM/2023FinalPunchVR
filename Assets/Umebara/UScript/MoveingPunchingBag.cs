@@ -19,4 +19,9 @@ public class MoveingPunchingBag : MonoBehaviour
         this.transform.DOMove(new Vector3(0f, 0f, 1.0f), 0.15f).SetDelay(0.075f);
         this.transform.DORotate(new Vector3(0f, 0f, 0f), 0.15f).SetDelay(0.075f);
     }
+
+    public void ResultDirection()
+    {
+
+    }
 }

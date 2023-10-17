@@ -66,6 +66,7 @@ public class ResultManager : MonoBehaviour
         InvokeRepeating("CallPunch", 12.25f, interval);
         InvokeRepeating("PunchCount", 12.25f, interval);
         Invoke("CallCancell", 12.5f + (0.25f * listCountP));
+        //StartCoroutine(CallRD(13.5f + count));
         StartCoroutine(ResultScore2(13.5f + count));
         StartCoroutine(SM(21.0f + count));
     }
@@ -223,5 +224,11 @@ public class ResultManager : MonoBehaviour
     {
         yield return new WaitForSeconds(wait);
         OVR.transform.DOMove(new Vector3(0, 0, -3), 2);
+    }
+
+    IEnumerator CallRD(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        moveingPunching.ResultDirection();
     }
 }
