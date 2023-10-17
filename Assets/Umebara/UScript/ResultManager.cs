@@ -15,6 +15,7 @@ public class ResultManager : MonoBehaviour
     [SerializeField] AppearAfterimage appearAfterimage;
     [SerializeField] MoveingPunchingBag moveingPunching;
     [SerializeField] GameManager gameManager;
+    [SerializeField] UIManager uIManager;
     [SerializeField] List<Vector3> posM = new List<Vector3>() { };
     [SerializeField] List<Quaternion> rotM = new List<Quaternion>() { };
     [SerializeField] TextMeshProUGUI score_text;
@@ -195,7 +196,7 @@ public class ResultManager : MonoBehaviour
         if (isDefaultScale)
         {
             resultdotweenText.text = score.ToString();
-            resultdotweenText.transform.DOScale(new Vector3(1.3f, 1.3f, 1.3f), 0.5f);
+            resultdotweenText.transform.DOScale(new Vector3(1.3f, 1.3f, 1.3f), 0.5f).OnComplete(() => { uIManager.DisplayScoreText(); });
             resultdotweenText.transform.DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.75f).SetDelay(0.50f);
             isDefaultScale = false;
         }

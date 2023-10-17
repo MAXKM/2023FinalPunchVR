@@ -2257,6 +2257,7 @@ MonoBehaviour:
   appearAfterimage: {fileID: 43295075}
   moveingPunching: {fileID: 1578301777}
   gameManager: {fileID: 1572190797}
+  uIManager: {fileID: 258676672}
   posM: []
   rotM: []
   score_text: {fileID: 954687666}
@@ -2311,7 +2312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1109646307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3456,7 +3457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '30
+  m_text: '
 
 '
   m_isRightToLeft: 0
