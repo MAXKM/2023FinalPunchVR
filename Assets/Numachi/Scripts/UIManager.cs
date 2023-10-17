@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform punchTextTf;
 
     [SerializeField] private Transform stopTextTf;
+
+    [SerializeField] private CanvasGroup scoreTextCG;
     private void Start()
     {
         TitleUIAnim();
@@ -55,5 +57,10 @@ public class UIManager : MonoBehaviour
                     stopTextTf.GetComponent<CanvasGroup>().DOFade(0, 1.5f); 
                 });
             });
+    }
+
+    public void DisplayScoreText()
+    {
+        scoreTextCG.DOFade(1,0.5f);
     }
 }
