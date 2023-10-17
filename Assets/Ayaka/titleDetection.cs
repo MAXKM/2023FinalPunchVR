@@ -11,7 +11,8 @@ public class titleDetection : MonoBehaviour
     //public Text StartObject;      //Textóp
     public GameObject StartObject;Å@//TMProóp
 
-    private int count = 0; 
+    private int count = 0;
+    [SerializeField] private UIManager UIManager;
 
     private void Start()
     {       
@@ -20,6 +21,7 @@ public class titleDetection : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         count++;
+        UIManager.DisplayCountTextForPractice(10 - count);
         if (count < 10) return;
         gameManager.SetState(GameManager.STATE.GAMESCENE);
 
