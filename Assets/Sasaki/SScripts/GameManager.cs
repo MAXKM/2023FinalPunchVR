@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject PObj;
     [SerializeField] UIManager uiManager;
     [SerializeField] GameObject Control;
+    [SerializeField] AudioClip audioClip;
+    [SerializeField] SoundManager soundManager;
     public bool SJudge = false;
 
 
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
                 Control.GetComponent<OVRPlayerController>().enabled = false;
                 uiManager.DisplayGameStateUI();
                 timeManager.CountTime();
+                soundManager.PlayBGM(audioClip);    //âπäyïœçX
                 break;
 
             case STATE.RESULT:
