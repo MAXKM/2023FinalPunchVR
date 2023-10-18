@@ -19,7 +19,6 @@ public class AppearAfterimage : MonoBehaviour
         if (!_isDisappear)
         {
             afterimage.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().materials = resultMaterials;
-            Debug.Log("ok");
             return;
         }
         DOVirtual.DelayedCall(0.5f, () =>
