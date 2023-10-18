@@ -4239,6 +4239,8 @@ MonoBehaviour:
   PObj: {fileID: 2075292382}
   uiManager: {fileID: 258676672}
   Control: {fileID: 1566344021}
+  audioClip: {fileID: 8300000, guid: bb249166aac22b6449c5031562e19307, type: 3}
+  soundManager: {fileID: 1979992361}
   SJudge: 0
   state: 0
 --- !u!4 &1572190798
