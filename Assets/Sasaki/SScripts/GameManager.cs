@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case STATE.TITLE:
+                if (state == STATE.TITLE) return;
+                state = STATE.TITLE;
                 Debug.Log("Title");
                 //UIの表示
                 //TitleText.gameObject.SetActive(true);     
@@ -53,6 +55,8 @@ public class GameManager : MonoBehaviour
             //    break;
 
             case STATE.GAMESCENE:
+                if (state == STATE.GAMESCENE) return;
+                state = STATE.GAMESCENE;
                 //時間の計測開始
                 Debug.Log("Game");
                 SJudge = true;
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
                 break;
 
             case STATE.RESULT:
+                if (state == STATE.RESULT) return;
+                state = STATE.RESULT;
                 Debug.Log("Result");
                 PObj.SetActive(true);
                 uiManager.DisplayStopText();
