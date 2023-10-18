@@ -66,7 +66,12 @@ public class ResultManager : MonoBehaviour
         InvokeRepeating("CallPunch", 12.25f, interval);
         InvokeRepeating("PunchCount", 12.25f, interval);
         Invoke("CallCancell", 12.5f + (0.25f * listCountP));
-        //StartCoroutine(CallRD(13.5f + count));
+        StartCoroutine(CallRD2(12.5f + (0.25f * listCountP)));
+        if (listCountP >= 20)
+        {
+            StartCoroutine(CallRD2(16.5f + (0.25f * listCountP)));
+            StartCoroutine(CallRD2(20.5f + (0.25f * listCountP)));
+        }
         StartCoroutine(ResultScore2(13.5f + count));
         StartCoroutine(SM(21.0f + count));
     }
@@ -226,9 +231,24 @@ public class ResultManager : MonoBehaviour
         OVR.transform.DOMove(new Vector3(0, 0, -3), 2);
     }
 
-    IEnumerator CallRD(float wait)
+    private void CallRD()
+    {
+        if (listCountP < 10)
+        {
+            moveingPunching.ResultDirection();
+        }else if(listCountP >= 10 && listCountP < 20)
+        {
+            moveingPunching.ResultDirection2();
+        }
+        else
+        {
+            moveingPunching.ResultDirection3();
+        }
+    }
+
+    IEnumerator CallRD2(float wait)
     {
         yield return new WaitForSeconds(wait);
-        moveingPunching.ResultDirection();
+        CallRD();
     }
 }
