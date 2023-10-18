@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSource_Sound;
+    [SerializeField] AudioSource audioSource_BGM;
 
     // Start is called before the first frame update
     void Start()
@@ -12,14 +13,15 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlaySound(AudioClip hitsound)
     {
-        audioSource.PlayOneShot(hitsound);
+        audioSource_Sound.PlayOneShot(hitsound);
     }
+
+    public void PlayBGM(AudioClip BGM){
+        audioSource_BGM.clip = BGM;
+        audioSource_BGM.Play();
+
+    }
+
 }
