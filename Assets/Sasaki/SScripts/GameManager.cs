@@ -37,9 +37,9 @@ public class GameManager : MonoBehaviour
     }
 
     //ó‘Ô‘JˆÚ‚ğŠÇ—
-    public void SetState(STATE state)
+    public void SetState(STATE _state)
     {
-        switch (state)
+        switch (_state)
         {
             case STATE.TITLE:
                 if (state == STATE.TITLE) return;
