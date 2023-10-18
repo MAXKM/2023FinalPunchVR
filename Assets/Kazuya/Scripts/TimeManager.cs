@@ -29,7 +29,6 @@ public class TimeManager : MonoBehaviour
             timerText.text = limit.ToString("0.00");
             if (limit < 0)
             {
-                Debug.Log("ppp");
                 timerText.gameObject.SetActive(false);
                 gameManager.SetState(GameManager.STATE.RESULT);
                 count = false;
@@ -39,8 +38,5 @@ public class TimeManager : MonoBehaviour
     public void CountTime()
     {
         count = true;
-        Debug.Log("time");
-       
-
     }
 }

@@ -17,9 +17,5 @@ public class TestSound : MonoBehaviour
         {
             soundmanager.PlaySound(hitsound2);
         }
-        else
-        {
-            Debug.Log("MissSound");
-        }
     }
 }
