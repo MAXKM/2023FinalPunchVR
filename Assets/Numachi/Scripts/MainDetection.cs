@@ -1,3 +1,4 @@
+using OVR;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,9 @@ public class MainDetection : MonoBehaviour
     [SerializeField] private GameObject hitEffectPrefab; // ヒットエフェクトのプレファブ
     [SerializeField] private GameManager gameManager;
 
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private AudioClip hitSE;
+
     // テスト用
     [SerializeField] private bool isVRTest;
     private void OnTriggerEnter(Collider other)
@@ -26,6 +30,9 @@ public class MainDetection : MonoBehaviour
         // ヒットエフェクトを表示
         GameObject hitEffect = GetHitEffectsFromPool(mainHitPos);
         if (!hitEffect.activeSelf) hitEffect.SetActive(true);
+
+        // ヒットSEを再生
+        soundManager.PlaySound(hitSE);
 
         // 練習状態では残像は表示されない
         if (!gameManager.SJudge) return;
