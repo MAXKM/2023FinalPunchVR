@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             case STATE.TITLE:
                 if (state == STATE.TITLE) return;
                 state = STATE.TITLE;
-                Debug.Log("Title");
+                //Debug.Log("Title");
                 //UIの表示
                 //TitleText.gameObject.SetActive(true);     
                 //TitleText.gameObject.SetActive(false);
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
                 if (state == STATE.GAMESCENE) return;
                 state = STATE.GAMESCENE;
                 //時間の計測開始
-                Debug.Log("Game");
+                //Debug.Log("Game");
                 SJudge = true;
                 Control.GetComponent<OVRPlayerController>().enabled = false;
                 uiManager.DisplayGameStateUI();
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
             case STATE.RESULT:
                 if (state == STATE.RESULT) return;
                 state = STATE.RESULT;
-                Debug.Log("Result");
+                //Debug.Log("Result");
                 PObj.SetActive(true);
                 uiManager.DisplayStopText();
                 resultManager.AfterImageCome();
