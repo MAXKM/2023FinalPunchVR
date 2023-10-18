@@ -3224,6 +3224,8 @@ MonoBehaviour:
   afterimageManager: {fileID: 1033210381}
   appearAfterimage: {fileID: 43295075}
   moveingPunching: {fileID: 1578301777}
+  soundManager: {fileID: 1979992361}
+  resultHit: {fileID: 8300000, guid: 63bbee6f6b467df4284c79c441385919, type: 3}
   gameManager: {fileID: 1572190797}
   uIManager: {fileID: 258676672}
   posM: []
