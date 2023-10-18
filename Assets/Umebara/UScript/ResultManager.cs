@@ -14,6 +14,8 @@ public class ResultManager : MonoBehaviour
     [SerializeField] AfterimageManager afterimageManager;
     [SerializeField] AppearAfterimage appearAfterimage;
     [SerializeField] MoveingPunchingBag moveingPunching;
+    [SerializeField] SoundManager soundManager;
+    [SerializeField] AudioClip resultHit;
     [SerializeField] GameManager gameManager;
     [SerializeField] UIManager uIManager;
     [SerializeField] List<Vector3> posM = new List<Vector3>() { };
@@ -210,6 +212,7 @@ public class ResultManager : MonoBehaviour
     private void CallPunch()
     {
         moveingPunching.KnockBack();
+        soundManager.PlaySound(resultHit);
     }
 
     private void OnCall()
