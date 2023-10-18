@@ -11,8 +11,5 @@ public class BGMManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
