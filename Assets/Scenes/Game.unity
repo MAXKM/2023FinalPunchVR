@@ -2023,68 +2023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb2e0d8bc810bb48b63c91af80d5f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortAxis: {x: 0, y: 0, z: 0}
-  objsToMesh: []
-  useObjsToMeshFromTexBaker: 1
-  clearBuffersAfterBake: 1
-  bakeAssetsInPlaceFolderPath: 
-  resultPrefab: {fileID: 0}
-  resultPrefabLeaveInstanceInSceneAfterBake: 0
-  parentSceneObject: {fileID: 0}
-  _meshCombiner:
-    _validationLevel: 2
-    _name: MeshBaker-mesh
-    _textureBakeResults: {fileID: 11400000, guid: ffcaf1cda050a5c4187320c074222668, type: 2}
-    _resultSceneObject: {fileID: 1640050441}
-    _targetRenderer: {fileID: 747372952}
-    _LOG_LEVEL: 3
-    _settingsHolder: {fileID: 1304835067}
-    _outputOption: 0
-    _renderType: 0
-    _lightmapOption: 1
-    _doNorm: 1
-    _doTan: 1
-    _doCol: 0
-    _doUV: 1
-    _doUV3: 0
-    _doUV4: 0
-    _doUV5: 0
-    _doUV6: 0
-    _doUV7: 0
-    _doUV8: 0
-    _doBlendShapes: 0
-    _pivotLocationType: 0
-    _pivotLocation: {x: 0, y: 0, z: 0}
-    _clearBuffersAfterBake: 0
-    _optimizeAfterBake: 1
-    _uv2UnwrappingParamsHardAngle: 60
-    _uv2UnwrappingParamsPackMargin: 0.005
-    _smrNoExtraBonesWhenCombiningMeshRenderers: 0
-    _smrMergeBlendShapesWithSameNames: 0
-    _assignToMeshCustomizer: {fileID: 0}
-    objectsInCombinedMesh: []
-    lightmapIndex: -1
-    mbDynamicObjectsInCombinedMesh: []
-    verts: []
-    normals: []
-    tangents: []
-    uvs: []
-    uvsSliceIdx: []
-    uv2s: []
-    uv3s: []
-    uv4s: []
-    uv5s: []
-    uv6s: []
-    uv7s: []
-    uv8s: []
-    colors: []
-    bindPoses: []
-    bones: []
-    blendShapes: []
-    blendShapesInCombined: []
-    submeshTris: []
-    _meshBirth: 1
-    _mesh: {fileID: 1553964580}
 --- !u!1 &631066072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,72 +2550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb2e0d8bc810bb48b63c91af80d5f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortAxis: {x: 0, y: 0, z: 0}
-  objsToMesh:
-  - {fileID: 726865253}
-  - {fileID: 1679027042}
-  - {fileID: 8234062611596557652}
-  - {fileID: 8234062612557049563}
-  useObjsToMeshFromTexBaker: 0
-  clearBuffersAfterBake: 1
-  bakeAssetsInPlaceFolderPath: 
-  resultPrefab: {fileID: 0}
-  resultPrefabLeaveInstanceInSceneAfterBake: 0
-  parentSceneObject: {fileID: 0}
-  _meshCombiner:
-    _validationLevel: 2
-    _name: MeshBaker (0)-mesh
-    _textureBakeResults: {fileID: 0}
-    _resultSceneObject: {fileID: 1776009657}
-    _targetRenderer: {fileID: 1234504730}
-    _LOG_LEVEL: 3
-    _settingsHolder: {fileID: 0}
-    _outputOption: 0
-    _renderType: 0
-    _lightmapOption: 1
-    _doNorm: 1
-    _doTan: 1
-    _doCol: 0
-    _doUV: 1
-    _doUV3: 0
-    _doUV4: 0
-    _doUV5: 0
-    _doUV6: 0
-    _doUV7: 0
-    _doUV8: 0
-    _doBlendShapes: 0
-    _pivotLocationType: 0
-    _pivotLocation: {x: 0, y: 0, z: 0}
-    _clearBuffersAfterBake: 0
-    _optimizeAfterBake: 1
-    _uv2UnwrappingParamsHardAngle: 60
-    _uv2UnwrappingParamsPackMargin: 0.005
-    _smrNoExtraBonesWhenCombiningMeshRenderers: 0
-    _smrMergeBlendShapesWithSameNames: 0
-    _assignToMeshCustomizer: {fileID: 0}
-    objectsInCombinedMesh: []
-    lightmapIndex: -1
-    mbDynamicObjectsInCombinedMesh: []
-    verts: []
-    normals: []
-    tangents: []
-    uvs: []
-    uvsSliceIdx: []
-    uv2s: []
-    uv3s: []
-    uv4s: []
-    uv5s: []
-    uv6s: []
-    uv7s: []
-    uv8s: []
-    colors: []
-    bindPoses: []
-    bones: []
-    blendShapes: []
-    blendShapesInCombined: []
-    submeshTris: []
-    _meshBirth: 1
-    _mesh: {fileID: 892383027}
 --- !u!4 &798755631
 Transform:
   m_ObjectHideFlags: 0
@@ -3697,6 +3569,7 @@ MonoBehaviour:
   resultdotweenText: {fileID: 2084258898}
   score: 0
   pM: {fileID: 1578301772}
+  ex: {fileID: 6985984380925318110, guid: 0912ae3b8aeef8349b6b0c34df5a20c4, type: 3}
   parent: {fileID: 43295076}
   OVR: {fileID: 1566344021}
   scoretext: {fileID: 954687663}
@@ -4285,51 +4158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97974931c5043247b11cd77898c1702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clusterType: 0
-  parentSceneObject: {fileID: 0}
-  data:
-    clusterOnLMIndex: 0
-    clusterByLODLevel: 0
-    origin: {x: 0, y: 0, z: 0}
-    cellSize: {x: 0, y: 0, z: 0}
-    pieNumSegments: 4
-    pieAxis: {x: 0, y: 1, z: 0}
-    ringSpacing: 100
-    combineSegmentsInInnermostRing: 0
-    height: 1
-    maxDistBetweenClusters: 1
-    includeCellsWithOnlyOneRenderer: 1
-  sourceObjectBounds:
-    m_Center: {x: 0.0000019073486, y: 5.8979726, z: 0.09000015}
-    m_Extent: {x: 20.00002, y: 7.0770283, z: 20.000017}
-  prefabOptions_outputFolder: 
-  prefabOptions_autoGeneratePrefabs: 0
-  prefabOptions_mergeOutputIntoSinglePrefab: 0
-  meshBakerSettingsAsset: {fileID: 0}
-  meshBakerSettings:
-    _renderType: 0
-    _outputOption: 0
-    _lightmapOption: 1
-    _doNorm: 1
-    _doTan: 1
-    _doCol: 0
-    _doUV: 1
-    _doUV3: 0
-    _doUV4: 0
-    _doUV5: 0
-    _doUV6: 0
-    _doUV7: 0
-    _doUV8: 0
-    _doBlendShapes: 0
-    _pivotLocationType: 0
-    _pivotLocation: {x: 0, y: 0, z: 0}
-    _clearBuffersAfterBake: 0
-    _optimizeAfterBake: 1
-    _uv2UnwrappingParamsHardAngle: 60
-    _uv2UnwrappingParamsPackMargin: 0.005
-    _smrNoExtraBonesWhenCombiningMeshRenderers: 0
-    _smrMergeBlendShapesWithSameNames: 0
-    _assignToMeshCustomizer: {fileID: 0}
 --- !u!114 &1304835068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4342,100 +4170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077f80fe3940dc7468ecec90989abe66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortAxis: {x: 0, y: 0, z: 0}
-  LOG_LEVEL: 3
-  _textureBakeResults: {fileID: 11400000, guid: ffcaf1cda050a5c4187320c074222668, type: 2}
-  _atlasPadding: 1
-  _maxAtlasSize: 4096
-  _useMaxAtlasWidthOverride: 0
-  _maxAtlasWidthOverride: 4096
-  _useMaxAtlasHeightOverride: 0
-  _maxAtlasHeightOverride: 4096
-  _resizePowerOfTwoTextures: 0
-  _fixOutOfBoundsUVs: 0
-  _maxTilingBakeSize: 1024
-  _packingAlgorithm: 1
-  _layerTexturePackerFastMesh: -1
-  _meshBakerTexturePackerForcePowerOfTwo: 1
-  _customShaderProperties: []
-  _customShaderPropNames_Depricated: []
-  _resultType: 0
-  _doMultiMaterial: 0
-  _doMultiMaterialSplitAtlasesIfTooBig: 1
-  _doMultiMaterialSplitAtlasesIfOBUVs: 1
-  _resultMaterial: {fileID: 2100000, guid: e950f56d3498721409b6865ac250e4e8, type: 2}
-  _considerNonTextureProperties: 0
-  _doSuggestTreatment: 1
-  resultMaterials: []
-  resultMaterialsTexArray: []
-  textureArrayOutputFormats: []
-  objsToMesh:
-  - {fileID: 420934546405990581}
-  - {fileID: 420934546374247655}
-  - {fileID: 75454634}
-  - {fileID: 4756475823268788405}
-  - {fileID: 1632772268884644468}
-  - {fileID: 1632772267876286897}
-  - {fileID: 1632772268786180681}
-  - {fileID: 1632772268347450797}
-  - {fileID: 580897401}
-  - {fileID: 1987458972}
-  - {fileID: 408784292}
-  - {fileID: 1694986881}
-  - {fileID: 663643749}
-  - {fileID: 1919124687}
-  - {fileID: 2009156801}
-  - {fileID: 1259416398}
-  - {fileID: 1000195250}
-  - {fileID: 2070923527}
-  - {fileID: 1740339951}
-  - {fileID: 379378699}
-  - {fileID: 5675393556861596221}
-  - {fileID: 3142647320298651746}
-  - {fileID: 3142647320002125532}
-  - {fileID: 846442014}
-  - {fileID: 1789173615}
-  - {fileID: 3032135813275487470}
-  - {fileID: 1269915768}
-  - {fileID: 569882600}
-  - {fileID: 1493947565}
-  - {fileID: 1460604301128126416}
-  - {fileID: 1604967823669883129}
-  - {fileID: 1604967823376514080}
-  - {fileID: 1248786799}
-  - {fileID: 853024348}
-  - {fileID: 6205442547170984756}
-  - {fileID: 2004933317}
-  - {fileID: 190502224}
-  - {fileID: 1559529303}
-  - {fileID: 411239681}
-  - {fileID: 1679262486}
-  - {fileID: 1359805763}
-  - {fileID: 2079701663}
-  - {fileID: 2098395089}
-  - {fileID: 1550063702}
-  - {fileID: 3484740530725630719}
-  OnCombinedTexturesCoroutineAtlasesAndRects:
-  - atlases:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    texPropertyNames:
-    - _MainTex
-    - _MetallicGlossMap
-    - _BumpMap
-    - _ParallaxMap
-    - _OcclusionMap
-    - _EmissionMap
-    - _DetailMask
-    - _DetailAlbedoMap
-    - _DetailNormalMap
 --- !u!4 &1304835069
 Transform:
   m_ObjectHideFlags: 0
@@ -5146,7 +4880,9 @@ MonoBehaviour:
   PObj: {fileID: 2075292382}
   uiManager: {fileID: 258676672}
   Control: {fileID: 1566344021}
-  audioClip: {fileID: 8300000, guid: bb249166aac22b6449c5031562e19307, type: 3}
+  audioClipBgm: {fileID: 0}
+  audioClipTitle: {fileID: 0}
+  audioClipResult: {fileID: 0}
   soundManager: {fileID: 1979992361}
   SJudge: 0
   state: 0
