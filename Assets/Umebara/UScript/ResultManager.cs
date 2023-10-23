@@ -236,10 +236,10 @@ public class ResultManager : MonoBehaviour
 
     private void CallRD()
     {
-        if (listCountP < 10)
+        if (listCountP < 25)
         {
             moveingPunching.ResultDirection();
-        }else if(listCountP >= 10 && listCountP < 20)
+        }else if(listCountP >= 25 && listCountP < 45)
         {
             moveingPunching.ResultDirection2();
         }
