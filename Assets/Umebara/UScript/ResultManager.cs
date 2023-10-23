@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEngine.UI.Image;
 
 public class ResultManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class ResultManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI resultdotweenText;
     [SerializeField] int score;
     public GameObject pM;
+    public GameObject ex;
     private int listCountP;
     private int listCountR;
     private float count;
@@ -68,6 +70,7 @@ public class ResultManager : MonoBehaviour
         InvokeRepeating("CallPunch", 12.25f, interval);
         InvokeRepeating("PunchCount", 12.25f, interval);
         Invoke("CallCancell", 12.5f + (0.25f * listCountP));
+        StartCoroutine(Ex((12.5f + (0.25f * listCountP))));
         StartCoroutine(CallRD2(12.5f + (0.25f * listCountP)));
         if (listCountP >= 20)
         {
@@ -247,6 +250,12 @@ public class ResultManager : MonoBehaviour
         {
             moveingPunching.ResultDirection3();
         }
+    }
+
+    IEnumerator Ex(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        Instantiate(ex, new Vector3(0, 0, 1), Quaternion.identity);
     }
 
     IEnumerator CallRD2(float wait)
