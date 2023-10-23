@@ -8,7 +8,7 @@ public class AppearAfterimage : MonoBehaviour
 {
     public List<GameObject> pool = new List<GameObject>();
     [SerializeField] private GameObject afterimagePrefab;
-    [SerializeField] private Material[] resultMaterials;
+    [SerializeField] private Material resultMaterial;
     public void Appear(Vector3 _origin,Quaternion _rot,bool _isDisappear = true)
     {
         GameObject afterimage = GetFromPool();
@@ -18,7 +18,7 @@ public class AppearAfterimage : MonoBehaviour
         afterimage.transform.parent = transform;
         if (!_isDisappear)
         {
-            afterimage.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().materials = resultMaterials;
+            afterimage.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = resultMaterial;
             return;
         }
         DOVirtual.DelayedCall(0.5f, () =>
