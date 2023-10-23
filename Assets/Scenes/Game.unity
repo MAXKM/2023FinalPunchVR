@@ -251,9 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: []
   afterimagePrefab: {fileID: 5712999446097874619, guid: 48ba46cd79c6b5448b68520b1941c934, type: 3}
-  resultMaterials:
-  - {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
-  - {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
+  resultMaterial: {fileID: 2100000, guid: ad22e5383fbf6b1449976311480e2596, type: 2}
 --- !u!4 &43295076
 Transform:
   m_ObjectHideFlags: 0
