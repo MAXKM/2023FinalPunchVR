@@ -17,6 +17,8 @@ public class ResultManager : MonoBehaviour
     [SerializeField] MoveingPunchingBag moveingPunching;
     [SerializeField] SoundManager soundManager;
     [SerializeField] AudioClip resultHit;
+    [SerializeField] AudioClip exS;
+    [SerializeField] AudioClip hyu;
     [SerializeField] GameManager gameManager;
     [SerializeField] UIManager uIManager;
     [SerializeField] List<Vector3> posM = new List<Vector3>() { };
@@ -72,7 +74,7 @@ public class ResultManager : MonoBehaviour
         Invoke("CallCancell", 12.5f + (0.25f * listCountP));
         StartCoroutine(Ex((12.5f + (0.25f * listCountP))));
         StartCoroutine(CallRD2(12.5f + (0.25f * listCountP)));
-        if (listCountP >= 20)
+        if (listCountP >= 45)
         {
             StartCoroutine(CallRD2(16.5f + (0.25f * listCountP)));
             StartCoroutine(CallRD2(20.5f + (0.25f * listCountP)));
@@ -245,10 +247,12 @@ public class ResultManager : MonoBehaviour
         }else if(listCountP >= 25 && listCountP < 45)
         {
             moveingPunching.ResultDirection2();
+            soundManager.PlaySound(hyu);
         }
         else
         {
             moveingPunching.ResultDirection3();
+            //soundManager.PlaySound(hyu);
         }
     }
 
@@ -256,6 +260,7 @@ public class ResultManager : MonoBehaviour
     {
         yield return new WaitForSeconds(wait);
         Instantiate(ex, new Vector3(0, 0, 1), Quaternion.identity);
+        soundManager.PlaySound(exS);
     }
 
     IEnumerator CallRD2(float wait)
