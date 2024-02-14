@@ -58,15 +58,18 @@ public class GameManager : MonoBehaviour
 
             case STATE.GAMESCENE:
                 if (state == STATE.GAMESCENE) return;
-                state = STATE.GAMESCENE;
                 //時間の計測開始
                 //Debug.Log("Game");
+                soundManager.StopBGM();
                 SJudge = true;
                 Control.GetComponent<OVRPlayerController>().enabled = false;
-                uiManager.DisplayGameStateUI();
-                timeManager.CountTime();
-                soundManager.PlaySound(audioClipTitle);
-                soundManager.PlayBGM(audioClipBgm);    //音楽変更
+                StartCoroutine(uiManager.DisplayGameStateUI(() =>
+                {
+                    state = STATE.GAMESCENE;
+                    timeManager.CountTime();
+                    soundManager.PlaySound(audioClipTitle);
+                    soundManager.PlayBGM(audioClipBgm);    //音楽変更
+                }));
                 break;
 
             case STATE.RESULT:

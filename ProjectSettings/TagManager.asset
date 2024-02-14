@@ -11,6 +11,7 @@ TagManager:
   - PM
   - Sound2
   - AA
+  - Main
   layers:
   - Default
   - TransparentFX

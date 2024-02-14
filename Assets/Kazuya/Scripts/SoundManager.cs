@@ -21,7 +21,11 @@ public class SoundManager : MonoBehaviour
     public void PlayBGM(AudioClip BGM){
         audioSource_BGM.clip = BGM;
         audioSource_BGM.Play();
+    }
 
+    public void StopBGM()
+    {
+        audioSource_BGM.Stop();
     }
 
 }
