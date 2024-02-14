@@ -58,14 +58,14 @@ public class GameManager : MonoBehaviour
 
             case STATE.GAMESCENE:
                 if (state == STATE.GAMESCENE) return;
+                state = STATE.GAMESCENE;
                 //時間の計測開始
                 //Debug.Log("Game");
                 soundManager.StopBGM();
-                SJudge = true;
                 Control.GetComponent<OVRPlayerController>().enabled = false;
                 StartCoroutine(uiManager.DisplayGameStateUI(() =>
                 {
-                    state = STATE.GAMESCENE;
+                    SJudge = true;
                     timeManager.CountTime();
                     soundManager.PlaySound(audioClipTitle);
                     soundManager.PlayBGM(audioClipBgm);    //音楽変更
