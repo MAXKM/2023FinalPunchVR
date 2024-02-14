@@ -14,6 +14,7 @@ public class HandVibration : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Main")) return;
         StartCoroutine(Vibration());
     }
 
