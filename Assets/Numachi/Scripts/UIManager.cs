@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
     public IEnumerator DisplayGameStateUI(Action _completeAction)
     {
         // タイトルUIを非表示
+        countText.gameObject.SetActive(false);
         titleUI.DOFade(0,0.5f);
         // カウントダウン
         yield return new WaitForSeconds(1f);
